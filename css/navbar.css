@@ -160,22 +160,81 @@ header.header-scrolled .logo-mark {
     transform: translateY(-2px);
 }
 
-/* Narrow screens: stop flanking the logo, stack everything centered */
+/* Hamburger toggle button — hidden on desktop, shown only on narrow screens */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 5px;
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    flex: 0 0 auto;
+}
+.nav-toggle span {
+    display: block;
+    height: 2px;
+    background-color: white;
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Narrow screens: collapse the nav links/CTA behind the hamburger toggle instead
+   of stacking everything open by default (which pushed real content off-screen) */
 @media (max-width: 860px) {
-    .main-nav {
-        flex-direction: column;
-        text-align: center;
-    }
-    .nav-group {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    .nav-group.nav-right {
-        justify-content: center;
-    }
     .utility-bar {
         flex-direction: column;
         gap: 0.2rem;
         text-align: center;
+        padding: 0.5rem 1rem;
+    }
+
+    .main-nav {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0.7rem 1.2rem;
+    }
+    .nav-toggle {
+        display: flex;
+    }
+
+    /* Collapsed by default: only the logo + toggle button show */
+    .nav-group,
+    .nav-cta {
+        display: none;
+        flex: 0 0 100%;
+        text-align: center;
+    }
+    .nav-group {
+        flex-direction: column;
+        gap: 0.9rem;
+        margin-top: 0.8rem;
+    }
+    .nav-group.nav-right {
+        justify-content: center;
+    }
+    .nav-cta {
+        justify-content: center;
+        margin: 1rem auto 0;
+    }
+
+    /* Opened via JS: .main-nav gets .nav-open, revealing the links below the
+       compact logo/toggle row */
+    .main-nav.nav-open .nav-group,
+    .main-nav.nav-open .nav-cta {
+        display: flex;
     }
 }

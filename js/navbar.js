@@ -42,3 +42,25 @@ if (siteHeader) {
     updateHeaderState();
     window.addEventListener('scroll', onScroll, { passive: true });
 }
+
+// Mobile hamburger toggle: on narrow screens the nav links/CTA are collapsed by
+// default (see the max-width: 860px rules in css/navbar.css) and only appear once
+// the toggle button is clicked and .nav-open is added to .main-nav.
+const navToggle = document.getElementById('navToggle');
+const mainNav = document.querySelector('.main-nav');
+
+if (navToggle && mainNav) {
+    navToggle.addEventListener('click', function () {
+        const isOpen = mainNav.classList.toggle('nav-open');
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    // Close the menu automatically if the viewport is widened past the mobile
+    // breakpoint while it's open, so it doesn't stay stuck open on desktop.
+    window.addEventListener('resize', function () {
+        if (window.innerWidth > 860 && mainNav.classList.contains('nav-open')) {
+            mainNav.classList.remove('nav-open');
+            navToggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+}

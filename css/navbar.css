@@ -207,8 +207,26 @@ header.header-scrolled .logo-mark {
         justify-content: space-between;
         padding: 0.7rem 1.2rem;
     }
+
+    /* Explicit order so the logo + toggle stay on the first row no matter what —
+       without this, the toggle button (last in the HTML) ends up rendering
+       AFTER the opened menu, at the very bottom, instead of staying next to
+       the logo where it's easy to find and tap closed again. */
+    .logo {
+        order: 1;
+    }
     .nav-toggle {
         display: flex;
+        order: 2;
+    }
+    .nav-group.nav-left {
+        order: 3;
+    }
+    .nav-group.nav-right {
+        order: 4;
+    }
+    .nav-cta {
+        order: 5;
     }
 
     /* Collapsed by default: only the logo + toggle button show */

@@ -106,6 +106,17 @@ body {
     color: #2563EB;
 }
 
+/* Validator result screenshots */
+.validation-screenshot {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    margin: 1rem 0;
+    border: 1px solid #DCE3ED;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(18, 58, 122, 0.08);
+}
+
 /* Clearly-flagged placeholder / dummy content block */
 .dummy-block {
     background-color: #FFF9E8;

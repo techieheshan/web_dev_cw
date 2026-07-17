@@ -3,12 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrightPath | Page Editor ST2</title>
-    <link rel="stylesheet" href="style.css">
+    <title>BrightPath | Page Editor &mdash; Student 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/pageEditor_validator.css">
 </head>
-<body>
-    <header></header>
-    <!-- Content goes here -->
+<body id="top">
+    <header class="editor-header">
+        <h1>Page Editor &mdash; Student 2</h1>
+        <p>BrightPath &middot; UN SDG 4, Quality Education &middot; University of Westminster group coursework</p>
+    </header>
+
+    <div class="editor-warning">
+        <strong>&#9888; Draft notice:</strong> Sections marked <span class="dummy-flag">Placeholder</span> below
+        (name/ID, the meeting log, and parts of the challenges/references sections) need to be filled in with
+        real information before submission. The technical write-ups reflect the pages as actually built.
+    </div>
+
+    <div class="student-card">
+        <div><strong>Name</strong>[Student 2 Name]</div>
+        <div><strong>Student ID</strong>[Student ID]</div>
+        <div><strong>Role</strong>Splash Screen, Action Impact Simulator</div>
+        <div><strong>Group Website</strong>BrightPath &mdash; SDG 4, Quality Education</div>
+    </div>
+
+    <nav class="editor-toc" aria-label="Page Editor contents">
+        <h2>Contents</h2>
+        <ol>
+            <li><a href="#completed-tasks">Completed Pages / Tasks</a></li>
+            <li><a href="#splash-page">Splash Screen</a></li>
+            <li><a href="#ais-page">Action Impact Simulator</a></li>
+            <li><a href="#content-page">Content Page</a></li>
+            <li><a href="#links-validation">Links &amp; Validation</a></li>
+            <li><a href="#challenges">Challenges &amp; Lessons Learned</a></li>
+            <li><a href="#accessibility">Accessibility Considerations</a></li>
+            <li><a href="#janet">Compliance with JANET Regulations</a></li>
+            <li><a href="#meetings">Group Meetings &amp; Contribution Log</a></li>
+            <li><a href="#references">References</a></li>
+        </ol>
+    </nav>
+
+    <section id="completed-tasks" class="editor-section">
+        <h2>Completed Pages / Tasks</h2>
+        <ul>
+            <li>Splash Screen (<code>splash.html</code>, <code>css/splash.css</code>, <code>js/splash.js</code>)</li>
+            <li>SDG Action Impact Simulator (<code>ais.html</code>, <code>js/ais.js</code>)</li>
+            <li>Content Page &mdash; "Bridging the Digital Divide" (<code>content_ST2.html</code>)</li>
+            <li>This Page Editor and the accompanying Validation Page</li>
+        </ul>
+    </section>
+
+    <section id="splash-page" class="editor-section">
+        <h2>Splash Screen</h2>
+        <h3>HTML Structure</h3>
+        <p>
+            The Splash Screen does not use the shared site template (the spec allows this, since it's meant to
+            look different from the rest of the site). It has its own <code>&lt;main class="splash"&gt;</code>
+            containing an overlay div, a content block with the title, mission statement, team list, a countdown
+            area, and a Skip Intro link. A <code>&lt;meta http-equiv="refresh" content="4; url=home.html"&gt;</code>
+            tag in the <code>&lt;head&gt;</code> handles the automatic redirect, as required by the spec.
+        </p>
+        <h3>CSS Techniques</h3>
+        <p>
+            The background photo, dark gradient overlay, and centred content use <code>position: relative</code>/
+            <code>absolute</code> layering. The loading indicator is a CSS-only spinning ring
+            (<code>border-top-color</code> + a <code>@keyframes</code> rotation), not a GIF, per the spec's
+            explicit requirement.
+        </p>
+        <h3>JavaScript Logic</h3>
+        <p>
+            A <code>setInterval</code> counts down from 4 and updates the on-page number every second. The Skip
+            Intro button removes the pending <code>&lt;meta http-equiv="refresh"&gt;</code> element from the DOM
+            (cancelling the automatic redirect) before its own link takes the user to the Home Page immediately.
+        </p>
+        <p><a href="splash.html" target="_blank" rel="noopener">Open the live Splash Screen &rarr;</a> &middot;
+            <a href="validation_ST2.html#splash">See its validation evidence &rarr;</a></p>
+    </section>
+
+    <section id="ais-page" class="editor-section">
+        <h2>SDG Action Impact Simulator</h2>
+        <h3>HTML Structure</h3>
+        <p>
+            Six <code>&lt;article class="action-card"&gt;</code> elements, each carrying a
+            <code>data-points</code> attribute holding its impact score, plus an image, a title, a description,
+            and a visible impact-points badge. A separate <code>.impact-summary</code> panel shows the running
+            total, impact level, and feedback message.
+        </p>
+        <h3>CSS Techniques</h3>
+        <p>
+            Page-specific styling is embedded in a <code>&lt;style&gt;</code> block, as the spec requires for
+            this page. A <code>.selected</code> class (toggled by JavaScript, not CSS) changes a card's border
+            colour and adds a "Selected" label via <code>::after</code>. A fixed-position <code>.ais-bg</code>
+            div sits behind everything and swaps its background image via <code>.level-medium</code>/
+            <code>.level-high</code> classes.
+        </p>
+        <h3>JavaScript Logic</h3>
+        <p>
+            Clicking or pressing Enter/Space on a card toggles a <code>selected</code> class and recalculates
+            the total from every selected card's <code>data-points</code>. The total is compared against two
+            thresholds to pick one of three impact levels, each with its own message and background class
+            &mdash; so the background image change is driven entirely by JavaScript, not a CSS-only trick, per
+            the spec.
+        </p>
+        <p><a href="ais.html" target="_blank" rel="noopener">Open the live Action Impact Simulator &rarr;</a> &middot;
+            <a href="validation_ST2.html#ais">See its validation evidence &rarr;</a></p>
+    </section>
+
+    <section id="content-page" class="editor-section">
+        <h2>Content Page &mdash; "Bridging the Digital Divide"</h2>
+        <h3>HTML Structure</h3>
+        <p>
+            One <code>&lt;h1&gt;</code> and four <code>&lt;h2&gt;</code> sections, each with a unique
+            <code>id</code>, linked from a simple top navigation list via anchor links.
+        </p>
+        <h3>CSS Techniques</h3>
+        <p>
+            Uses the shared <code>css/content.css</code> file (also used by Students 3 and 4's content pages)
+            rather than page-specific embedded CSS, since this page's layout is a straightforward single column
+            and didn't need bespoke styling. The "Go to Top" button is plain HTML/CSS, no JavaScript.
+        </p>
+        <h3>Design Rationale</h3>
+        <p>
+            The topic connects to the Home Page's second focus-area card. It focuses specifically on device and
+            connectivity access, distinct from Student 1's content page on the exam-to-employment skills gap.
+        </p>
+        <p><a href="content_ST2.html" target="_blank" rel="noopener">Open the live Content Page &rarr;</a> &middot;
+            <a href="validation_ST2.html#content">See its validation evidence &rarr;</a></p>
+    </section>
+
+    <section id="links-validation" class="editor-section">
+        <h2>Links &amp; Validation Summary</h2>
+        <table class="editor-table">
+            <thead>
+                <tr><th>Page</th><th>Live Page</th><th>Validation Evidence</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Splash Screen</td><td><a href="splash.html" target="_blank" rel="noopener">splash.html</a></td><td><a href="validation_ST2.html#splash">Validation &rarr;</a></td></tr>
+                <tr><td>Action Impact Simulator</td><td><a href="ais.html" target="_blank" rel="noopener">ais.html</a></td><td><a href="validation_ST2.html#ais">Validation &rarr;</a></td></tr>
+                <tr><td>Content Page</td><td><a href="content_ST2.html" target="_blank" rel="noopener">content_ST2.html</a></td><td><a href="validation_ST2.html#content">Validation &rarr;</a></td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="challenges" class="editor-section">
+        <h2>Challenges &amp; Lessons Learned</h2>
+        <div class="dummy-block">
+            <span class="dummy-flag">Placeholder &mdash; rewrite in your own words</span>
+            <p>Draft points based on the actual build, to be rewritten as a personal account:</p>
+            <ul>
+                <li>Getting the automatic meta-refresh redirect to work alongside a JavaScript countdown took
+                    some care &mdash; the two had to be kept in sync without one interfering with the other.</li>
+                <li>Deciding on fair impact-point values for each action card, and picking thresholds for Low/
+                    Medium/High that felt meaningful rather than arbitrary.</li>
+                <li>Making the background-image change feel smooth rather than jarring when the impact level
+                    changes.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="accessibility" class="editor-section">
+        <h2>Accessibility Considerations</h2>
+        <ul>
+            <li><strong>Alt text</strong> on every image across both pages, describing what's shown.</li>
+            <li><strong>Keyboard access</strong> on the AIS action cards via <code>tabindex="0"</code> and an
+                Enter/Space key handler identical in effect to a click.</li>
+            <li><strong>Live region</strong> (<code>aria-live="polite"</code>) on the Splash Screen's countdown
+                so screen readers announce the countdown changing.</li>
+            <li><strong>No motion-only cues</strong> &mdash; the AIS impact level is always shown as text, not
+                just implied by the background image changing.</li>
+        </ul>
+    </section>
+
+    <section id="janet" class="editor-section">
+        <h2>Compliance with JANET Regulations</h2>
+        <div class="dummy-block">
+            <span class="dummy-flag">Draft &mdash; check wording against your module handbook</span>
+            <p>
+                All content on these two pages is original or properly attributed: photographs sourced from
+                Pexels are credited in the References section below rather than presented as our own. No content
+                is offensive, defamatory, or unlawful. The Action Impact Simulator does not collect or transmit
+                any personal data &mdash; all interaction happens locally in the browser.
+            </p>
+        </div>
+    </section>
+
+    <section id="meetings" class="editor-section">
+        <h2>Group Meetings &amp; Individual Contribution Log</h2>
+        <div class="dummy-block">
+            <span class="dummy-flag">Placeholder &mdash; replace every row with a real meeting</span>
+            <table class="meeting-table">
+                <thead>
+                    <tr><th>#</th><th>Date &amp; Time</th><th>Format</th><th>Objective</th><th>Attended</th><th>Your Individual Contribution</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>[DATE]</td><td>[FORMAT]</td><td>[OBJECTIVE]</td><td>[Yes/No]</td><td>[CONTRIBUTION]</td></tr>
+                    <tr><td>2</td><td>[DATE]</td><td>[FORMAT]</td><td>[OBJECTIVE]</td><td>[Yes/No]</td><td>[CONTRIBUTION]</td></tr>
+                    <tr><td>3</td><td>[DATE]</td><td>[FORMAT]</td><td>[OBJECTIVE]</td><td>[Yes/No]</td><td>[CONTRIBUTION]</td></tr>
+                    <tr><td>4</td><td>[DATE]</td><td>[FORMAT]</td><td>[OBJECTIVE]</td><td>[Yes/No]</td><td>[CONTRIBUTION]</td></tr>
+                    <tr><td>5</td><td>[DATE]</td><td>[FORMAT]</td><td>[OBJECTIVE]</td><td>[Yes/No]</td><td>[CONTRIBUTION]</td></tr>
+                    <tr><td>6</td><td>[DATE]</td><td>[FORMAT]</td><td>[OBJECTIVE]</td><td>[Yes/No]</td><td>[CONTRIBUTION]</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="references" class="editor-section">
+        <h2>References</h2>
+        <ul>
+            <li>Pexels contributors (various), Splash/AIS/Content Page photographs, Pexels, used under the Pexels licence.</li>
+            <li>Google Fonts, "Poppins" and "Inter" typefaces, used under the SIL Open Font Licence.</li>
+            <li>Mozilla Developer Network (MDN Web Docs), referenced for <code>setInterval</code>, meta refresh behaviour, and CSS keyframe animation syntax.</li>
+        </ul>
+        <div class="dummy-block" style="margin-top:0.8rem;">
+            <span class="dummy-flag">Placeholder</span>
+            <p>[Add any lecture slides, seminar handouts, or specific tutorials you personally consulted.]</p>
+        </div>
+    </section>
+
+    <a href="#top" class="back-to-top-editor">&uarr; Top</a>
 </body>
 </html>

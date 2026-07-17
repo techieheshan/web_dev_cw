@@ -1,1 +1,195 @@
-/* Styles for the page editor + validation tool pages */
+/* Styles for the Page Editor + Validation pages.
+   Deliberately styled differently from the main site (allowed by spec 4.11 point 11) —
+   this is a report/document, not a page in the SDG website itself. */
+
+body {
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #1F2933;
+    background-color: #F4F6F9;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 5rem;
+}
+
+.editor-header {
+    border-bottom: 3px solid #123A7A;
+    padding-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+.editor-header h1 {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 1.9rem;
+    margin: 0 0 0.3rem;
+    color: #123A7A;
+}
+.editor-header p {
+    margin: 0.15rem 0;
+    color: #52606D;
+}
+
+/* Prominent warning banner for placeholder content */
+.editor-warning {
+    background-color: #FFF4D6;
+    border: 1px solid #E8B94A;
+    border-left: 5px solid #E8B94A;
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 2rem;
+    font-size: 0.92rem;
+}
+.editor-warning strong {
+    color: #8A5A00;
+}
+
+/* Internal contents nav */
+.editor-toc {
+    background: white;
+    border: 1px solid #DCE3ED;
+    border-radius: 10px;
+    padding: 1rem 1.4rem;
+    margin-bottom: 2.5rem;
+}
+.editor-toc h2 {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #52606D;
+    margin: 0 0 0.6rem;
+}
+.editor-toc ol {
+    columns: 2;
+    padding-left: 1.2rem;
+    margin: 0;
+}
+.editor-toc a {
+    color: #2563EB;
+    text-decoration: none;
+    font-size: 0.92rem;
+}
+.editor-toc a:hover {
+    text-decoration: underline;
+}
+
+/* Report sections */
+.editor-section {
+    background: white;
+    border: 1px solid #DCE3ED;
+    border-radius: 10px;
+    padding: 1.6rem 1.8rem;
+    margin-bottom: 1.6rem;
+    scroll-margin-top: 20px;
+}
+.editor-section h2 {
+    font-family: 'Poppins', Arial, sans-serif;
+    color: #123A7A;
+    border-bottom: 2px solid #38BDF8;
+    padding-bottom: 0.4rem;
+    margin-top: 0;
+}
+.editor-section h3 {
+    font-family: 'Poppins', Arial, sans-serif;
+    color: #1D4ED8;
+    margin-bottom: 0.3rem;
+}
+.editor-section code {
+    background: #EFF6FF;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.85em;
+}
+.editor-section ul, .editor-section ol {
+    padding-left: 1.4rem;
+}
+.editor-section a {
+    color: #2563EB;
+}
+
+/* Clearly-flagged placeholder / dummy content block */
+.dummy-block {
+    background-color: #FFF9E8;
+    border: 2px dashed #E8B94A;
+    border-radius: 10px;
+    padding: 1.2rem 1.4rem;
+    margin: 0.8rem 0;
+}
+.dummy-flag {
+    display: inline-block;
+    background-color: #E8B94A;
+    color: #4A3400;
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    margin-bottom: 0.6rem;
+}
+
+/* Links & validation table */
+.editor-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+}
+.editor-table th, .editor-table td {
+    text-align: left;
+    padding: 0.6rem 0.7rem;
+    border-bottom: 1px solid #DCE3ED;
+    font-size: 0.92rem;
+}
+.editor-table th {
+    background-color: #EFF6FF;
+    color: #123A7A;
+}
+
+/* Meeting log table */
+.meeting-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+.meeting-table th, .meeting-table td {
+    border: 1px solid #DCE3ED;
+    padding: 0.5rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+}
+.meeting-table th {
+    background-color: #123A7A;
+    color: white;
+}
+
+/* Student info card at top */
+.student-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    background: #EFF6FF;
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 2rem;
+}
+.student-card div strong {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #52606D;
+    margin-bottom: 0.2rem;
+}
+
+.back-to-top-editor {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    background-color: #123A7A;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.7rem 1.1rem;
+    border-radius: 999px;
+    box-shadow: 0 6px 16px rgba(18, 58, 122, 0.35);
+}

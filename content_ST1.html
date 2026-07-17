@@ -3,11 +3,400 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrightPath | Content ST1</title>
+    <title>BrightPath | From Passing Grades to Real Skills</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Page-specific embedded CSS (Content Page ST1 only) -->
+    <style>
+        /* Content-page-only: magazine layout — sticky sidebar + wide content column */
+        .mag-layout {
+            display: grid;
+            grid-template-columns: 230px 1fr;
+            gap: 3rem;
+            align-items: start;
+            margin-top: 1.5rem;
+        }
+
+        /* Sidebar: section nav + a pinned fact, stays in view while the article scrolls */
+        .mag-sidebar {
+            position: sticky;
+            top: 100px;
+            background-color: var(--neutral-color);
+            border-radius: 14px;
+            padding: 1.4rem 1.3rem;
+        }
+        .mag-sidebar .toc-label {
+            display: block;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--secondary-color);
+            margin-bottom: 0.7rem;
+        }
+        .mag-sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.4rem;
+        }
+        .mag-sidebar li {
+            margin-bottom: 0.5rem;
+        }
+        .mag-sidebar a {
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.88rem;
+        }
+        .mag-sidebar a:hover {
+            text-decoration: underline;
+        }
+        .sidebar-stat {
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 10px;
+            padding: 1rem 1.1rem;
+            font-size: 0.85rem;
+        }
+        .sidebar-stat strong {
+            color: var(--accent-color);
+            display: block;
+            margin-bottom: 0.3rem;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Content column */
+        .mag-content h1 {
+            font-size: 2.1rem;
+            max-width: 18ch;
+        }
+        .mag-content section {
+            scroll-margin-top: 100px;
+            margin-bottom: 2.4rem;
+        }
+        .mag-content h2 {
+            font-size: 1.4rem;
+        }
+        .mag-content .content-img {
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 6px 16px rgba(18, 58, 122, 0.15);
+            margin: 1rem 0 0.4rem;
+        }
+        .mag-content .img-caption {
+            display: block;
+            font-size: 0.78rem;
+            color: #5B6B7D;
+            margin-bottom: 1rem;
+        }
+
+        /* Pull-quotes float beside the text on wide screens */
+        .pull-quote-float {
+            float: right;
+            width: 40%;
+            margin: 0 0 1rem 1.6rem;
+            padding-left: 1rem;
+            border-left: 4px solid var(--accent-color);
+            font-weight: 600;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+        }
+
+        /* Action checklist styled like a to-do list rather than plain bullets */
+        .action-checklist {
+            list-style: none;
+            padding: 0;
+            background-color: var(--neutral-color);
+            border-radius: 14px;
+            padding: 1.4rem 1.6rem;
+        }
+        .action-checklist li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 0.9rem;
+        }
+        .action-checklist li::before {
+            content: "\2713";
+            position: absolute;
+            left: 0;
+            top: 0.05rem;
+            width: 1.3rem;
+            height: 1.3rem;
+            border-radius: 5px;
+            background-color: var(--teal-color);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* "Go to Top" button — HTML/CSS only, no JavaScript */
+        .back-to-top {
+            position: fixed;
+            right: 1.5rem;
+            bottom: 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.7rem 1.1rem;
+            border-radius: 999px;
+            box-shadow: 0 6px 16px rgba(18, 58, 122, 0.35);
+            z-index: 30;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+        .back-to-top:hover {
+            background-color: var(--link-color);
+            transform: translateY(-3px);
+        }
+
+        .photo-credits {
+            clear: both;
+            font-size: 0.75rem;
+            color: #5B6B7D;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Sidebar drops above the content and stops sticking on narrow screens */
+        @media (max-width: 820px) {
+            .mag-layout {
+                grid-template-columns: 1fr;
+            }
+            .mag-sidebar {
+                position: static;
+            }
+            .pull-quote-float {
+                float: none;
+                width: 100%;
+                margin: 1.2rem 0;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header></header>
-    <!-- Content goes here -->
+    <!-- DO NOT MODIFY: header, nav, and footer structure below -->
+    <header>
+        <div class="utility-bar">
+            <span>UN SDG 4 &middot; Quality Education</span>
+            <a href="#">Accessibility &amp; Compliance</a>
+        </div>
+        <div class="main-nav">
+            <nav class="nav-group nav-left">
+                <a href="home.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="team.html">Team</a>
+            </nav>
+            <a href="home.html" class="logo">
+                <span class="logo-mark">
+                    <img src="images/BrightPathlogo.png" alt="BrightPath Logo">
+                </span>
+                <span class="logo-text">
+                    <span class="logo-name">BrightPath</span>
+                    <span class="logo-tagline">Learn &middot; Grow &middot; Succeed</span>
+                </span>
+            </a>
+            <nav class="nav-group nav-right">
+                <a href="profile.html">Profile</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="sitemap.html">Sitemap</a>
+            </nav>
+            <a href="ais.html" class="btn nav-cta">Take Action &rarr;</a>
+        </div>
+    </header>
+
+    <main id="top">
+        <span class="eyebrow-plain">Student 1 &middot; Content Page</span>
+
+        <div class="mag-layout">
+            <!-- Sidebar: internal navigation + a pinned fact -->
+            <nav class="mag-sidebar" aria-label="Page sections">
+                <span class="toc-label">On This Page</span>
+                <ul>
+                    <li><a href="#exam-treadmill">The Exam Treadmill</a></li>
+                    <li><a href="#skills-gap">The Gap Employers See</a></li>
+                    <li><a href="#whats-changing">What's Slowly Changing</a></li>
+                    <li><a href="#what-you-can-do">Before You Graduate</a></li>
+                    <li><a href="#outcome">The Outcome</a></li>
+                </ul>
+                <div class="sidebar-stat">
+                    <strong>Worth knowing</strong>
+                    Passing an exam and being able to do the job it's supposed to lead to have never been the
+                    same test &mdash; and employers are increasingly the ones pointing that out, not just
+                    students.
+                </div>
+            </nav>
+
+            <!-- Main article -->
+            <div class="mag-content">
+                <h1>From Passing Grades to Real Skills</h1>
+                <p class="hero-lede" style="max-width:60ch;margin-bottom:1rem;">
+                    Sri Lanka's O/Level and A/Level system produces genuinely strong exam results. What it
+                    doesn't always produce, on its own, is someone ready to walk into a workplace and be useful
+                    on day one. This page is about that gap &mdash; why it exists, and what's actually within a
+                    student's control to do about it before graduation, not after.
+                </p>
+
+                <section id="exam-treadmill">
+                    <h2>The Exam Treadmill</h2>
+                    <p class="pull-quote-float">"Grades measure how well you performed on one specific day.
+                        They were never designed to measure whether you can do the job."</p>
+                    <img class="content-img" src="images/content1-exam-study.jpg"
+                        alt="A student studying intently with an open book, lit by sunlight">
+                    <span class="img-caption">Years of exam preparation build real discipline &mdash; but discipline alone isn't the same as job-readiness.</span>
+                    <p>
+                        Sri Lanka's education system is, by regional standards, exam-heavy: results on the O/Level
+                        and A/Level largely determine which stream, which university place, and which future a
+                        student is funnelled toward. That system rewards a specific, narrow skill extremely well
+                        &mdash; recalling and reproducing material under timed pressure. It's a real skill, and
+                        it's not nothing. But it's also not the same skill as solving a problem that doesn't have
+                        a mark scheme, working in a team, or explaining an idea to someone who disagrees with you.
+                    </p>
+                    <p>
+                        The treadmill effect is that the better a student gets at the exam game, the less time
+                        and incentive they have left to practise anything else &mdash; right up until they
+                        graduate and discover the workplace is testing for a different set of skills entirely.
+                    </p>
+                </section>
+
+                <section id="skills-gap">
+                    <h2>The Gap Employers Actually See</h2>
+                    <img class="content-img" src="images/content1-job-interview.jpg"
+                        alt="Two women shaking hands after a successful job interview">
+                    <span class="img-caption">A strong transcript gets you the interview. It rarely wins it on its own.</span>
+                    <p>
+                        Talk to anyone who's actually hired a recent graduate in Sri Lanka and a pattern comes up
+                        fast: candidates with excellent grades who still struggle with basic workplace
+                        communication, who've never had to manage their own project deadline without a teacher
+                        chasing them, or who've genuinely never used the specific software tools the job actually
+                        requires. None of that is a failure of intelligence. It's a gap between what the
+                        curriculum tests and what the job tests.
+                    </p>
+                    <p>
+                        It's worth being precise about what's actually missing, because "soft skills" gets used
+                        as a vague catch-all. In practice it usually means: being able to work without being
+                        told exactly what to do next, being comfortable saying "I don't know, let me find out,"
+                        and having built something &mdash; anything &mdash; outside of an exam hall that another
+                        person can actually look at.
+                    </p>
+                </section>
+
+                <section id="whats-changing">
+                    <h2>What's Slowly Changing</h2>
+                    <img class="content-img" src="images/content1-apprentice-workshop.jpg"
+                        alt="An experienced craftsperson mentoring a younger apprentice hands-on in a workshop">
+                    <span class="img-caption">Apprenticeship-style mentoring teaches things a classroom structurally can't.</span>
+                    <p>
+                        Vocational training centres and apprenticeship-style programmes have been quietly growing
+                        as an alternative track &mdash; places where the entire point is doing the task under
+                        someone experienced, not writing about the task in an exam booklet. Student-run coding
+                        clubs, hackathons, and skill-share workshops on university campuses are doing something
+                        similar informally: giving students a reason to build something real, with a deadline
+                        that isn't an exam.
+                    </p>
+                    <img class="content-img" src="images/content1-group-reading.jpg"
+                        alt="A small group of students working through material together">
+                    <span class="img-caption">Peer-led skill-shares let students teach each other things the syllabus doesn't cover.</span>
+                    <p>
+                        None of this requires an institution to organise it, either. A small group of students
+                        teaching each other practical skills &mdash; one person who's good at design teaching
+                        two others, in exchange for help with something they're weak in &mdash; covers ground a
+                        formal curriculum won't get to for years, if ever.
+                    </p>
+                </section>
+
+                <section id="what-you-can-do">
+                    <h2>What You Can Do Before You Graduate</h2>
+                    <p>The earlier you start, the less it costs you later. None of this requires waiting for a
+                        module to teach it:</p>
+                    <ul class="action-checklist">
+                        <li><strong>Build one thing nobody assigned you.</strong> A small project, a write-up, a
+                            tool &mdash; something an employer can actually look at that isn't a transcript.</li>
+                        <li><strong>Ask for the unglamorous tasks.</strong> Volunteering for the boring parts of
+                            a group project (coordinating, documenting, following up) is where the actually
+                            transferable skills live.</li>
+                        <li><strong>Teach a peer a skill you already have.</strong> Explaining something out
+                            loud exposes the gaps in your own understanding faster than any exam does.</li>
+                        <li><strong>Say yes to one thing outside your comfort subject.</strong> A short workshop,
+                            a club, a one-off task in an unfamiliar area &mdash; the discomfort is the point.</li>
+                    </ul>
+                </section>
+
+                <section id="outcome">
+                    <h2>The Outcome</h2>
+                    <p>
+                        This isn't an argument that grades don't matter &mdash; they open doors, and pretending
+                        otherwise would be dishonest. It's an argument that grades alone are an incomplete bet.
+                        The students who end up genuinely prepared are usually the ones who treated their exam
+                        results as the minimum requirement, not the finish line, and spent the time everyone
+                        else spent on one more past paper building something a mark scheme was never going to
+                        measure.
+                    </p>
+                </section>
+
+                <p class="photo-credits">
+                    Photo credits: Karola G, Resume Genius, and Tahir Xəlfəquliyev &mdash; sourced from Pexels
+                    (free-to-use licence). Full reference details are listed in the References section of the
+                    Page Editor.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <a href="#top" class="back-to-top">&uarr; Top</a>
+
+    <footer>
+        <div class="footer-main">
+            <div class="footer-col footer-brand">
+                <a href="home.html" class="logo">
+                    <span class="logo-mark">
+                        <img src="images/BrightPathlogo.png" alt="BrightPath Logo">
+                    </span>
+                    <span class="logo-text">
+                        <span class="logo-name">BrightPath</span>
+                        <span class="logo-tagline">Learn &middot; Grow &middot; Succeed</span>
+                    </span>
+                </a>
+                <p>A student-led website for UN SDG 4 &mdash; Quality Education.</p>
+            </div>
+            <div class="footer-col">
+                <span class="footer-heading">Pages</span>
+                <a href="home.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="ais.html">Action Simulator</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="team.html">Team</a>
+                <a href="sitemap.html">Sitemap</a>
+            </div>
+            <div class="footer-col">
+                <span class="footer-heading">Page Owner</span>
+                <a href="pageEditor_ST1.html">Page Editor</a>
+                <a href="validation_ST1.html">Validation Page</a>
+                <a href="#">Accessibility / Compliance</a>
+            </div>
+            <div class="footer-col">
+                <span class="footer-heading">Student</span>
+                <p>Heshan Kavinda</p>
+                <p>Student 1 &middot; ID 20251117</p>
+                <p>Template &middot; Home &middot; Gallery</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Bright Path &middot; University of Westminster group coursework</span>
+            <span>Compliant with JANET regulations</span>
+        </div>
+    </footer>
+    <script src="js/navbar.js"></script>
 </body>
 </html>

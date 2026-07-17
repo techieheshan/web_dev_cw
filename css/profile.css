@@ -1,0 +1,109 @@
+/* User Profile Page (Student 4) */
+
+.profile-controls {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 1.5rem 0;
+}
+.btn-outline-dark {
+    background: none;
+    border: 1.5px solid var(--link-color);
+    color: var(--link-color);
+    cursor: pointer;
+}
+.btn-outline-dark:hover {
+    background: var(--neutral-color);
+}
+
+.profile-progress {
+    margin-bottom: 1.2rem;
+}
+.progress-bar-track {
+    width: 100%;
+    height: 12px;
+    background: var(--neutral-color);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--link-color), var(--accent-color));
+    transition: width 0.4s ease;
+}
+#progressText {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.step-buttons {
+    display: flex;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+.step-btn {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-color);
+    background: white;
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+.step-btn:hover {
+    background: var(--neutral-color);
+}
+.step-btn.step-complete {
+    border-color: var(--teal-color);
+    color: var(--teal-color);
+}
+
+.profile-output {
+    background: white;
+    border-radius: 14px;
+    padding: 1.6rem 1.8rem;
+    box-shadow: 0 4px 12px rgba(18, 58, 122, 0.1);
+    min-height: 100px;
+}
+.profile-placeholder {
+    color: #64748B;
+    font-size: 0.9rem;
+}
+.profile-step-block {
+    margin-bottom: 1.2rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid var(--neutral-color);
+}
+.profile-step-block:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.profile-step-block h3 {
+    font-size: 1rem;
+    color: var(--link-color);
+    margin-bottom: 0.5rem;
+}
+.profile-field {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+.profile-field .field-label {
+    font-weight: 600;
+    color: var(--secondary-color);
+    min-width: 110px;
+}
+.profile-field .field-value {
+    color: #444;
+}
+.profile-field .field-skipped {
+    color: #94A3B8;
+    font-style: italic;
+}

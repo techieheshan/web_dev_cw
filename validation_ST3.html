@@ -3,11 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrightPath | Validation ST3</title>
-    <link rel="stylesheet" href="style.css">
+    <title>BrightPath | Validation &mdash; Student 3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/pageEditor_validator.css">
 </head>
-<body>
-    <header></header>
-    <!-- Content goes here -->
+<body id="top">
+    <header class="editor-header">
+        <h1>Validation Page &mdash; Student 3</h1>
+        <p>HTML validation evidence for Feedback &amp; Programme Directory, Team, and Content Page (content_ST3.html)</p>
+    </header>
+
+    <div class="editor-warning">
+        <strong>How this evidence was produced:</strong> Each page was checked using the official
+        <a href="https://validator.w3.org/nu/" target="_blank" rel="noopener">W3C Nu Html Checker</a> against
+        the page's live source HTML on 17 July 2026. Results below are reproduced exactly as returned.
+    </div>
+
+    <section id="feedback" class="editor-section">
+        <h2>Feedback &amp; Programme Directory &mdash; feedback.html</h2>
+        <table class="editor-table">
+            <tbody>
+                <tr><th>Page checked</th><td>feedback.html</td></tr>
+                <tr><th>Tool</th><td>W3C Nu Html Checker (validator.w3.org/nu/)</td></tr>
+                <tr><th>Result</th><td><strong style="color:#147A45;">Pass &mdash; 0 errors, 0 warnings</strong></td></tr>
+            </tbody>
+        </table>
+        <p style="margin-top:0.8rem;"><a href="pageEditor_ST3.html#feedback-page">&larr; Back to Page Editor: Feedback Page</a></p>
+    </section>
+
+    <section id="team" class="editor-section">
+        <h2>Team Page &mdash; team.html</h2>
+        <table class="editor-table">
+            <tbody>
+                <tr><th>Page checked</th><td>team.html</td></tr>
+                <tr><th>Tool</th><td>W3C Nu Html Checker (validator.w3.org/nu/)</td></tr>
+                <tr><th>Result</th><td><strong style="color:#147A45;">Pass &mdash; 0 errors, 0 warnings</strong></td></tr>
+            </tbody>
+        </table>
+        <p><strong>Note:</strong> The first draft went straight from the page's <code>&lt;h1&gt;</code> to
+            <code>&lt;h3&gt;</code> team-member names with no <code>&lt;h2&gt;</code> in between, which the
+            validator flagged as a heading-level skip. Fixed by adding a "Meet the Team" <code>&lt;h2&gt;</code>
+            above the team grid.</p>
+        <p style="margin-top:0.8rem;"><a href="pageEditor_ST3.html#team-page">&larr; Back to Page Editor: Team Page</a></p>
+    </section>
+
+    <section id="content" class="editor-section">
+        <h2>Content Page &mdash; content_ST3.html</h2>
+        <table class="editor-table">
+            <tbody>
+                <tr><th>Page checked</th><td>content_ST3.html</td></tr>
+                <tr><th>Tool</th><td>W3C Nu Html Checker (validator.w3.org/nu/)</td></tr>
+                <tr><th>Result</th><td><strong style="color:#147A45;">Pass &mdash; 0 errors, 0 warnings</strong></td></tr>
+            </tbody>
+        </table>
+        <p style="margin-top:0.8rem;"><a href="pageEditor_ST3.html#content-page">&larr; Back to Page Editor: Content Page</a></p>
+    </section>
+
+    <section id="reflection" class="editor-section">
+        <h2>Reflection on the Validation Process</h2>
+        <p>
+            The heading-order error on the Team page was the same category of mistake that showed up on
+            several other pages across the site: it's easy to reach for a smaller heading tag purely because it
+            "looks right" visually, without checking it against the actual document outline. Adding a
+            deliberate <code>&lt;h2&gt;</code> before any <code>&lt;h3&gt;</code> content fixed it every time it
+            came up.
+        </p>
+    </section>
+
+    <footer style="margin-top:2rem; padding-top:1rem; border-top:1px solid #DCE3ED; font-size:0.85rem; color:#52606D;">
+        <p><a href="pageEditor_ST3.html">&larr; Back to Page Editor</a></p>
+        <p>[Student 3 Name] &middot; Student 3 &middot; ID [Student ID]</p>
+    </footer>
+
+    <a href="#top" class="back-to-top-editor">&uarr; Top</a>
 </body>
 </html>

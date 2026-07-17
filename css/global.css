@@ -1,0 +1,170 @@
+/* ==========================================================================
+   GLOBAL.CSS — BrightPath shared design tokens + components
+   Part of the site's Global CSS (imported by the root style.css).
+   Do NOT add page-specific rules here — see /css/<page>.css instead.
+   ========================================================================== */
+
+:root {
+    /* BrightPath Education palette */
+    --primary-color: #123A7A;   /* Primary Dark Blue — trust, stability */
+    --secondary-color: #1E293B; /* Text Dark — headings, strong readability */
+    --accent-color: #38BDF8;    /* Accent Sky Blue — creativity, highlights */
+    --neutral-color: #EFF6FF;   /* Light Blue — soft section backgrounds */
+    --link-color: #2563EB;      /* Secondary Blue — links, primary buttons */
+    --hover-color: #1D4ED8;     /* Deeper blue — hover state */
+    --border-color: #BFDBFE;    /* Light blue — muted text on dark bg, borders */
+    --teal-color: #22C55E;      /* Success Green — checkmarks, positive actions */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #1E293B;
+    overflow-x: hidden;
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+}
+
+/* Heading styles */
+h1, h2, h3 {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+
+/* Eyebrow label (small caps heading above a section title) */
+.eyebrow-plain {
+    display: block;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--link-color);
+    margin-bottom: 0.4rem;
+}
+
+/* Shared lede paragraph style */
+.hero-lede {
+    color: #444;
+    max-width: 55ch;
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+}
+.hero-banner .hero-lede {
+    color: var(--border-color);
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.85rem 1.6rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+.btn-solid {
+    background-color: var(--link-color);
+    color: white;
+}
+.btn-solid:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+}
+.btn-outline {
+    background-color: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+}
+.btn-outline:hover {
+    border-color: white;
+    transform: translateY(-2px);
+}
+
+/* Card styles (shared component, required in Global CSS) */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(18, 58, 122, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-photo {
+    position: relative;
+}
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: top center;
+}
+.card-badge {
+    position: absolute;
+    top: 0.8rem;
+    left: 0.8rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 8px rgba(18, 58, 122, 0.3);
+    background-color: var(--link-color);
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+.card-content p {
+    color: #444;
+    margin-bottom: 1rem;
+}
+.card-content ul {
+    padding-left: 1.2rem;
+}
+.card-content li {
+    margin-bottom: 0.3rem;
+}
+
+/* Checklist variant (checkmark instead of a plain bullet) */
+.card-content ul.check-list {
+    list-style: none;
+    padding-left: 0;
+}
+.card-content ul.check-list li {
+    position: relative;
+    padding-left: 1.4rem;
+}
+.card-content ul.check-list li::before {
+    content: "\2713";
+    position: absolute;
+    left: 0;
+    color: var(--teal-color);
+    font-weight: bold;
+}

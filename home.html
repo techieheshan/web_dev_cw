@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Source+Sans+3:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
@@ -21,7 +21,7 @@
 
         .cards-grid .card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 10px 24px rgba(11, 37, 69, 0.18);
+            box-shadow: 0 10px 24px rgba(18, 58, 122, 0.18);
         }
 
         /* Home-page-only: fade-and-rise entrance animation for the hero content */
@@ -46,56 +46,200 @@
                 font-size: 2.1rem;
             }
         }
+
+        /* Home-page-only: hero banner (full-width photo backdrop with dark tint for legibility) */
+        .hero-banner {
+            background: linear-gradient(rgba(18, 58, 122, 0.6), rgba(18, 58, 122, 0.45)), url('images/home-hero-peradeniya.jpg') center top/cover no-repeat;
+            color: white;
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            /* cancels out <main>'s top padding so the banner sits flush under the header,
+               instead of leaving a gap of plain background above it */
+            margin-top: -2.5rem;
+            padding: 4rem 2rem 3rem;
+        }
+        .hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .hero-banner .hero-badge {
+            display: inline-block;
+            color: var(--border-color);
+            background: rgba(56, 189, 248, 0.18);
+            border: 1px solid rgba(56, 189, 248, 0.5);
+            padding: 0.35rem 0.9rem;
+            border-radius: 999px;
+        }
+        .hero-banner h1 {
+            color: white;
+            font-size: 3rem;
+            line-height: 1.15;
+            max-width: 16ch;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+        }
+        .hero-banner h1 .accent {
+            color: var(--accent-color);
+        }
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Home-page-only: stat strip under the hero banner */
+        .hero-stats {
+            background-color: var(--primary-color);
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            margin-top: 2.5rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding: 1.5rem 2rem;
+        }
+        .hero-stats > div {
+            text-align: center;
+            border-left: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .hero-stats > div:first-child {
+            border-left: none;
+        }
+        .hero-stats strong {
+            display: block;
+            font-family: 'Poppins', Arial, sans-serif;
+            color: var(--accent-color);
+            font-size: 1.6rem;
+        }
+        .hero-stats span {
+            color: var(--border-color);
+            font-size: 0.85rem;
+        }
+
+        /* Home-page-only: focus-area cards linking to the 4 content pages */
+        .focus-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0 2rem;
+        }
+        .focus-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            border-radius: 14px;
+            background-color: var(--neutral-color);
+            text-decoration: none;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+        .focus-item:hover {
+            transform: translateY(-3px);
+            background-color: #DBEAFE;
+        }
+        .focus-num {
+            font-family: 'Poppins', Arial, sans-serif;
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: var(--border-color);
+            flex: 0 0 auto;
+        }
+        .focus-item:hover .focus-num {
+            color: var(--link-color);
+        }
+        .focus-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+            flex: 1;
+        }
+        .focus-title {
+            font-family: 'Poppins', Arial, sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        .focus-desc {
+            font-size: 0.88rem;
+            color: #5B6B7D;
+        }
+        .focus-arrow {
+            font-size: 1.3rem;
+            color: var(--border-color);
+            transition: transform 0.25s ease, color 0.25s ease;
+        }
+        .focus-item:hover .focus-arrow {
+            transform: translateX(6px);
+            color: var(--link-color);
+        }
     </style>
 </head>
 
 <body>
     <!-- DO NOT MODIFY: header, nav, and footer structure below -->
     <header>
-        <div class="logo">
-            <a href="home.html" class="logo-mark">
-                <img src="images/BrightPathlogo.png" alt="BrightPath Logo">
-            </a>
-            <a href="home.html" class="logo-text">
-                <span class="logo-name">Bright Path</span>
-                <span class="logo-tagline">Learn &middot; Grow &middot; Succeed</span>
-            </a>
+        <div class="utility-bar">
+            <span>UN SDG 4 &middot; Quality Education</span>
+            <a href="#">Accessibility &amp; Compliance</a>
         </div>
-
-        <nav>
-            <a href="home.html" class="active">Home</a>
-            <a href="ais.html">Action Simulation</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="profile.html">Profile</a>
-            <a href="feedback.html">Feedback</a>
-            <a href="team.html">Team</a>
-            <a href="sitemap.html">Site Map</a>
-        </nav>
+        <div class="main-nav">
+            <nav class="nav-group nav-left">
+                <a href="home.html" class="active">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="team.html">Team</a>
+            </nav>
+            <a href="home.html" class="logo">
+                <span class="logo-mark">
+                    <img src="images/BrightPathlogo.png" alt="BrightPath Logo">
+                </span>
+                <span class="logo-text">
+                    <span class="logo-name">BrightPath</span>
+                    <span class="logo-tagline">Learn &middot; Grow &middot; Succeed</span>
+                </span>
+            </a>
+            <nav class="nav-group nav-right">
+                <a href="profile.html">Profile</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="sitemap.html">Sitemap</a>
+            </nav>
+            <a href="ais.html" class="btn nav-cta">Take Action &rarr;</a>
+        </div>
     </header>
     <main>
         <section class="hero-banner">
             <div class="hero-inner">
                 <span class="eyebrow-plain hero-badge">UN SDG 4 &middot; Quality Education</span>
-                <h1>A good education shouldn&rsquo;t <span class="accent">depend on luck</span>.</h1>
-                <p class="hero-lede">244 million children are out of school worldwide. BrightPath is four students
-                    turning awareness into action &mdash; tutoring, sharing resources, and opening doors in our own
-                    communities.</p>
+                <h1>Not every student in Sri Lanka gets the <span class="accent">same shot</span> at learning.</h1>
+                <p class="hero-lede">We're four students who got tired of just talking about this in class. BrightPath
+                    is us actually doing something about it &mdash; sharing notes, tutoring, and pointing out where
+                    the gaps are, one action at a time.</p>
                 <div class="hero-actions">
                     <a href="ais.html" class="btn btn-solid">See what you could change &rarr;</a>
                     <a href="gallery.html" class="btn btn-outline">Explore the gallery</a>
                 </div>
             </div>
             <div class="hero-stats">
-                <div><strong>244M</strong><span>children out of school</span></div>
-                <div><strong>6</strong><span>student-led actions</span></div>
-                <div><strong>2030</strong><span>our target year</span></div>
+                <div><strong>244M</strong><span>children out of school worldwide</span></div>
+                <div><strong>6</strong><span>things you can actually do</span></div>
+                <div><strong>2030</strong><span>the UN's deadline for SDG 4</span></div>
             </div>
         </section>
 
+        <span class="eyebrow-plain" style="margin-top:2rem;">Our Mission</span>
+        <h2>Why we're doing this</h2>
         <div class="cards-grid">
             <article class="card">
                 <div class="card-photo">
-                    <img src="images/card1-library-reading.jpg" alt="Students reading together in a public library">
+                    <img src="images/home-card1-uniform-procession.jpg"
+                        alt="Sri Lankan school children in white uniforms taking part in a community event">
                     <span class="card-badge" aria-hidden="true">
                         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -105,9 +249,10 @@
                     </span>
                 </div>
                 <div class="card-content">
-                    <h3>Education Is the Foundation for Change</h3>
-                    <p>Millions of students worldwide still lack access to consistent, quality learning — a gap that
-                        widens every year school is disrupted. BrightPath exists to turn that awareness into action.</p>
+                    <h3>Same Uniform, Different Chances</h3>
+                    <p>Two students can sit in the same classroom, wear the same uniform, and still end up with wildly
+                        different opportunities &mdash; because one of them has books, wifi, and someone to ask for
+                        help at home, and the other doesn't. That gap is what we're actually trying to close.</p>
                     <ul class="check-list">
                         <li>Share study resources with peers who lack them</li>
                         <li>Volunteer as a peer tutor</li>
@@ -118,8 +263,8 @@
 
             <article class="card">
                 <div class="card-photo">
-                    <img src="images/card2-mentoring.jpg"
-                        alt="Volunteers teaching children as part of a community learning programme">
+                    <img src="images/home-card2-community-procession.jpg"
+                        alt="A community of Sri Lankan school children gathered together">
                     <span class="card-badge" aria-hidden="true">
                         <svg viewBox="0 0 24 24" width="18" height="18" fill="white">
                             <path
@@ -128,10 +273,10 @@
                     </span>
                 </div>
                 <div class="card-content">
-                    <h3>Small Actions, Real Impact</h3>
-                    <p>You don't need to wait until graduation to contribute to SDG 4. Everyday choices — from mentoring
-                        a younger student to donating old textbooks — compound into meaningful change within your own
-                        community.</p>
+                    <h3>You Don't Need to Wait Until Graduation</h3>
+                    <p>Honestly, none of us thought we could do much about this until we actually tried. Turns out
+                        lending your old notes to a first-year or spending an hour a week tutoring adds up faster
+                        than you'd expect &mdash; you don't need a degree or a budget to start.</p>
                     <ul class="check-list">
                         <li>Mentor a first-year student</li>
                         <li>Donate unused textbooks and supplies</li>
@@ -142,7 +287,8 @@
 
             <article class="card">
                 <div class="card-photo">
-                    <img src="images/card3-graduation.jpg" alt="University students celebrating their graduation">
+                    <img src="images/home-card3-graduation.jpg"
+                        alt="A student celebrating at a university graduation ceremony in Sri Lanka">
                     <span class="card-badge" aria-hidden="true">
                         <svg viewBox="0 0 24 24" width="18" height="18" fill="white">
                             <path
@@ -151,10 +297,10 @@
                     </span>
                 </div>
                 <div class="card-content">
-                    <h3>Imagine the Outcome</h3>
-                    <p>If even a fraction of students at Westminster took one of these actions this year, the ripple
-                        effect on local access to education would be significant — measured in confidence gained,
-                        dropouts prevented, and skills passed on.</p>
+                    <h3>This Is What We're Actually Working Toward</h3>
+                    <p>This is the moment all of this is for. Not a statistic, an actual person crossing the stage who
+                        almost didn't get the chance to. If a handful of us at Westminster keep doing the small things,
+                        more of these moments happen for people who deserve them.</p>
                     <ul class="check-list">
                         <li>Higher retention among supported students</li>
                         <li>Stronger peer networks</li>
@@ -172,8 +318,8 @@
                 <a href="content_ST1.html" class="focus-item">
                     <span class="focus-num">01</span>
                     <span class="focus-text">
-                        <span class="focus-title">Access to Learning Resources</span>
-                        <span class="focus-desc">Reaching learners left behind</span>
+                        <span class="focus-title">From Passing Grades to Real Skills</span>
+                        <span class="focus-desc">Closing the gap between exams and employability</span>
                     </span>
                     <span class="focus-arrow">&rarr;</span>
                 </a>
@@ -208,15 +354,15 @@
     <footer>
         <div class="footer-main">
             <div class="footer-col footer-brand">
-                <div class="logo">
-                    <a href="home.html" class="logo-mark">
+                <a href="home.html" class="logo">
+                    <span class="logo-mark">
                         <img src="images/BrightPathlogo.png" alt="BrightPath Logo">
-                    </a>
-                    <a href="home.html" class="logo-text">
-                        <span class="logo-name">Bright Path</span>
+                    </span>
+                    <span class="logo-text">
+                        <span class="logo-name">BrightPath</span>
                         <span class="logo-tagline">Learn &middot; Grow &middot; Succeed</span>
-                    </a>
-                </div>
+                    </span>
+                </a>
                 <p>A student-led website for UN SDG 4 &mdash; Quality Education.</p>
             </div>
             <div class="footer-col">
@@ -242,11 +388,12 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <span>&copy; 2026 Bright Path &middot; University of Westminster group coursework</span>
+            <span>&copy; 2026 BrightPath &middot; University of Westminster group coursework</span>
             <span>Compliant with JANET regulations</span>
         </div>
     </footer>
 
+    <script src="js/navbar.js"></script>
 </body>
 
 </html>

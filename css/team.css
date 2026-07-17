@@ -1,0 +1,69 @@
+/* Team Page (Student 3) */
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.team-member {
+    background: white;
+    border-radius: 16px;
+    padding: 1.8rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(18, 58, 122, 0.08);
+    cursor: default;
+    outline-offset: 3px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover feedback (CSS-based, per spec) */
+.team-member:hover,
+.team-member:focus {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(18, 58, 122, 0.2);
+}
+
+.avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    color: white;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.team-member h3 {
+    margin-bottom: 0.1rem;
+}
+.role {
+    font-size: 0.82rem;
+    color: #64748B;
+    margin-bottom: 0.8rem;
+}
+
+/* Expandable detail area — hidden by default, revealed on hover/focus */
+.team-details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    text-align: left;
+    transition: max-height 0.35s ease, opacity 0.3s ease;
+}
+.team-member:hover .team-details,
+.team-member:focus .team-details,
+.team-member:focus-within .team-details {
+    max-height: 220px;
+    opacity: 1;
+}
+.team-details p {
+    font-size: 0.85rem;
+    color: #444;
+    margin-top: 0.8rem;
+}

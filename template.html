@@ -6,31 +6,39 @@
     <title>BrightPath</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- DO NOT MODIFY: header, nav, and footer structure below. Only edit content inside <main>. -->
     <!-- Each student: add class="active" to YOUR OWN page's nav link below once you copy this file. -->
     <header>
-        <div class="logo">
-            <a href="home.html" class="logo-mark">
-                <img src="images/BrightPathlogo.png" alt="BrightPath Logo">
-            </a>
-            <a href="home.html" class="logo-text">
-                <span class="logo-name">Bright Path</span>
-                <span class="logo-tagline">Learn &middot; Grow &middot; Succeed</span>
-            </a>
+        <div class="utility-bar">
+            <span>UN SDG 4 &middot; Quality Education</span>
+            <a href="#">Accessibility &amp; Compliance</a>
         </div>
-        <nav>
-            <a href="home.html">Home</a>
-            <a href="ais.html">Action Simulation</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="profile.html">Profile</a>
-            <a href="feedback.html">Feedback</a>
-            <a href="team.html">Team</a>
-            <a href="sitemap.html">Site Map</a>
-        </nav>
+        <div class="main-nav">
+            <nav class="nav-group nav-left">
+                <a href="home.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="team.html">Team</a>
+            </nav>
+            <a href="home.html" class="logo">
+                <span class="logo-mark">
+                    <img src="images/BrightPathlogo.png" alt="BrightPath Logo">
+                </span>
+                <span class="logo-text">
+                    <span class="logo-name">BrightPath</span>
+                    <span class="logo-tagline">Learn &middot; Grow &middot; Succeed</span>
+                </span>
+            </a>
+            <nav class="nav-group nav-right">
+                <a href="profile.html">Profile</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="sitemap.html">Sitemap</a>
+            </nav>
+            <a href="ais.html" class="btn nav-cta">Take Action &rarr;</a>
+        </div>
     </header>
     <main>
         <!-- Add your page content here -->
@@ -39,15 +47,15 @@
     <footer>
         <div class="footer-main">
             <div class="footer-col footer-brand">
-                <div class="logo">
-                    <a href="home.html" class="logo-mark">
+                <a href="home.html" class="logo">
+                    <span class="logo-mark">
                         <img src="images/BrightPathlogo.png" alt="BrightPath Logo">
-                    </a>
-                    <a href="home.html" class="logo-text">
-                        <span class="logo-name">Bright Path</span>
+                    </span>
+                    <span class="logo-text">
+                        <span class="logo-name">BrightPath</span>
                         <span class="logo-tagline">Learn &middot; Grow &middot; Succeed</span>
-                    </a>
-                </div>
+                    </span>
+                </a>
                 <p>A student-led website for UN SDG 4 &mdash; Quality Education.</p>
             </div>
             <div class="footer-col">
@@ -75,9 +83,10 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <span>&copy; 2026 Bright Path &middot; University of Westminster group coursework</span>
+            <span>&copy; 2026 BrightPath &middot; University of Westminster group coursework</span>
             <span>Compliant with JANET regulations</span>
         </div>
     </footer>
+    <script src="js/navbar.js"></script>
 </body>
 </html>

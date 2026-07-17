@@ -3,51 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrightPath</title>
+    <title>BrightPath | Feedback &amp; Programs</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/feedback.css">
 </head>
 <body>
-    <!-- DO NOT MODIFY: header, nav, and footer structure below. Only edit content inside <main>. -->
-    <!-- Each student: add class="active" to YOUR OWN page's nav link below once you copy this file. -->
+    <!-- DO NOT MODIFY: header, nav, and footer structure below -->
     <header>
-        <div class="logo">
-            <a href="home.html" class="logo-mark">
-                <img src="images/BrightPathlogo.png" alt="BrightPath Logo">
-            </a>
-            <a href="home.html" class="logo-text">
-                <span class="logo-name">Bright Path</span>
-                <span class="logo-tagline">Learn &middot; Grow &middot; Succeed</span>
-            </a>
+        <div class="utility-bar">
+            <span>UN SDG 4 &middot; Quality Education</span>
+            <a href="#">Accessibility &amp; Compliance</a>
         </div>
-        <nav>
-            <a href="home.html">Home</a>
-            <a href="ais.html">Action Simulation</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="profile.html">Profile</a>
-            <a href="feedback.html">Feedback</a>
-            <a href="team.html">Team</a>
-            <a href="sitemap.html">Site Map</a>
-        </nav>
+        <div class="main-nav">
+            <nav class="nav-group nav-left">
+                <a href="home.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="team.html">Team</a>
+            </nav>
+            <a href="home.html" class="logo">
+                <span class="logo-mark">
+                    <img src="images/BrightPathlogo.png" alt="BrightPath Logo">
+                </span>
+                <span class="logo-text">
+                    <span class="logo-name">BrightPath</span>
+                    <span class="logo-tagline">Learn &middot; Grow &middot; Succeed</span>
+                </span>
+            </a>
+            <nav class="nav-group nav-right">
+                <a href="profile.html">Profile</a>
+                <a href="feedback.html" class="active">Feedback</a>
+                <a href="sitemap.html">Sitemap</a>
+            </nav>
+            <a href="ais.html" class="btn nav-cta">Take Action &rarr;</a>
+        </div>
     </header>
     <main>
-        <!-- Add your page content here -->
+        <span class="eyebrow-plain">Feedback &amp; Programs</span>
+        <h1>Find a way in, then tell us how it went</h1>
+        <p class="hero-lede">A few real ways to get involved, what other students thought of them, and a place
+            to leave your own feedback.</p>
 
+        <section id="programs">
+            <div class="section-heading-row">
+                <h2>Programme Directory</h2>
+                <label class="sort-label" for="sortSelect">Sort by
+                    <select id="sortSelect">
+                        <option>Most popular</option>
+                        <option>Nearest</option>
+                        <option>Student-friendly</option>
+                    </select>
+                </label>
+            </div>
+            <div class="programs-scroll">
+                <article class="program-card">
+                    <img src="images/content1-apprentice-workshop.jpg" alt="A mentor teaching a student a hands-on skill">
+                    <div class="program-body">
+                        <h3>Peer Tutoring Circle</h3>
+                        <p>Weekly drop-in sessions where students help each other with whatever they're stuck on.</p>
+                        <a href="#" class="btn btn-outline-dark">Learn More</a>
+                    </div>
+                </article>
+                <article class="program-card">
+                    <img src="images/content1-bookshelf-srilanka.jpg" alt="A community bookshelf stocked with books">
+                    <div class="program-body">
+                        <h3>Community Book Drive</h3>
+                        <p>Collecting and redistributing textbooks and notes to students who need them most.</p>
+                        <a href="#" class="btn btn-outline-dark">Learn More</a>
+                    </div>
+                </article>
+                <article class="program-card">
+                    <img src="images/gallery3-computer-lab.jpg" alt="Students learning together in a computer lab">
+                    <div class="program-body">
+                        <h3>Weekend Skills Workshop</h3>
+                        <p>A monthly student-run session teaching one practical skill outside the syllabus.</p>
+                        <a href="#" class="btn btn-outline-dark">Learn More</a>
+                    </div>
+                </article>
+                <article class="program-card">
+                    <img src="images/content1-group-reading.jpg" alt="Students reading and discussing together">
+                    <div class="program-body">
+                        <h3>Digital Literacy Meetup</h3>
+                        <p>Helping students and families get comfortable with the tools coursework now assumes.</p>
+                        <a href="#" class="btn btn-outline-dark">Learn More</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="reviews">
+            <h2>What Students Are Saying</h2>
+            <div class="rating-summary">
+                <span class="rating-number">8.6/10</span>
+                <span class="rating-label">Excellent &middot; based on 42 reviews</span>
+            </div>
+            <div class="reviews-grid">
+                <article class="review-card">
+                    <h3>Actually useful, not just a poster</h3>
+                    <p>I went to one tutoring session expecting nothing and now I go every week.
+                        <a href="#">See more</a></p>
+                    <div class="review-meta">
+                        <span class="review-name">D. Perera</span>
+                        <span class="review-date">3 June 2026</span>
+                        <span class="review-rating">9/10</span>
+                    </div>
+                </article>
+                <article class="review-card">
+                    <h3>Book drive saved me real money</h3>
+                    <p>Got two of my required textbooks for free through the community drive.
+                        <a href="#">See more</a></p>
+                    <div class="review-meta">
+                        <span class="review-name">A. Fernando</span>
+                        <span class="review-date">28 May 2026</span>
+                        <span class="review-rating">9/10</span>
+                    </div>
+                </article>
+                <article class="review-card">
+                    <h3>Wish I'd found this sooner</h3>
+                    <p>The skills workshop taught me more in two hours than a full term did.
+                        <a href="#">See more</a></p>
+                    <div class="review-meta">
+                        <span class="review-name">N. Silva</span>
+                        <span class="review-date">14 May 2026</span>
+                        <span class="review-rating">8/10</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="feedback-form">
+            <h2>Leave Your Feedback</h2>
+            <form id="feedbackForm" novalidate>
+                <fieldset>
+                    <legend>Personal Details</legend>
+                    <div class="form-row">
+                        <label for="fullName">Full Name
+                            <input type="text" id="fullName" name="fullName" required>
+                            <span class="field-error" id="fullNameError"></span>
+                        </label>
+                        <label for="email">Email Address
+                            <input type="email" id="email" name="email" required>
+                            <span class="field-error" id="emailError"></span>
+                        </label>
+                    </div>
+                    <div class="form-row">
+                        <label for="tel">Telephone Number
+                            <input type="tel" id="tel" name="tel">
+                        </label>
+                        <label for="visitDate">Preferred Date
+                            <input type="date" id="visitDate" name="visitDate">
+                        </label>
+                        <label for="visitDateTime">Preferred Session
+                            <input type="datetime-local" id="visitDateTime" name="visitDateTime">
+                        </label>
+                    </div>
+                    <label for="address">Address
+                        <textarea id="address" name="address" rows="2"></textarea>
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Feedback Details</legend>
+                    <label for="program">Which programme is this about?
+                        <input list="programList" id="program" name="program" placeholder="Start typing or pick one&hellip;">
+                        <datalist id="programList">
+                            <option value="Peer Tutoring Circle">
+                            <option value="Community Book Drive">
+                            <option value="Weekend Skills Workshop">
+                            <option value="Digital Literacy Meetup">
+                        </datalist>
+                    </label>
+                    <label for="message">Comment / Message
+                        <textarea id="message" name="message" rows="4" maxlength="300" required></textarea>
+                        <span class="char-counter"><span id="charCount">300</span> characters remaining</span>
+                        <span class="field-error" id="messageError"></span>
+                    </label>
+                </fieldset>
+
+                <button type="submit" class="btn btn-solid-dark">Submit Feedback</button>
+                <p id="formConfirmation" class="form-confirmation" role="status" aria-live="polite"></p>
+            </form>
+        </section>
     </main>
     <footer>
         <div class="footer-main">
             <div class="footer-col footer-brand">
-                <div class="logo">
-                    <a href="home.html" class="logo-mark">
+                <a href="home.html" class="logo">
+                    <span class="logo-mark">
                         <img src="images/BrightPathlogo.png" alt="BrightPath Logo">
-                    </a>
-                    <a href="home.html" class="logo-text">
-                        <span class="logo-name">Bright Path</span>
+                    </span>
+                    <span class="logo-text">
+                        <span class="logo-name">BrightPath</span>
                         <span class="logo-tagline">Learn &middot; Grow &middot; Succeed</span>
-                    </a>
-                </div>
+                    </span>
+                </a>
                 <p>A student-led website for UN SDG 4 &mdash; Quality Education.</p>
             </div>
             <div class="footer-col">
@@ -60,24 +211,25 @@
                 <a href="sitemap.html">Sitemap</a>
             </div>
             <div class="footer-col">
-                <!-- Each student: update the 3 links below to point to YOUR OWN Page Editor / Validation page -->
                 <span class="footer-heading">Page Owner</span>
-                <a href="pageEditor_ST1.html">Page Editor</a>
-                <a href="validation_ST1.html">Validation Page</a>
+                <a href="pageEditor_ST3.html">Page Editor</a>
+                <a href="validation_ST3.html">Validation Page</a>
                 <a href="#">Accessibility / Compliance</a>
             </div>
             <div class="footer-col">
-                <!-- Each student: update the details below to your own name / student ID / pages -->
                 <span class="footer-heading">Student</span>
-                <p>Heshan Kavinda</p>
-                <p>Student 1 &middot; ID 20251117</p>
-                <p>Template &middot; Home &middot; Gallery</p>
+                <p>[Student 3 Name]</p>
+                <p>Student 3 &middot; ID [Student ID]</p>
+                <p>Feedback &middot; Team</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <span>&copy; 2026 Bright Path &middot; University of Westminster group coursework</span>
+            <span>&copy; 2026 BrightPath &middot; University of Westminster group coursework</span>
             <span>Compliant with JANET regulations</span>
         </div>
     </footer>
+
+    <script src="js/feedback.js"></script>
+    <script src="js/navbar.js"></script>
 </body>
 </html>

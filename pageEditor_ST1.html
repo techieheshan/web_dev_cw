@@ -3,12 +3,330 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrightPath | Page Editor ST1</title>
-    <link rel="stylesheet" href="style.css">
+    <title>BrightPath | Page Editor &mdash; Student 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/pageEditor_validator.css">
 </head>
-<body>
-    <header></header>
-    <!-- Content goes here -->
+<body id="top">
+    <header class="editor-header">
+        <h1>Page Editor &mdash; Student 1</h1>
+        <p>BrightPath &middot; UN SDG 4, Quality Education &middot; University of Westminster group coursework</p>
+    </header>
+
+    <div class="editor-warning">
+        <strong>&#9888; Draft notice:</strong> The sections marked with a <span class="dummy-flag">Placeholder</span>
+        tag below (the meeting log, some of the challenges/lessons, and part of the references) contain
+        placeholder content and must be replaced with real, accurate information before submission. Everything
+        else on this page reflects the actual pages as built. You will be asked to defend this content in the
+        in-class demonstration, so do not submit the placeholder sections unedited.
+    </div>
+
+    <div class="student-card">
+        <div><strong>Name</strong>Heshan Kavinda</div>
+        <div><strong>Student ID</strong>20251117</div>
+        <div><strong>Role</strong>Template &amp; Navigation, Home Page, Gallery Page</div>
+        <div><strong>Group Website</strong>BrightPath &mdash; SDG 4, Quality Education</div>
+    </div>
+
+    <nav class="editor-toc" aria-label="Page Editor contents">
+        <h2>Contents</h2>
+        <ol>
+            <li><a href="#completed-tasks">Completed Pages / Tasks</a></li>
+            <li><a href="#template-nav">Shared Template &amp; Navigation</a></li>
+            <li><a href="#home-page">Home Page</a></li>
+            <li><a href="#gallery-page">Gallery Page</a></li>
+            <li><a href="#content-page">Content Page</a></li>
+            <li><a href="#links-validation">Links &amp; Validation</a></li>
+            <li><a href="#challenges">Challenges &amp; Lessons Learned</a></li>
+            <li><a href="#accessibility">Accessibility Considerations</a></li>
+            <li><a href="#janet">Compliance with JANET Regulations</a></li>
+            <li><a href="#meetings">Group Meetings &amp; Contribution Log</a></li>
+            <li><a href="#references">References</a></li>
+        </ol>
+    </nav>
+
+    <section id="completed-tasks" class="editor-section">
+        <h2>Completed Pages / Tasks</h2>
+        <ul>
+            <li>Shared HTML template, navigation bar, and Global CSS (<code>template.html</code>, <code>style.css</code>)</li>
+            <li>Home Page (<code>home.html</code>)</li>
+            <li>Gallery Page, including its external page-specific stylesheet and script (<code>gallery.html</code>, <code>css/gallery.css</code>, <code>js/gallery.js</code>)</li>
+            <li>Content Page &mdash; "Access to Learning Resources" (<code>content_ST1.html</code>)</li>
+            <li>This Page Editor and the accompanying Validation Page</li>
+        </ul>
+    </section>
+
+    <section id="template-nav" class="editor-section">
+        <h2>Shared Template &amp; Navigation</h2>
+        <h3>HTML Structure</h3>
+        <p>
+            <code>template.html</code> defines the structure every other page in the site is built from: a
+            <code>&lt;header&gt;</code> containing the logo (an <code>&lt;img&gt;</code> with descriptive
+            <code>alt</code> text) and a <code>&lt;nav&gt;</code> with links to every main page; a
+            <code>&lt;main&gt;</code> left empty as the slot each student fills with their own content; and a
+            <code>&lt;footer&gt;</code> containing four columns (brand, page links, page-owner links, student
+            details). HTML comments mark the header/nav/footer as "DO NOT MODIFY" so the structure stays
+            consistent once other students copy the file.
+        </p>
+        <h3>CSS Techniques</h3>
+        <p>
+            The header is two-tier: a thin <code>.utility-bar</code> row (SDG badge + accessibility link) sits
+            above a <code>.main-nav</code> row built with Flexbox, where the logo is visually centred between two
+            <code>&lt;nav&gt;</code> groups (<code>.nav-left</code>, <code>.nav-right</code>) using
+            <code>flex: 1</code> on each group and <code>flex: 0 0 auto</code> on the logo, plus a prominent
+            <code>.nav-cta</code> button at the far right. This structure was inspired by a real-world
+            navigation pattern (a two-tier bar with a centred logo and a call-to-action button), adapted with
+            BrightPath's own page groupings and wording rather than copied. On narrow screens, a media query
+            switches <code>.main-nav</code> to <code>flex-direction: column</code> so the groups stack and
+            centre instead of overlapping. Navigation links use an underline-on-hover style with a
+            <code>.active</code> class each student applies to their own page's link. The footer uses a
+            responsive grid (<code>repeat(auto-fit, minmax(...))</code>) so its four columns collapse cleanly on
+            narrow screens without a media query.
+        </p>
+        <h3>Design Rationale</h3>
+        <p>
+            The template intentionally has as few opinions as possible about page content &mdash; only the
+            shared chrome (header/nav/footer) is fixed, everything inside <code>&lt;main&gt;</code> is left to
+            the individual student, which is what the spec's "no structural changes permitted" rule requires
+            while still giving each page room to look different where it should. The colour palette (navy
+            <code>#123A7A</code>, blue <code>#2563EB</code>, sky blue <code>#38BDF8</code>, success green
+            <code>#22C55E</code>) and the Poppins/Inter font pairing were agreed as the team's shared visual
+            identity and implemented centrally in <code>css/global.css</code> so every page inherits them
+            automatically rather than each student picking their own colours.
+        </p>
+    </section>
+
+    <section id="home-page" class="editor-section">
+        <h2>Home Page</h2>
+        <h3>HTML Structure</h3>
+        <p>
+            <code>home.html</code> follows the shared template, then adds a <code>&lt;section
+            class="hero-banner"&gt;</code> for the mission statement, a <code>.cards-grid</code> of three
+            <code>&lt;article class="card"&gt;</code> elements (each with a photo, heading, description, and a
+            checklist), and a <code>.focus-list</code> of anchor links to all four students' Content Pages.
+        </p>
+        <h3>CSS Techniques</h3>
+        <p>
+            The hero banner uses the "full-bleed" trick (<code>width: 100vw; position: relative; left: 50%;
+            margin-left: -50vw;</code>) to break out of the centred <code>&lt;main&gt;</code> container edge to
+            edge, while an inner <code>.hero-inner</code> wrapper keeps the actual content readably constrained.
+            The three cards use CSS Grid with <code>repeat(auto-fit, minmax(280px, 1fr))</code> so the layout
+            reflows responsively without a manual breakpoint. Page-specific rules (the hero fade-in animation,
+            the card hover-lift, the focus-list hover states) live in an embedded <code>&lt;style&gt;</code>
+            block inside <code>home.html</code> itself, per the coursework's requirement that Home Page CSS be
+            embedded rather than external.
+        </p>
+        <h3>Design Rationale</h3>
+        <p>
+            Cards were used instead of plain paragraphs to keep the "what can I actually do" message scannable.
+            The <code>.focus-list</code> doubles as the "interactive gallery linking to content pages" the spec
+            requires &mdash; each item shows a number, a title, and a short description of what that teammate's
+            page covers, with a hover animation to signal it's clickable.
+        </p>
+        <p><a href="home.html" target="_blank" rel="noopener">Open the live Home Page &rarr;</a> &middot;
+            <a href="validation_ST1.html#home">See its validation evidence &rarr;</a></p>
+    </section>
+
+    <section id="gallery-page" class="editor-section">
+        <h2>Gallery Page</h2>
+        <h3>HTML Structure</h3>
+        <p>
+            Each thumbnail in <code>gallery.html</code> is a <code>&lt;div class="thumb" tabindex="0"
+            role="button" aria-label="..."&gt;</code> carrying <code>data-title</code>, <code>data-desc</code>,
+            and <code>data-img</code> attributes. A hidden <code>&lt;div id="galleryModal"&gt;</code> acts as
+            the template for the extended view and is populated by JavaScript rather than duplicated per photo.
+        </p>
+        <h3>CSS Techniques</h3>
+        <p>
+            Gallery-specific styling lives in its own external stylesheet, <code>css/gallery.css</code>, rather
+            than an embedded block &mdash; the spec allows either approach for this page, and a separate file
+            kept it easier to edit independently of the HTML. It defines the thumbnail grid, the modal
+            overlay/positioning, and two extra classes (<code>.alt-color</code>, <code>.alt-font</code>) that
+            are toggled on the modal only, for the user-customisation requirement. The page's JavaScript is
+            similarly extracted into <code>js/gallery.js</code> rather than an inline <code>&lt;script&gt;</code>
+            block, matching the project's overall CSS/JS/images folder separation.
+        </p>
+        <h3>JavaScript Logic</h3>
+        <p>
+            All interactivity is handled with <code>addEventListener</code> rather than CSS <code>:hover</code>,
+            which the spec explicitly requires: <code>click</code> and <code>keydown</code> (<code>Enter</code>/
+            <code>Space</code>) open the modal and fill it from the clicked thumbnail's <code>data-*</code>
+            attributes; <code>mouseenter</code>/<code>mouseleave</code>/<code>focus</code>/<code>blur</code>
+            toggle a <code>.thumb-hover</code> class for the hover feedback; the modal closes on its close
+            button, a click on the dark overlay, or the <code>Escape</code> key. Two buttons inside the modal
+            toggle <code>.alt-color</code>/<code>.alt-font</code> on <code>.modal-content</code> only, so the
+            customisation never touches the rest of the page.
+        </p>
+        <h3>Design Rationale</h3>
+        <p>
+            Using <code>data-*</code> attributes instead of a separate JS array keeps each thumbnail
+            self-describing directly in the HTML, which made the JavaScript itself shorter (one shared
+            <code>openModal()</code> function reads whichever thumbnail was interacted with, instead of one
+            function per photo). <code>tabindex="0"</code>, <code>role="button"</code>, and
+            <code>aria-label</code> were added to every thumbnail so keyboard and screen-reader users get the
+            same interaction as mouse users, not just visual hover feedback.
+        </p>
+        <p><a href="gallery.html" target="_blank" rel="noopener">Open the live Gallery Page &rarr;</a> &middot;
+            <a href="validation_ST1.html#gallery">See its validation evidence &rarr;</a></p>
+    </section>
+
+    <section id="content-page" class="editor-section">
+        <h2>Content Page &mdash; "From Passing Grades to Real Skills"</h2>
+        <h3>HTML Structure</h3>
+        <p>
+            One <code>&lt;h1&gt;</code> and five <code>&lt;h2&gt;</code> sections, each with a unique
+            <code>id</code> (<code>#exam-treadmill</code>, <code>#skills-gap</code>, <code>#whats-changing</code>,
+            <code>#what-you-can-do</code>, <code>#outcome</code>), linked from a sidebar navigation list via
+            anchor links (<code>href="#section-id"</code>). The page uses a two-column layout: a
+            <code>&lt;nav class="mag-sidebar"&gt;</code> holding the section links and a pinned fact, and a
+            <code>.mag-content</code> column holding the article itself.
+        </p>
+        <h3>CSS Techniques</h3>
+        <p>
+            The layout uses CSS Grid (<code>grid-template-columns: 230px 1fr</code>) to place the sidebar beside
+            the article, with <code>position: sticky</code> on the sidebar so it stays in view while the article
+            scrolls. A media query collapses this to a single column and turns off the sticky positioning below
+            820px. Pull-quotes use <code>float: right</code> to sit beside the surrounding paragraph text rather
+            than breaking the flow, matching a magazine-style layout. Each section has
+            <code>scroll-margin-top</code> so anchor-jumping doesn't tuck the heading under the sticky site
+            header. The "Go to Top" button is a plain anchor link (<code>href="#top"</code>) styled with
+            <code>position: fixed</code> &mdash; deliberately no JavaScript, since the spec requires this
+            element to be HTML/CSS only.
+        </p>
+        <h3>Design Rationale</h3>
+        <p>
+            This page went through two full rewrites. The first draft covered a different topic (equitable
+            access to learning resources) in a simpler single-column layout; after review, both the topic and
+            the layout were replaced. The current topic &mdash; the gap between exam results and job-readiness
+            &mdash; was chosen because it connects to the Home Page's "focus area" card for this page and gives
+            the page a clearer point of view than a general access-and-resources framing. The sidebar/magazine
+            layout was chosen over a flat list of sections to make the page visually distinct from the Gallery
+            and Home pages, and to make the pinned "worth knowing" fact visible throughout the whole read
+            instead of only at the top.
+        </p>
+        <p><a href="content_ST1.html" target="_blank" rel="noopener">Open the live Content Page &rarr;</a> &middot;
+            <a href="validation_ST1.html#content">See its validation evidence &rarr;</a></p>
+    </section>
+
+    <section id="links-validation" class="editor-section">
+        <h2>Links &amp; Validation Summary</h2>
+        <table class="editor-table">
+            <thead>
+                <tr><th>Page</th><th>Live Page</th><th>Validation Evidence</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Home Page</td><td><a href="home.html" target="_blank" rel="noopener">home.html</a></td><td><a href="validation_ST1.html#home">Validation &rarr;</a></td></tr>
+                <tr><td>Gallery Page</td><td><a href="gallery.html" target="_blank" rel="noopener">gallery.html</a></td><td><a href="validation_ST1.html#gallery">Validation &rarr;</a></td></tr>
+                <tr><td>Content Page</td><td><a href="content_ST1.html" target="_blank" rel="noopener">content_ST1.html</a></td><td><a href="validation_ST1.html#content">Validation &rarr;</a></td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="challenges" class="editor-section">
+        <h2>Challenges &amp; Lessons Learned</h2>
+        <div class="dummy-block">
+            <span class="dummy-flag">Placeholder &mdash; rewrite in your own words</span>
+            <p>
+                The draft points below are based on real technical decisions made in the code, but they need to
+                be rewritten as <em>your own account</em> of what was actually difficult and what you actually
+                learned &mdash; not left as-is.
+            </p>
+            <ul>
+                <li>Getting the hero banner to stretch full-width while the rest of the page stayed centred took
+                    some trial and error with the <code>100vw</code> / negative-margin technique before it
+                    worked without introducing a horizontal scrollbar.</li>
+                <li>Making the Gallery's click-to-expand modal keyboard-accessible (not just mouse-hover) meant
+                    learning that <code>:hover</code> alone isn't enough for accessibility, and that
+                    <code>tabindex</code> + JS event listeners were needed instead.</li>
+                <li>Coordinating file names and the shared <code>style.css</code> with teammates so nobody's
+                    page broke another's &mdash; agreeing early on which CSS classes were "shared" vs
+                    "page-specific" helped avoid conflicts.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="accessibility" class="editor-section">
+        <h2>Accessibility Considerations</h2>
+        <p>Across all the pages I built, accessibility was addressed with:</p>
+        <ul>
+            <li><strong>Meaningful alt text</strong> on every image, describing what the image shows rather than
+                just naming the file.</li>
+            <li><strong>Semantic HTML</strong> &mdash; <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>,
+                <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code> used for
+                their actual structural meaning rather than generic <code>&lt;div&gt;</code>s throughout.</li>
+            <li><strong>Keyboard access</strong> on the Gallery's interactive thumbnails via
+                <code>tabindex="0"</code>, <code>role="button"</code>, and an <code>Enter</code>/<code>Space</code>
+                key handler identical in effect to a click.</li>
+            <li><strong>Logical heading order</strong> on the Content Page (a single <code>&lt;h1&gt;</code>
+                followed by <code>&lt;h2&gt;</code> section headings, never skipping a level).</li>
+            <li><strong>Visible focus/hover feedback</strong> so keyboard users get the same interaction cues as
+                mouse users, not just a mouse-only hover effect.</li>
+        </ul>
+        <p>
+            These choices improve usability for screen-reader and keyboard-only users, and also make the pages
+            easier for anyone to use on a slow connection where images may fail to load (the alt text still
+            conveys the content).
+        </p>
+    </section>
+
+    <section id="janet" class="editor-section">
+        <h2>Compliance with JANET Regulations</h2>
+        <div class="dummy-block">
+            <span class="dummy-flag">Draft &mdash; check wording against your module handbook</span>
+            <p>
+                All content on the pages I built is original or properly attributed: photographs sourced from
+                Pexels are credited (photographer name and platform) in the Content Page and in the References
+                section below, rather than presented as our own. No content on these pages contains offensive,
+                defamatory, or unlawful material. External resources (Google Fonts, Pexels images) were used
+                under their respective free-to-use licences rather than copied without permission. The site
+                does not collect or store any personal data from visitors &mdash; the Gallery and Content pages
+                are read-only, and no form on these particular pages transmits information anywhere.
+            </p>
+        </div>
+    </section>
+
+    <section id="meetings" class="editor-section">
+        <h2>Group Meetings &amp; Individual Contribution Log</h2>
+        <div class="dummy-block">
+            <span class="dummy-flag">Placeholder &mdash; replace every row with a real meeting</span>
+            <p>The coursework requires a minimum of six real, honestly-recorded meetings. The table below is a
+                template with placeholder values only &mdash; if a meeting didn't happen, or you weren't
+                present, the table must say so.</p>
+            <table class="meeting-table">
+                <thead>
+                    <tr><th>#</th><th>Date &amp; Time</th><th>Format</th><th>Objective</th><th>Attended</th><th>Your Individual Contribution</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>[DATE]</td><td>[Face-to-face / Online / Hybrid]</td><td>[e.g. Agree SDG and assign roles]</td><td>[Yes/No]</td><td>[What you personally did/decided]</td></tr>
+                    <tr><td>2</td><td>[DATE]</td><td>[FORMAT]</td><td>[OBJECTIVE]</td><td>[Yes/No]</td><td>[CONTRIBUTION]</td></tr>
+                    <tr><td>3</td><td>[DATE]</td><td>[FORMAT]</td><td>[OBJECTIVE]</td><td>[Yes/No]</td><td>[CONTRIBUTION]</td></tr>
+                    <tr><td>4</td><td>[DATE]</td><td>[FORMAT]</td><td>[OBJECTIVE]</td><td>[Yes/No]</td><td>[CONTRIBUTION]</td></tr>
+                    <tr><td>5</td><td>[DATE]</td><td>[FORMAT]</td><td>[OBJECTIVE]</td><td>[Yes/No]</td><td>[CONTRIBUTION]</td></tr>
+                    <tr><td>6</td><td>[DATE]</td><td>[FORMAT]</td><td>[OBJECTIVE]</td><td>[Yes/No]</td><td>[CONTRIBUTION]</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="references" class="editor-section">
+        <h2>References</h2>
+        <ul>
+            <li>Pexels contributor Thilina Alagiyawanna, "Building of University of Peradeniya in Kandy in Sri Lanka," Pexels, used under the Pexels licence.</li>
+            <li>Pexels contributor Roshan Kumara, Sri Lanka school/procession photographs, Pexels, used under the Pexels licence.</li>
+            <li>Pexels contributor Sangeeth, "Graduation Celebration in Sri Lanka," Pexels, used under the Pexels licence.</li>
+            <li>Pexels contributors Karola G, Resume Genius, Tahir Xəlfəquliyev, and Ron Lach, Content Page photographs, Pexels, used under the Pexels licence.</li>
+            <li>Google Fonts, "Poppins" and "Inter" typefaces, used under the SIL Open Font Licence.</li>
+            <li>Mozilla Developer Network (MDN Web Docs), referenced for JavaScript DOM event handling (<code>addEventListener</code>, <code>classList</code>) and CSS Grid/Flexbox syntax.</li>
+        </ul>
+        <div class="dummy-block" style="margin-top:0.8rem;">
+            <span class="dummy-flag">Placeholder</span>
+            <p>[Add any lecture slides, seminar handouts, or specific tutorials you personally consulted,
+                with the week/topic and a link if available.]</p>
+        </div>
+    </section>
+
+    <a href="#top" class="back-to-top-editor">&uarr; Top</a>
 </body>
 </html>

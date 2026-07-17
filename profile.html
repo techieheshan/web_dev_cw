@@ -3,11 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrightPath | Profile</title>
+    <title>BrightPath | Your Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/profile.css">
 </head>
 <body>
-    <header></header>
-    <!-- Content goes here -->
+    <!-- DO NOT MODIFY: header, nav, and footer structure below -->
+    <header>
+        <div class="utility-bar">
+            <span>UN SDG 4 &middot; Quality Education</span>
+            <a href="#">Accessibility &amp; Compliance</a>
+        </div>
+        <div class="main-nav">
+            <nav class="nav-group nav-left">
+                <a href="home.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="team.html">Team</a>
+            </nav>
+            <a href="home.html" class="logo">
+                <span class="logo-mark">
+                    <img src="images/BrightPathlogo.png" alt="BrightPath Logo">
+                </span>
+                <span class="logo-text">
+                    <span class="logo-name">BrightPath</span>
+                    <span class="logo-tagline">Learn &middot; Grow &middot; Succeed</span>
+                </span>
+            </a>
+            <nav class="nav-group nav-right">
+                <a href="profile.html" class="active">Profile</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="sitemap.html">Sitemap</a>
+            </nav>
+            <a href="ais.html" class="btn nav-cta">Take Action &rarr;</a>
+        </div>
+    </header>
+    <main>
+        <span class="eyebrow-plain">Your Profile</span>
+        <h1>Build your BrightPath profile</h1>
+        <p class="hero-lede">No form to fill in &mdash; just answer a few short prompts as they pop up. Skip
+            anything you're not ready to answer, and come back to it later.</p>
+
+        <div class="profile-controls">
+            <button type="button" class="btn btn-solid" id="startBtn">Start / Continue Profile</button>
+            <button type="button" class="btn btn-outline-dark" id="resetBtn">Reset Profile</button>
+        </div>
+
+        <div class="profile-progress">
+            <div class="progress-bar-track">
+                <div class="progress-bar-fill" id="progressFill" style="width:0%;"></div>
+            </div>
+            <span id="progressText">Completion: 0% (0/9 prompts completed)</span>
+        </div>
+
+        <div class="step-buttons" id="stepButtons">
+            <button type="button" class="step-btn" data-step="1">Step 1: Basics</button>
+            <button type="button" class="step-btn" data-step="2">Step 2: Interests</button>
+            <button type="button" class="step-btn" data-step="3">Step 3: Actions</button>
+        </div>
+
+        <h2 class="eyebrow-plain" style="font-size:0.78rem;">Your Profile (Updates Progressively)</h2>
+        <div class="profile-output" id="profileOutput">
+            <p class="profile-placeholder" id="profilePlaceholder">Nothing here yet &mdash; click "Start /
+                Continue Profile" above to begin.</p>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-main">
+            <div class="footer-col footer-brand">
+                <a href="home.html" class="logo">
+                    <span class="logo-mark">
+                        <img src="images/BrightPathlogo.png" alt="BrightPath Logo">
+                    </span>
+                    <span class="logo-text">
+                        <span class="logo-name">BrightPath</span>
+                        <span class="logo-tagline">Learn &middot; Grow &middot; Succeed</span>
+                    </span>
+                </a>
+                <p>A student-led website for UN SDG 4 &mdash; Quality Education.</p>
+            </div>
+            <div class="footer-col">
+                <span class="footer-heading">Pages</span>
+                <a href="home.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="ais.html">Action Simulator</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="team.html">Team</a>
+                <a href="sitemap.html">Sitemap</a>
+            </div>
+            <div class="footer-col">
+                <span class="footer-heading">Page Owner</span>
+                <a href="pageEditor_ST4.html">Page Editor</a>
+                <a href="validation_ST4.html">Validation Page</a>
+                <a href="#">Accessibility / Compliance</a>
+            </div>
+            <div class="footer-col">
+                <span class="footer-heading">Student</span>
+                <p>[Student 4 Name]</p>
+                <p>Student 4 &middot; ID [Student ID]</p>
+                <p>Profile &middot; Sitemap</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 BrightPath &middot; University of Westminster group coursework</span>
+            <span>Compliant with JANET regulations</span>
+        </div>
+    </footer>
+
+    <script src="js/profile.js"></script>
+    <script src="js/navbar.js"></script>
 </body>
 </html>

@@ -3,11 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrightPath | Validation ST4</title>
-    <link rel="stylesheet" href="style.css">
+    <title>BrightPath | Validation &mdash; Student 4</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/pageEditor_validator.css">
 </head>
-<body>
-    <header></header>
-    <!-- Content goes here -->
+<body id="top">
+    <header class="editor-header">
+        <h1>Validation Page &mdash; Student 4</h1>
+        <p>HTML validation evidence for User Profile, Sitemap, and Content Page (content_ST4.html)</p>
+    </header>
+
+    <div class="editor-warning">
+        <strong>How this evidence was produced:</strong> Each page was checked using the official
+        <a href="https://validator.w3.org/nu/" target="_blank" rel="noopener">W3C Nu Html Checker</a> against
+        the page's live source HTML on 17 July 2026. Results below are reproduced exactly as returned.
+    </div>
+
+    <section id="profile" class="editor-section">
+        <h2>User Profile &mdash; profile.html</h2>
+        <table class="editor-table">
+            <tbody>
+                <tr><th>Page checked</th><td>profile.html</td></tr>
+                <tr><th>Tool</th><td>W3C Nu Html Checker (validator.w3.org/nu/)</td></tr>
+                <tr><th>Result</th><td><strong style="color:#147A45;">Pass &mdash; 0 errors, 0 warnings</strong></td></tr>
+            </tbody>
+        </table>
+        <p style="margin-top:0.8rem;"><a href="pageEditor_ST4.html#profile-page">&larr; Back to Page Editor: User Profile</a></p>
+    </section>
+
+    <section id="sitemap" class="editor-section">
+        <h2>Sitemap &mdash; sitemap.html</h2>
+        <table class="editor-table">
+            <tbody>
+                <tr><th>Page checked</th><td>sitemap.html</td></tr>
+                <tr><th>Tool</th><td>W3C Nu Html Checker (validator.w3.org/nu/)</td></tr>
+                <tr><th>Result</th><td><strong style="color:#147A45;">Pass &mdash; 0 errors, 0 warnings</strong></td></tr>
+            </tbody>
+        </table>
+        <p style="margin-top:0.8rem;"><a href="pageEditor_ST4.html#sitemap-page">&larr; Back to Page Editor: Sitemap</a></p>
+    </section>
+
+    <section id="content" class="editor-section">
+        <h2>Content Page &mdash; content_ST4.html</h2>
+        <table class="editor-table">
+            <tbody>
+                <tr><th>Page checked</th><td>content_ST4.html</td></tr>
+                <tr><th>Tool</th><td>W3C Nu Html Checker (validator.w3.org/nu/)</td></tr>
+                <tr><th>Result</th><td><strong style="color:#147A45;">Pass &mdash; 0 errors, 0 warnings</strong></td></tr>
+            </tbody>
+        </table>
+        <p style="margin-top:0.8rem;"><a href="pageEditor_ST4.html#content-page">&larr; Back to Page Editor: Content Page</a></p>
+    </section>
+
+    <section id="reflection" class="editor-section">
+        <h2>Reflection on the Validation Process</h2>
+        <p>
+            All three pages passed on the first check. The Sitemap page was the one I expected trouble from,
+            since it's a large hand-written inline SVG with a lot of repeated markup, but well-formed
+            <code>&lt;a&gt;</code>/<code>&lt;rect&gt;</code>/<code>&lt;text&gt;</code> groups inside SVG validate
+            cleanly as long as the SVG itself is well-formed XML-in-HTML, which careful, consistent copy-paste
+            of the node structure helped with.
+        </p>
+    </section>
+
+    <footer style="margin-top:2rem; padding-top:1rem; border-top:1px solid #DCE3ED; font-size:0.85rem; color:#52606D;">
+        <p><a href="pageEditor_ST4.html">&larr; Back to Page Editor</a></p>
+        <p>[Student 4 Name] &middot; Student 4 &middot; ID [Student ID]</p>
+    </footer>
+
+    <a href="#top" class="back-to-top-editor">&uarr; Top</a>
 </body>
 </html>

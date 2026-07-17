@@ -4,10 +4,191 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BrightPath | Sitemap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/sitemap.css">
 </head>
 <body>
-    <header></header>
-    <!-- Content goes here -->
+    <!-- DO NOT MODIFY: header, nav, and footer structure below -->
+    <header>
+        <div class="utility-bar">
+            <span>UN SDG 4 &middot; Quality Education</span>
+            <a href="#">Accessibility &amp; Compliance</a>
+        </div>
+        <div class="main-nav">
+            <nav class="nav-group nav-left">
+                <a href="home.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="team.html">Team</a>
+            </nav>
+            <a href="home.html" class="logo">
+                <span class="logo-mark">
+                    <img src="images/BrightPathlogo.png" alt="BrightPath Logo">
+                </span>
+                <span class="logo-text">
+                    <span class="logo-name">BrightPath</span>
+                    <span class="logo-tagline">Learn &middot; Grow &middot; Succeed</span>
+                </span>
+            </a>
+            <nav class="nav-group nav-right">
+                <a href="profile.html">Profile</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="sitemap.html" class="active">Sitemap</a>
+            </nav>
+            <a href="ais.html" class="btn nav-cta">Take Action &rarr;</a>
+        </div>
+    </header>
+    <main>
+        <span class="eyebrow-plain">Sitemap</span>
+        <h1>Every page, one diagram</h1>
+        <p class="hero-lede">Click any box to jump straight to that page, or use Tab and Enter on your keyboard.</p>
+
+        <svg class="sitemap-svg" viewBox="0 0 1200 480" role="img" aria-labelledby="sitemapTitle" preserveAspectRatio="xMidYMid meet">
+            <title id="sitemapTitle">BrightPath website structure: Splash Screen leads to Home, which links to Gallery, Action Simulator, Feedback, Team, Profile, Sitemap, and four Content pages.</title>
+
+            <!-- Connecting lines. With the 6-page row widened and centred, the gap between
+                 Feedback and Team now falls exactly on x=600 (Home's own centre), so a single
+                 straight trunk runs down the middle with no jog needed. -->
+            <g class="site-links" aria-hidden="true">
+                <!-- Splash to Home -->
+                <line x1="600" y1="70" x2="600" y2="133"></line>
+
+                <!-- Single centred trunk, straight down through the gap between Feedback and Team -->
+                <line x1="600" y1="197" x2="600" y2="365"></line>
+
+                <!-- Rail 1: the 6 main pages -->
+                <line x1="150" y1="230" x2="1050" y2="230"></line>
+                <line x1="150" y1="230" x2="150" y2="258"></line>
+                <line x1="330" y1="230" x2="330" y2="258"></line>
+                <line x1="510" y1="230" x2="510" y2="258"></line>
+                <line x1="690" y1="230" x2="690" y2="258"></line>
+                <line x1="870" y1="230" x2="870" y2="258"></line>
+                <line x1="1050" y1="230" x2="1050" y2="258"></line>
+
+                <!-- Rail 2: the 4 content pages -->
+                <line x1="300" y1="365" x2="900" y2="365"></line>
+                <line x1="300" y1="365" x2="300" y2="393"></line>
+                <line x1="500" y1="365" x2="500" y2="393"></line>
+                <line x1="700" y1="365" x2="700" y2="393"></line>
+                <line x1="900" y1="365" x2="900" y2="393"></line>
+            </g>
+
+            <!-- Splash -->
+            <a href="splash.html" class="site-node" tabindex="0">
+                <title>Splash Screen</title>
+                <rect x="530" y="20" width="140" height="50" rx="25" class="node-box node-splash"></rect>
+                <text x="600" y="50" class="node-label">Splash</text>
+            </a>
+
+            <!-- Home -->
+            <a href="home.html" class="site-node" tabindex="0">
+                <title>Home Page</title>
+                <rect x="510" y="133" width="180" height="64" rx="32" class="node-box node-home"></rect>
+                <text x="600" y="171" class="node-label node-label-light node-label-lg">Home</text>
+            </a>
+
+            <!-- Main pages -->
+            <a href="gallery.html" class="site-node" tabindex="0">
+                <title>Gallery Page</title>
+                <rect x="80" y="258" width="140" height="54" rx="27" class="node-box"></rect>
+                <text x="150" y="290" class="node-label">Gallery</text>
+            </a>
+            <a href="ais.html" class="site-node" tabindex="0">
+                <title>Action Impact Simulator</title>
+                <rect x="260" y="258" width="140" height="54" rx="27" class="node-box"></rect>
+                <text x="330" y="290" class="node-label">Action Sim.</text>
+            </a>
+            <a href="feedback.html" class="site-node" tabindex="0">
+                <title>Feedback and Programme Directory</title>
+                <rect x="440" y="258" width="140" height="54" rx="27" class="node-box"></rect>
+                <text x="510" y="290" class="node-label">Feedback</text>
+            </a>
+            <a href="team.html" class="site-node" tabindex="0">
+                <title>Team Page</title>
+                <rect x="620" y="258" width="140" height="54" rx="27" class="node-box"></rect>
+                <text x="690" y="290" class="node-label">Team</text>
+            </a>
+            <a href="profile.html" class="site-node" tabindex="0">
+                <title>User Profile Page</title>
+                <rect x="800" y="258" width="140" height="54" rx="27" class="node-box"></rect>
+                <text x="870" y="290" class="node-label">Profile</text>
+            </a>
+            <a href="sitemap.html" class="site-node" tabindex="0">
+                <title>Sitemap Page (this page)</title>
+                <rect x="980" y="258" width="140" height="54" rx="27" class="node-box node-current"></rect>
+                <text x="1050" y="290" class="node-label">Sitemap</text>
+            </a>
+
+            <!-- Content pages -->
+            <a href="content_ST1.html" class="site-node" tabindex="0">
+                <title>Content Page: From Passing Grades to Real Skills</title>
+                <rect x="220" y="393" width="160" height="54" rx="27" class="node-box node-content"></rect>
+                <text x="300" y="418" class="node-label node-label-sm">Content:</text>
+                <text x="300" y="433" class="node-label node-label-sm">Real Skills</text>
+            </a>
+            <a href="content_ST2.html" class="site-node" tabindex="0">
+                <title>Content Page: Bridging the Digital Divide</title>
+                <rect x="420" y="393" width="160" height="54" rx="27" class="node-box node-content"></rect>
+                <text x="500" y="418" class="node-label node-label-sm">Content:</text>
+                <text x="500" y="433" class="node-label node-label-sm">Digital Divide</text>
+            </a>
+            <a href="content_ST3.html" class="site-node" tabindex="0">
+                <title>Content Page: Community Learning Programs</title>
+                <rect x="620" y="393" width="160" height="54" rx="27" class="node-box node-content"></rect>
+                <text x="700" y="418" class="node-label node-label-sm">Content:</text>
+                <text x="700" y="433" class="node-label node-label-sm">Community</text>
+            </a>
+            <a href="content_ST4.html" class="site-node" tabindex="0">
+                <title>Content Page: Lifelong Skills for the Future</title>
+                <rect x="820" y="393" width="160" height="54" rx="27" class="node-box node-content"></rect>
+                <text x="900" y="418" class="node-label node-label-sm">Content:</text>
+                <text x="900" y="433" class="node-label node-label-sm">Lifelong Skills</text>
+            </a>
+        </svg>
+    </main>
+    <footer>
+        <div class="footer-main">
+            <div class="footer-col footer-brand">
+                <a href="home.html" class="logo">
+                    <span class="logo-mark">
+                        <img src="images/BrightPathlogo.png" alt="BrightPath Logo">
+                    </span>
+                    <span class="logo-text">
+                        <span class="logo-name">BrightPath</span>
+                        <span class="logo-tagline">Learn &middot; Grow &middot; Succeed</span>
+                    </span>
+                </a>
+                <p>A student-led website for UN SDG 4 &mdash; Quality Education.</p>
+            </div>
+            <div class="footer-col">
+                <span class="footer-heading">Pages</span>
+                <a href="home.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="ais.html">Action Simulator</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="team.html">Team</a>
+                <a href="sitemap.html">Sitemap</a>
+            </div>
+            <div class="footer-col">
+                <span class="footer-heading">Page Owner</span>
+                <a href="pageEditor_ST4.html">Page Editor</a>
+                <a href="validation_ST4.html">Validation Page</a>
+                <a href="#">Accessibility / Compliance</a>
+            </div>
+            <div class="footer-col">
+                <span class="footer-heading">Student</span>
+                <p>[Student 4 Name]</p>
+                <p>Student 4 &middot; ID [Student ID]</p>
+                <p>Profile &middot; Sitemap</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 BrightPath &middot; University of Westminster group coursework</span>
+            <span>Compliant with JANET regulations</span>
+        </div>
+    </footer>
+    <script src="js/navbar.js"></script>
 </body>
 </html>

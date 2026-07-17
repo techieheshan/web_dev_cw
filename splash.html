@@ -3,11 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrightPath | Splash</title>
+    <!-- Automatic redirect to the Home Page after 4 seconds (required: HTML meta refresh) -->
+    <meta http-equiv="refresh" content="4; url=home.html">
+    <title>BrightPath | Welcome</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/splash.css">
 </head>
 <body>
-    <header></header>
-    <!-- Content goes here -->
+    <main class="splash">
+        <div class="splash-panel-text">
+            <div class="splash-content">
+                <span class="splash-eyebrow">UN SDG 4 &middot; Quality Education</span>
+                <h1 class="splash-title">BrightPath</h1>
+                <p class="splash-mission">
+                    Four students turning awareness about unequal access to education into small, real
+                    actions &mdash; sharing resources, tutoring, and closing gaps one person at a time.
+                </p>
+
+                <div class="splash-team">
+                    <span class="splash-team-label">Made by</span>
+                    <ul>
+                        <li>Heshan Kavinda &middot; Student 1</li>
+                        <li>[Student 2 Name] &middot; Student 2</li>
+                        <li>[Student 3 Name] &middot; Student 3</li>
+                        <li>[Student 4 Name] &middot; Student 4</li>
+                    </ul>
+                </div>
+
+                <div class="splash-loader" role="status" aria-live="polite">
+                    <span class="loader-ring" aria-hidden="true"></span>
+                    <span class="loader-text">Entering site in <span id="countdown">4</span>&hellip;</span>
+                </div>
+
+                <a href="home.html" class="btn btn-solid splash-skip" id="skipBtn">Skip Intro &rarr;</a>
+            </div>
+        </div>
+        <div class="splash-panel-photo">
+            <img src="images/home-card2-community-procession.jpg"
+                 alt="A community of Sri Lankan school children gathered together">
+        </div>
+    </main>
+
+    <script src="js/splash.js"></script>
 </body>
 </html>

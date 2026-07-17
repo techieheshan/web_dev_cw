@@ -3,11 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrightPath | Validation ST1</title>
-    <link rel="stylesheet" href="style.css">
+    <title>BrightPath | Validation &mdash; Student 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/pageEditor_validator.css">
 </head>
-<body>
-    <header></header>
-    <!-- Content goes here -->
+<body id="top">
+    <header class="editor-header">
+        <h1>Validation Page &mdash; Student 1</h1>
+        <p>HTML validation evidence for Home Page, Gallery Page, and Content Page (content_ST1.html)</p>
+    </header>
+
+    <div class="editor-warning">
+        <strong>How this evidence was produced:</strong> Each page below was checked using the official
+        <a href="https://validator.w3.org/nu/" target="_blank" rel="noopener">W3C Nu Html Checker</a> &mdash;
+        the same validation engine used at validator.w3.org &mdash; queried directly against the page's live
+        source HTML on 10 July 2026. The raw pass/fail result and any messages returned by the validator are
+        reproduced below exactly as returned, with no edits. Before submission, it's still worth independently
+        re-running each page through <a href="https://validator.w3.org/#validate_by_upload" target="_blank" rel="noopener">validator.w3.org</a>
+        yourself and keeping a screenshot as a second, visual piece of evidence for the demo.
+    </div>
+
+    <section id="home" class="editor-section">
+        <h2>Home Page &mdash; home.html</h2>
+        <table class="editor-table">
+            <tbody>
+                <tr><th>Page checked</th><td>home.html</td></tr>
+                <tr><th>Tool</th><td>W3C Nu Html Checker (validator.w3.org/nu/)</td></tr>
+                <tr><th>Result</th><td><strong style="color:#147A45;">Pass &mdash; 0 errors, 0 warnings</strong></td></tr>
+            </tbody>
+        </table>
+        <p style="margin-top:0.8rem;"><a href="pageEditor_ST1.html#home-page">&larr; Back to Page Editor: Home Page</a></p>
+    </section>
+
+    <section id="gallery" class="editor-section">
+        <h2>Gallery Page &mdash; gallery.html</h2>
+        <table class="editor-table">
+            <tbody>
+                <tr><th>Page checked</th><td>gallery.html</td></tr>
+                <tr><th>Tool</th><td>W3C Nu Html Checker (validator.w3.org/nu/)</td></tr>
+                <tr><th>Result</th><td><strong style="color:#147A45;">Pass &mdash; 0 errors, 1 warning</strong></td></tr>
+            </tbody>
+        </table>
+        <p><strong>Warning returned:</strong> <code>Empty heading</code> on <code>&lt;h3 id="modalTitle"&gt;&lt;/h3&gt;</code>
+            (line 87). This is expected and acceptable: this heading is the extended-view modal's title, which
+            starts empty in the HTML source and is filled in by JavaScript (<code>modalTitle.textContent = ...</code>)
+            only once a user clicks a thumbnail. The coursework spec explicitly allows warnings as long as
+            there are no errors.</p>
+        <p style="margin-top:0.8rem;"><a href="pageEditor_ST1.html#gallery-page">&larr; Back to Page Editor: Gallery Page</a></p>
+    </section>
+
+    <section id="content" class="editor-section">
+        <h2>Content Page &mdash; content_ST1.html</h2>
+        <table class="editor-table">
+            <tbody>
+                <tr><th>Page checked</th><td>content_ST1.html</td></tr>
+                <tr><th>Tool</th><td>W3C Nu Html Checker (validator.w3.org/nu/)</td></tr>
+                <tr><th>Result</th><td><strong style="color:#147A45;">Pass &mdash; 0 errors, 0 warnings</strong></td></tr>
+            </tbody>
+        </table>
+        <p style="margin-top:0.8rem;"><a href="pageEditor_ST1.html#content-page">&larr; Back to Page Editor: Content Page</a></p>
+    </section>
+
+    <section id="reflection" class="editor-section">
+        <h2>Reflection on the Validation Process</h2>
+        <p>
+            The first validator run on <code>home.html</code> returned a real error: the three mission-card
+            headings were marked up as <code>&lt;h3&gt;</code>, but appeared before any <code>&lt;h2&gt;</code>
+            on the page, so the outline jumped straight from <code>&lt;h1&gt;</code> to <code>&lt;h3&gt;</code>.
+            The fix was to add a proper <code>&lt;h2&gt;</code> ("Why we're doing this") introducing the cards
+            section, which resolved the error without changing how the page looks.
+        </p>
+        <p>
+            <code>gallery.html</code> initially failed for two reasons: the hidden modal's <code>&lt;img&gt;</code>
+            placeholder had <code>src=""</code>, which HTML doesn't allow (an <code>img</code> must have a
+            non-empty <code>src</code> or none at all &mdash; and removing it entirely triggered a *different*
+            error, since <code>img</code> requires either <code>src</code> or <code>srcset</code>). The fix was
+            a tiny inline transparent placeholder image
+            (<code>data:image/gif;base64,...</code>) that satisfies the validator and is invisible until
+            JavaScript replaces it with the real photo on click. The same page also had the same heading-order
+            problem as the Home Page, fixed the same way by adding a heading before the thumbnail grid.
+        </p>
+        <p>
+            The lesson that carried across both fixes: the validator doesn't just check for typos, it checks
+            that the heading structure actually forms a logical outline, and that "hidden until JavaScript
+            fills it in" elements still have to be valid HTML in their empty state, not just their final state.
+        </p>
+    </section>
+
+    <footer style="margin-top:2rem; padding-top:1rem; border-top:1px solid #E0DACE; font-size:0.85rem; color:#52606D;">
+        <p><a href="pageEditor_ST1.html">&larr; Back to Page Editor</a></p>
+        <p>Heshan Kavinda &middot; Student 1 &middot; ID 20251117</p>
+    </footer>
+
+    <a href="#top" class="back-to-top-editor">&uarr; Top</a>
 </body>
 </html>

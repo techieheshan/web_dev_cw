@@ -1,0 +1,51 @@
+/* Shared content-page styling for Students 2, 3 and 4.
+   Deliberately simpler than Student 1's content page (which has its own bespoke,
+   embedded per-page styling) — this is a plain, functional layout. */
+
+.content-simple-toc {
+    background: var(--neutral-color);
+    border-radius: 10px;
+    padding: 0.9rem 1.2rem;
+    margin: 1.2rem 0 2rem;
+    font-size: 0.9rem;
+}
+.content-simple-toc a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 1rem;
+}
+.content-simple-toc a:hover {
+    text-decoration: underline;
+}
+
+.content-simple-section {
+    margin-bottom: 2.2rem;
+    scroll-margin-top: 100px;
+}
+
+.content-simple-img {
+    width: 100%;
+    max-width: 480px;
+    display: block;
+    margin: 1rem 0;
+    border-radius: 8px;
+}
+
+.back-to-top {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.7rem 1.1rem;
+    border-radius: 999px;
+    box-shadow: 0 6px 16px rgba(18, 58, 122, 0.35);
+    z-index: 30;
+}
+.back-to-top:hover {
+    background-color: var(--hover-color);
+}

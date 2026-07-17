@@ -1,0 +1,153 @@
+/* Splash Screen (Student 2) — split-panel layout: solid brand-colour panel for all
+   text/branding on one side, a real photo contained to the other side only.
+   Does not use the shared template, but matches the site's agreed visual identity. */
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.splash {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Left panel: solid brand colour, holds all the text */
+.splash-panel-text {
+    flex: 0 0 42%;
+    background: linear-gradient(160deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    align-items: center;
+    padding: 3rem;
+}
+
+.splash-content {
+    max-width: 420px;
+    animation: splashRise 0.8s ease both;
+}
+
+@keyframes splashRise {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: none; }
+}
+
+.splash-eyebrow {
+    display: inline-block;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #BFDBFE;
+    background: rgba(56, 189, 248, 0.18);
+    border: 1px solid rgba(56, 189, 248, 0.5);
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    margin-bottom: 1.2rem;
+}
+
+.splash-title {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 800;
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 0.8rem;
+    line-height: 1.05;
+}
+
+.splash-mission {
+    font-size: 1rem;
+    color: #E2E8F0;
+    margin: 0 0 1.8rem;
+    line-height: 1.6;
+}
+
+.splash-team {
+    margin-bottom: 2rem;
+}
+.splash-team-label {
+    display: block;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #93C5FD;
+    margin-bottom: 0.6rem;
+}
+.splash-team ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+.splash-team li {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: white;
+}
+
+/* CSS-only loader animation (no gif/video) */
+.splash-loader {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.8rem;
+}
+.loader-ring {
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+    border: 3px solid rgba(255, 255, 255, 0.25);
+    border-top-color: #38BDF8;
+    border-radius: 50%;
+    animation: loaderSpin 0.9s linear infinite;
+}
+@keyframes loaderSpin {
+    to { transform: rotate(360deg); }
+}
+.loader-text {
+    font-size: 0.9rem;
+    color: #E2E8F0;
+}
+#countdown {
+    font-weight: 700;
+    color: #38BDF8;
+}
+
+.splash-skip {
+    background-color: white;
+    color: var(--primary-color);
+}
+.splash-skip:hover {
+    background-color: #38BDF8;
+    color: white;
+}
+
+/* Right panel: the photo, contained to its own half */
+.splash-panel-photo {
+    flex: 1;
+    overflow: hidden;
+}
+.splash-panel-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Narrow screens: stack the photo below the text panel instead of side by side */
+@media (max-width: 820px) {
+    .splash {
+        flex-direction: column;
+    }
+    .splash-panel-text {
+        flex: none;
+        padding: 2.5rem 1.5rem;
+    }
+    .splash-panel-photo {
+        flex: none;
+        height: 40vh;
+    }
+}

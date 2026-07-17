@@ -3,11 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrightPath | Validation ST2</title>
-    <link rel="stylesheet" href="style.css">
+    <title>BrightPath | Validation &mdash; Student 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/pageEditor_validator.css">
 </head>
-<body>
-    <header></header>
-    <!-- Content goes here -->
+<body id="top">
+    <header class="editor-header">
+        <h1>Validation Page &mdash; Student 2</h1>
+        <p>HTML validation evidence for the Splash Screen, Action Impact Simulator, and Content Page (content_ST2.html)</p>
+    </header>
+
+    <div class="editor-warning">
+        <strong>How this evidence was produced:</strong> Each page was checked using the official
+        <a href="https://validator.w3.org/nu/" target="_blank" rel="noopener">W3C Nu Html Checker</a> against
+        the page's live source HTML on 17 July 2026. Results below are reproduced exactly as returned.
+    </div>
+
+    <section id="splash" class="editor-section">
+        <h2>Splash Screen &mdash; splash.html</h2>
+        <table class="editor-table">
+            <tbody>
+                <tr><th>Page checked</th><td>splash.html</td></tr>
+                <tr><th>Tool</th><td>W3C Nu Html Checker (validator.w3.org/nu/)</td></tr>
+                <tr><th>Result</th><td><strong style="color:#147A45;">Pass &mdash; 0 errors, 0 warnings</strong></td></tr>
+            </tbody>
+        </table>
+        <p style="margin-top:0.8rem;"><a href="pageEditor_ST2.html#splash-page">&larr; Back to Page Editor: Splash Screen</a></p>
+    </section>
+
+    <section id="ais" class="editor-section">
+        <h2>Action Impact Simulator &mdash; ais.html</h2>
+        <table class="editor-table">
+            <tbody>
+                <tr><th>Page checked</th><td>ais.html</td></tr>
+                <tr><th>Tool</th><td>W3C Nu Html Checker (validator.w3.org/nu/)</td></tr>
+                <tr><th>Result</th><td><strong style="color:#147A45;">Pass &mdash; 0 errors, 0 warnings</strong></td></tr>
+            </tbody>
+        </table>
+        <p><strong>Note:</strong> An earlier draft used <code>role="button"</code> and <code>aria-pressed</code>
+            on each <code>&lt;article&gt;</code> action card. The validator correctly rejected this &mdash; the
+            ARIA button role doesn't permit a heading (<code>&lt;h3&gt;</code>) as a descendant. Fixed by
+            removing the button role and announcing selection state via a dynamic <code>aria-label</code>
+            instead, keeping <code>tabindex="0"</code> for keyboard access.</p>
+        <p style="margin-top:0.8rem;"><a href="pageEditor_ST2.html#ais-page">&larr; Back to Page Editor: Action Impact Simulator</a></p>
+    </section>
+
+    <section id="content" class="editor-section">
+        <h2>Content Page &mdash; content_ST2.html</h2>
+        <table class="editor-table">
+            <tbody>
+                <tr><th>Page checked</th><td>content_ST2.html</td></tr>
+                <tr><th>Tool</th><td>W3C Nu Html Checker (validator.w3.org/nu/)</td></tr>
+                <tr><th>Result</th><td><strong style="color:#147A45;">Pass &mdash; 0 errors, 0 warnings</strong></td></tr>
+            </tbody>
+        </table>
+        <p style="margin-top:0.8rem;"><a href="pageEditor_ST2.html#content-page">&larr; Back to Page Editor: Content Page</a></p>
+    </section>
+
+    <section id="reflection" class="editor-section">
+        <h2>Reflection on the Validation Process</h2>
+        <p>
+            The meta-refresh tag on the Splash Screen initially failed validation with
+            <code>content="4;url=home.html"</code> &mdash; the validator expects a space after the semicolon
+            (<code>content="4; url=home.html"</code>). A small syntax detail, but one that would have silently
+            broken the redirect in stricter browsers.
+        </p>
+        <p>
+            The AIS page's ARIA button issue (described above) was the more instructive fix: it's a reminder
+            that ARIA roles come with real content restrictions, not just visual/behavioural implications.
+        </p>
+    </section>
+
+    <footer style="margin-top:2rem; padding-top:1rem; border-top:1px solid #DCE3ED; font-size:0.85rem; color:#52606D;">
+        <p><a href="pageEditor_ST2.html">&larr; Back to Page Editor</a></p>
+        <p>[Student 2 Name] &middot; Student 2 &middot; ID [Student ID]</p>
+    </footer>
+
+    <a href="#top" class="back-to-top-editor">&uarr; Top</a>
 </body>
 </html>

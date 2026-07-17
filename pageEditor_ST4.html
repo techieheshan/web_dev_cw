@@ -3,12 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrightPath | Page Editor ST4</title>
-    <link rel="stylesheet" href="style.css">
+    <title>BrightPath | Page Editor &mdash; Student 4</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/pageEditor_validator.css">
 </head>
-<body>
-    <header></header>
-    <!-- Content goes here -->
+<body id="top">
+    <header class="editor-header">
+        <h1>Page Editor &mdash; Student 4</h1>
+        <p>BrightPath &middot; UN SDG 4, Quality Education &middot; University of Westminster group coursework</p>
+    </header>
+
+    <div class="editor-warning">
+        <strong>&#9888; Draft notice:</strong> Sections marked <span class="dummy-flag">Placeholder</span> below
+        (name/ID, the meeting log, and parts of the challenges/references sections) need to be filled in with
+        real information before submission. The technical write-ups reflect the pages as actually built.
+    </div>
+
+    <div class="student-card">
+        <div><strong>Name</strong>[Student 4 Name]</div>
+        <div><strong>Student ID</strong>[Student ID]</div>
+        <div><strong>Role</strong>User Profile, Sitemap</div>
+        <div><strong>Group Website</strong>BrightPath &mdash; SDG 4, Quality Education</div>
+    </div>
+
+    <nav class="editor-toc" aria-label="Page Editor contents">
+        <h2>Contents</h2>
+        <ol>
+            <li><a href="#completed-tasks">Completed Pages / Tasks</a></li>
+            <li><a href="#profile-page">User Profile</a></li>
+            <li><a href="#sitemap-page">Sitemap</a></li>
+            <li><a href="#content-page">Content Page</a></li>
+            <li><a href="#links-validation">Links &amp; Validation</a></li>
+            <li><a href="#challenges">Challenges &amp; Lessons Learned</a></li>
+            <li><a href="#accessibility">Accessibility Considerations</a></li>
+            <li><a href="#janet">Compliance with JANET Regulations</a></li>
+            <li><a href="#meetings">Group Meetings &amp; Contribution Log</a></li>
+            <li><a href="#references">References</a></li>
+        </ol>
+    </nav>
+
+    <section id="completed-tasks" class="editor-section">
+        <h2>Completed Pages / Tasks</h2>
+        <ul>
+            <li>User Profile (<code>profile.html</code>, <code>css/profile.css</code>, <code>js/profile.js</code>)</li>
+            <li>Sitemap (<code>sitemap.html</code>, <code>css/sitemap.css</code>)</li>
+            <li>Content Page &mdash; "Lifelong Skills for the Future" (<code>content_ST4.html</code>)</li>
+            <li>This Page Editor and the accompanying Validation Page</li>
+        </ul>
+    </section>
+
+    <section id="profile-page" class="editor-section">
+        <h2>User Profile</h2>
+        <h3>HTML Structure</h3>
+        <p>
+            No HTML form at all, per the spec &mdash; instead, a control area (Start/Continue, Reset, and three
+            "revisit step" buttons), a progress bar, and an empty <code>&lt;div id="profileOutput"&gt;</code>
+            that JavaScript populates as the user answers prompts.
+        </p>
+        <h3>CSS Techniques</h3>
+        <p>
+            The progress bar is a nested-div track/fill pattern where the fill's <code>width</code> percentage
+            is set directly by JavaScript. Step buttons gain a <code>.step-complete</code> class once visited,
+            changing their border colour so the user can see at a glance which steps still need attention.
+        </p>
+        <h3>JavaScript Logic</h3>
+        <p>
+            Step and prompt definitions live in a <code>STEPS</code> array of objects (three steps, three
+            prompts each). A <code>runStep()</code> function loops through a step's prompts calling
+            <code>window.prompt()</code> for each; a blank response or Cancel is stored as <code>null</code> and
+            treated as "skipped" rather than as an error. <code>profileData</code> is a plain object keyed by
+            step number that accumulates answers across visits. <code>renderProfile()</code> clears and rebuilds
+            the output area from <code>profileData</code> using <code>createElement</code>/<code>textContent</code>
+            (DOM manipulation, not <code>innerHTML</code> string-building, for the actual field values) every
+            time it's called, and <code>updateProgress()</code> recalculates the percentage from how many
+            non-null answers exist. Any step can be revisited via its button at any time, which lets a user go
+            back and fill in something they skipped earlier &mdash; both the profile output and the progress bar
+            update immediately.
+        </p>
+        <p><a href="profile.html" target="_blank" rel="noopener">Open the live User Profile Page &rarr;</a> &middot;
+            <a href="validation_ST4.html#profile">See its validation evidence &rarr;</a></p>
+    </section>
+
+    <section id="sitemap-page" class="editor-section">
+        <h2>Sitemap</h2>
+        <h3>HTML Structure</h3>
+        <p>
+            A single inline <code>&lt;svg viewBox="0 0 1200 470"&gt;</code> containing one <code>&lt;a
+            href="..."&gt;</code> element per page (each wrapping a <code>&lt;rect&gt;</code> and
+            <code>&lt;text&gt;</code>, plus a <code>&lt;title&gt;</code> for its accessible name), and a set of
+            <code>&lt;line&gt;</code> elements showing the parent/child relationships between Home and every
+            other page.
+        </p>
+        <h3>CSS Techniques</h3>
+        <p>
+            <code>viewBox</code> combined with <code>width: 100%; height: auto;</code> in CSS makes the whole
+            diagram scale proportionally at any screen size without JavaScript. Hover/focus states are handled
+            with plain CSS selectors (<code>.site-node:hover .node-box</code>) since SVG <code>&lt;a&gt;</code>
+            elements with an <code>href</code> are natively part of the tab order in modern browsers.
+        </p>
+        <h3>Design Rationale</h3>
+        <p>
+            Every page in the site is represented as its own node rather than grouping them, so the diagram
+            doubles as an accurate, literal map of the site rather than a simplified illustration.
+        </p>
+        <p><a href="sitemap.html" target="_blank" rel="noopener">Open the live Sitemap Page &rarr;</a> &middot;
+            <a href="validation_ST4.html#sitemap">See its validation evidence &rarr;</a></p>
+    </section>
+
+    <section id="content-page" class="editor-section">
+        <h2>Content Page &mdash; "Lifelong Skills for the Future"</h2>
+        <h3>HTML Structure</h3>
+        <p>
+            One <code>&lt;h1&gt;</code> and four <code>&lt;h2&gt;</code> sections, linked from a simple top
+            navigation list, using the same shared <code>css/content.css</code> as Students 2 and 3.
+        </p>
+        <h3>Design Rationale</h3>
+        <p>
+            Focuses on the skills a fixed curriculum doesn't teach directly, connecting to the Home Page's
+            fourth focus-area card.
+        </p>
+        <p><a href="content_ST4.html" target="_blank" rel="noopener">Open the live Content Page &rarr;</a> &middot;
+            <a href="validation_ST4.html#content">See its validation evidence &rarr;</a></p>
+    </section>
+
+    <section id="links-validation" class="editor-section">
+        <h2>Links &amp; Validation Summary</h2>
+        <table class="editor-table">
+            <thead>
+                <tr><th>Page</th><th>Live Page</th><th>Validation Evidence</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>User Profile</td><td><a href="profile.html" target="_blank" rel="noopener">profile.html</a></td><td><a href="validation_ST4.html#profile">Validation &rarr;</a></td></tr>
+                <tr><td>Sitemap</td><td><a href="sitemap.html" target="_blank" rel="noopener">sitemap.html</a></td><td><a href="validation_ST4.html#sitemap">Validation &rarr;</a></td></tr>
+                <tr><td>Content Page</td><td><a href="content_ST4.html" target="_blank" rel="noopener">content_ST4.html</a></td><td><a href="validation_ST4.html#content">Validation &rarr;</a></td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="challenges" class="editor-section">
+        <h2>Challenges &amp; Lessons Learned</h2>
+        <div class="dummy-block">
+            <span class="dummy-flag">Placeholder &mdash; rewrite in your own words</span>
+            <ul>
+                <li>Working out how to represent "skipped" prompts clearly in both the profile output and the
+                    progress percentage, instead of just ignoring them silently.</li>
+                <li>Positioning 12 SVG nodes and their connecting lines by hand so the diagram stayed readable
+                    without overlapping labels.</li>
+                <li>Making sure the SVG sitemap was still fully keyboard-navigable, not just clickable with a
+                    mouse.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="accessibility" class="editor-section">
+        <h2>Accessibility Considerations</h2>
+        <ul>
+            <li><strong>Text alternatives on every SVG node</strong> via a <code>&lt;title&gt;</code> element
+                giving each link an accessible name beyond its visible label.</li>
+            <li><strong>Keyboard navigation</strong> through the sitemap using native SVG <code>&lt;a
+                href&gt;</code> tab order, with a visible <code>:focus</code> outline.</li>
+            <li><strong>Live-updating progress</strong> on the Profile page is reflected in visible text
+                (the percentage and prompt count), not colour alone.</li>
+        </ul>
+    </section>
+
+    <section id="janet" class="editor-section">
+        <h2>Compliance with JANET Regulations</h2>
+        <div class="dummy-block">
+            <span class="dummy-flag">Draft &mdash; check wording against your module handbook</span>
+            <p>
+                The User Profile page collects information only into browser memory via
+                <code>prompt()</code> &mdash; nothing is transmitted, stored server-side, or shared, so there is
+                no personal-data handling concern. All content is original.
+            </p>
+        </div>
+    </section>
+
+    <section id="meetings" class="editor-section">
+        <h2>Group Meetings &amp; Individual Contribution Log</h2>
+        <div class="dummy-block">
+            <span class="dummy-flag">Placeholder &mdash; replace every row with a real meeting</span>
+            <table class="meeting-table">
+                <thead>
+                    <tr><th>#</th><th>Date &amp; Time</th><th>Format</th><th>Objective</th><th>Attended</th><th>Your Individual Contribution</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>[DATE]</td><td>[FORMAT]</td><td>[OBJECTIVE]</td><td>[Yes/No]</td><td>[CONTRIBUTION]</td></tr>
+                    <tr><td>2</td><td>[DATE]</td><td>[FORMAT]</td><td>[OBJECTIVE]</td><td>[Yes/No]</td><td>[CONTRIBUTION]</td></tr>
+                    <tr><td>3</td><td>[DATE]</td><td>[FORMAT]</td><td>[OBJECTIVE]</td><td>[Yes/No]</td><td>[CONTRIBUTION]</td></tr>
+                    <tr><td>4</td><td>[DATE]</td><td>[FORMAT]</td><td>[OBJECTIVE]</td><td>[Yes/No]</td><td>[CONTRIBUTION]</td></tr>
+                    <tr><td>5</td><td>[DATE]</td><td>[FORMAT]</td><td>[OBJECTIVE]</td><td>[Yes/No]</td><td>[CONTRIBUTION]</td></tr>
+                    <tr><td>6</td><td>[DATE]</td><td>[FORMAT]</td><td>[OBJECTIVE]</td><td>[Yes/No]</td><td>[CONTRIBUTION]</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="references" class="editor-section">
+        <h2>References</h2>
+        <ul>
+            <li>Pexels contributors (various), Content Page photographs, Pexels, used under the Pexels licence.</li>
+            <li>Google Fonts, "Poppins" and "Inter" typefaces, used under the SIL Open Font Licence.</li>
+            <li>Mozilla Developer Network (MDN Web Docs), referenced for SVG <code>&lt;a&gt;</code>/accessibility patterns and the <code>prompt()</code> API.</li>
+        </ul>
+        <div class="dummy-block" style="margin-top:0.8rem;">
+            <span class="dummy-flag">Placeholder</span>
+            <p>[Add any lecture slides, seminar handouts, or specific tutorials you personally consulted.]</p>
+        </div>
+    </section>
+
+    <a href="#top" class="back-to-top-editor">&uarr; Top</a>
 </body>
 </html>

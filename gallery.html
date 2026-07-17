@@ -6,186 +6,83 @@
     <title>BrightPath | Gallery</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
-    <!-- Page-specific embedded CSS (Gallery Page only) -->
-    <style>
-        /* Gallery-page-only: thumbnail grid */
-        .thumb-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        /* Gallery-page-only: thumbnail card + hover feedback (visual only, JS handles the interaction) */
-        .thumb {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            cursor: pointer;
-            background: white;
-            box-shadow: 0 4px 10px rgba(11, 37, 69, 0.1);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        /* Toggled by JS (mouseenter/mouseleave/focus/blur), not a plain :hover rule */
-        .thumb.thumb-hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 20px rgba(11, 37, 69, 0.18);
-        }
-        .thumb img {
-            width: 100%;
-            height: 190px;
-            object-fit: cover;
-            display: block;
-        }
-        .thumb-title {
-            display: block;
-            padding: 0.8rem;
-            font-weight: 600;
-            color: var(--secondary-color);
-        }
-
-        /* Gallery-page-only: the extended-view modal */
-        .modal {
-            position: fixed;
-            inset: 0;
-            background: rgba(11, 37, 69, 0.75);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1.5rem;
-            z-index: 50;
-        }
-        .modal.hidden {
-            display: none;
-        }
-        .modal-content {
-            background: white;
-            border-radius: 14px;
-            max-width: 520px;
-            width: 100%;
-            max-height: 85vh;
-            overflow-y: auto;
-            padding: 1.5rem;
-            position: relative;
-        }
-        .modal-content img {
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-        }
-        .modal-close {
-            position: absolute;
-            top: 0.8rem;
-            right: 0.8rem;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            border: none;
-            background: var(--neutral-color);
-            color: var(--secondary-color);
-            font-size: 1.2rem;
-            line-height: 1;
-            cursor: pointer;
-        }
-        .modal-controls {
-            display: flex;
-            gap: 0.75rem;
-            margin-top: 1.2rem;
-        }
-        .btn-mini {
-            font-family: 'Source Sans 3', Arial, sans-serif;
-            font-size: 0.8rem;
-            font-weight: 600;
-            padding: 0.5rem 1rem;
-            border-radius: 999px;
-            border: 1px solid var(--border-color);
-            background: white;
-            color: var(--secondary-color);
-            cursor: pointer;
-        }
-
-        /* User customisation options, scoped to the extended view only */
-        .modal-content.alt-color {
-            background: var(--secondary-color);
-            color: white;
-        }
-        .modal-content.alt-color h3 {
-            color: white;
-        }
-        .modal-content.alt-color .modal-close {
-            background: rgba(255, 255, 255, 0.15);
-            color: white;
-        }
-        .modal-content.alt-font,
-        .modal-content.alt-font h3,
-        .modal-content.alt-font p {
-            font-family: 'Fraunces', Georgia, serif;
-        }
-    </style>
+    <!-- Page-specific CSS for the Gallery Page only, kept in its own external file (allowed by spec as an
+         alternative to an embedded <style> block) so it stays fully separate from the Global CSS -->
+    <link rel="stylesheet" href="css/gallery.css">
 </head>
 <body>
     <!-- DO NOT MODIFY: header, nav, and footer structure below -->
     <header>
-        <div class="logo">
-            <a href="home.html" class="logo-mark">
-                <img src="images/BrightPathlogo.png" alt="BrightPath Logo">
-            </a>
-            <a href="home.html" class="logo-text">
-                <span class="logo-name">Bright Path</span>
-                <span class="logo-tagline">Learn &middot; Grow &middot; Succeed</span>
-            </a>
+        <div class="utility-bar">
+            <span>UN SDG 4 &middot; Quality Education</span>
+            <a href="#">Accessibility &amp; Compliance</a>
         </div>
-        <nav>
-            <a href="home.html">Home</a>
-            <a href="ais.html">Action Simulation</a>
-            <a href="gallery.html" class="active">Gallery</a>
-            <a href="profile.html">Profile</a>
-            <a href="feedback.html">Feedback</a>
-            <a href="team.html">Team</a>
-            <a href="sitemap.html">Site Map</a>
-        </nav>
+        <div class="main-nav">
+            <nav class="nav-group nav-left">
+                <a href="home.html">Home</a>
+                <a href="gallery.html" class="active">Gallery</a>
+                <a href="team.html">Team</a>
+            </nav>
+            <a href="home.html" class="logo">
+                <span class="logo-mark">
+                    <img src="images/BrightPathlogo.png" alt="BrightPath Logo">
+                </span>
+                <span class="logo-text">
+                    <span class="logo-name">BrightPath</span>
+                    <span class="logo-tagline">Learn &middot; Grow &middot; Succeed</span>
+                </span>
+            </a>
+            <nav class="nav-group nav-right">
+                <a href="profile.html">Profile</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="sitemap.html">Sitemap</a>
+            </nav>
+            <a href="ais.html" class="btn nav-cta">Take Action &rarr;</a>
+        </div>
     </header>
     <main>
         <span class="eyebrow-plain">Gallery</span>
-        <h1>Moments from the movement</h1>
-        <p class="hero-lede" style="max-width:65ch;margin-bottom:1.5rem;">A closer look at what quality education
-            in action actually looks like. Click any photo for the full story.</p>
+        <h1>A few moments that stuck with us</h1>
+        <p class="hero-lede" style="max-width:65ch;margin-bottom:1.5rem;">
+            These are some of the real scenes that got us thinking about this SDG in the first place.
+            Click any photo for the full story behind it.
+        </p>
 
+        <h2 class="eyebrow-plain" style="font-size:0.78rem;">Photo Highlights</h2>
         <div class="thumb-grid">
-            <div class="thumb" tabindex="0" role="button" aria-label="Open: Reading Together"
-                data-title="Reading Together"
-                data-desc="A public library reading session. Access to a quiet, well-stocked space to read is one of the simplest but most unequal parts of education worldwide."
-                data-img="images/card1-library-reading.jpg">
-                <img src="images/card1-library-reading.jpg" alt="Students reading together in a public library">
-                <span class="thumb-title">Reading Together</span>
+            <div class="thumb" tabindex="0" role="button" aria-label="Open: Respect, Passed Down"
+                data-title="Respect, Passed Down"
+                data-desc="School children in Sri Lanka taking part in a community procession. Half of what keeps a community's education culture alive isn't in a classroom at all &mdash; it's moments like this, passed down rather than taught."
+                data-img="images/gallery1-procession-a.jpg">
+                <img src="images/gallery1-procession-a.jpg" alt="Sri Lankan school children in white uniforms taking part in a community procession">
+                <span class="thumb-title">Respect, Passed Down</span>
             </div>
 
-            <div class="thumb" tabindex="0" role="button" aria-label="Open: Learning Side by Side"
-                data-title="Learning Side by Side"
-                data-desc="Volunteers running an informal English and literacy session. Community-led teaching like this often reaches learners that formal systems miss."
-                data-img="images/card2-mentoring.jpg">
-                <img src="images/card2-mentoring.jpg"
-                    alt="Volunteers teaching children as part of a community learning programme">
-                <span class="thumb-title">Learning Side by Side</span>
+            <div class="thumb" tabindex="0" role="button" aria-label="Open: Showing Up Together"
+                data-title="Showing Up Together"
+                data-desc="Same uniforms, same street, all showing up for the same thing. It's a small reminder that education isn't just an individual effort &mdash; it's a community one."
+                data-img="images/gallery2-procession-b.jpg">
+                <img src="images/gallery2-procession-b.jpg" alt="Sri Lankan school children in white uniforms gathered together">
+                <span class="thumb-title">Showing Up Together</span>
             </div>
 
-            <div class="thumb" tabindex="0" role="button" aria-label="Open: Milestones Worth Celebrating"
-                data-title="Milestones Worth Celebrating"
-                data-desc="Graduation day. Every diploma represents years of support &mdash; family, teachers, and peers &mdash; that made the finish line possible."
-                data-img="images/card3-graduation.jpg">
-                <img src="images/card3-graduation.jpg" alt="University students celebrating their graduation">
-                <span class="thumb-title">Milestones Worth Celebrating</span>
+            <div class="thumb" tabindex="0" role="button" aria-label="Open: The Digital Half of the Gap"
+                data-title="The Digital Half of the Gap"
+                data-desc="Access isn't just about books anymore &mdash; it's also about who gets a working computer and who doesn't. We couldn't confirm this exact photo was taken in Sri Lanka, but the gap it shows is one we see here too."
+                data-img="images/gallery3-computer-lab.jpg">
+                <img src="images/gallery3-computer-lab.jpg" alt="Students learning together in a school computer lab">
+                <span class="thumb-title">The Digital Half of the Gap</span>
             </div>
 
-            <div class="thumb" tabindex="0" role="button" aria-label="Open: Tools for Tomorrow"
-                data-title="Tools for Tomorrow"
-                data-desc="Hands-on technology education. Closing the digital divide means giving students real tools to build with, not just theory."
-                data-img="images/hero-digital-learning.jpg">
-                <img src="images/hero-digital-learning.jpg" alt="Students building a small robotics project">
-                <span class="thumb-title">Tools for Tomorrow</span>
+            <div class="thumb" tabindex="0" role="button" aria-label="Open: The Best Study Spot Isn't a Desk"
+                data-title="The Best Study Spot Isn't a Desk"
+                data-desc="Not every student has a quiet room to study in, and honestly, they shouldn't need one. A patch of sunlight and a borrowed book can be enough &mdash; if someone made sure the book was there to borrow."
+                data-img="images/gallery4-reading-outdoors.jpg">
+                <img src="images/gallery4-reading-outdoors.jpg" alt="A student reading a book outdoors in the sunlight">
+                <span class="thumb-title">The Best Study Spot Isn't a Desk</span>
             </div>
         </div>
     </main>
@@ -194,7 +91,7 @@
     <div id="galleryModal" class="modal hidden">
         <div class="modal-content">
             <button id="modalClose" class="modal-close" aria-label="Close">&times;</button>
-            <img id="modalImg" src="" alt="">
+            <img id="modalImg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBTAA7" alt="">
             <h3 id="modalTitle"></h3>
             <p id="modalDesc"></p>
             <div class="modal-controls">
@@ -207,15 +104,15 @@
     <footer>
         <div class="footer-main">
             <div class="footer-col footer-brand">
-                <div class="logo">
-                    <a href="home.html" class="logo-mark">
+                <a href="home.html" class="logo">
+                    <span class="logo-mark">
                         <img src="images/BrightPathlogo.png" alt="BrightPath Logo">
-                    </a>
-                    <a href="home.html" class="logo-text">
-                        <span class="logo-name">Bright Path</span>
+                    </span>
+                    <span class="logo-text">
+                        <span class="logo-name">BrightPath</span>
                         <span class="logo-tagline">Learn &middot; Grow &middot; Succeed</span>
-                    </a>
-                </div>
+                    </span>
+                </a>
                 <p>A student-led website for UN SDG 4 &mdash; Quality Education.</p>
             </div>
             <div class="footer-col">
@@ -241,81 +138,12 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <span>&copy; 2026 Bright Path &middot; University of Westminster group coursework</span>
+            <span>&copy; 2026 BrightPath &middot; University of Westminster group coursework</span>
             <span>Compliant with JANET regulations</span>
         </div>
     </footer>
 
-    <script>
-        // Gallery interactivity: hover is CSS, but click-to-expand and close are JavaScript-driven (required by spec).
-        const thumbs = document.querySelectorAll('.thumb');
-        const modal = document.getElementById('galleryModal');
-        const modalContent = modal.querySelector('.modal-content');
-        const modalImg = document.getElementById('modalImg');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalDesc = document.getElementById('modalDesc');
-
-        function openModal(thumb) {
-            modalImg.src = thumb.dataset.img;
-            modalImg.alt = thumb.dataset.title;
-            modalTitle.textContent = thumb.dataset.title;
-            modalDesc.textContent = thumb.dataset.desc;
-            modal.classList.remove('hidden');
-        }
-
-        function closeModal() {
-            modal.classList.add('hidden');
-        }
-
-        thumbs.forEach(function (thumb) {
-            thumb.addEventListener('click', function () {
-                openModal(thumb);
-            });
-            // Keyboard accessibility: Enter or Space also opens the extended view
-            thumb.addEventListener('keydown', function (e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    openModal(thumb);
-                }
-            });
-            // Hover interaction handled via JS event listeners (not a CSS :hover rule)
-            thumb.addEventListener('mouseenter', function () {
-                thumb.classList.add('thumb-hover');
-            });
-            thumb.addEventListener('mouseleave', function () {
-                thumb.classList.remove('thumb-hover');
-            });
-            thumb.addEventListener('focus', function () {
-                thumb.classList.add('thumb-hover');
-            });
-            thumb.addEventListener('blur', function () {
-                thumb.classList.remove('thumb-hover');
-            });
-        });
-
-        document.getElementById('modalClose').addEventListener('click', closeModal);
-
-        // Close when clicking the dark overlay outside the modal box
-        modal.addEventListener('click', function (e) {
-            if (e.target === modal) {
-                closeModal();
-            }
-        });
-
-        // Close on Escape key
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-                closeModal();
-            }
-        });
-
-        // User customisation: colour scheme and font style toggles, scoped to the extended view only
-        document.getElementById('toggleColor').addEventListener('click', function () {
-            modalContent.classList.toggle('alt-color');
-        });
-        document.getElementById('toggleFont').addEventListener('click', function () {
-            modalContent.classList.toggle('alt-font');
-        });
-    </script>
+    <script src="js/gallery.js"></script>
+    <script src="js/navbar.js"></script>
 </body>
 </html>

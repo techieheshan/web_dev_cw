@@ -3,82 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrightPath | Validation &mdash; Student 3</title>
+    <title>Validator Page Student - Maneesha Manodhara Ramanayake</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/pageEditor_validator.css">
 </head>
 <body id="top">
-    <header class="editor-header">
-        <h1>Validation Page &mdash; Student 3</h1>
-        <p>HTML validation evidence for Feedback &amp; Programme Directory, Team, and Content Page (content_ST3.html)</p>
+
+    <header>
+        <div class="utility-bar">
+            <span>UN SDG 4 &middot; Quality Education</span>
+            <a href="pageEditor_ST1.html#accessibility">Accessibility &amp; Compliance</a>
+        </div>
+        <div class="main-nav">
+            <nav class="nav-group nav-left">
+                <a href="home.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="team.html">Team</a>
+            </nav>
+            <a href="home.html" class="logo">
+                <span class="logo-mark">
+                    <img src="images/BrightPathlogo.png" alt="BrightPath Logo">
+                </span>
+                <span class="logo-text">
+                    <span class="logo-name">BrightPath</span>
+                    <span class="logo-tagline">Learn &middot; Grow &middot; Succeed</span>
+                </span>
+            </a>
+            <nav class="nav-group nav-right">
+                <a href="profile.html">Profile</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="sitemap.html">Sitemap</a>
+            </nav>
+            <a href="ais.html" class="btn nav-cta">Take Action &rarr;</a>
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </header>
 
-    <div class="editor-warning">
-        <strong>How this evidence was produced:</strong> Each page was checked using the official
-        <a href="https://validator.w3.org/nu/" target="_blank" rel="noopener">W3C Nu Html Checker</a> against
-        the page's <strong>live, publicly deployed URL</strong> on Vercel (not just a local file), confirming
-        the site markers will actually see is the one that validates clean. Re-checked most recently on 17 July
-        2026. Results below are reproduced exactly as returned.
+    <section class="stud">
+        <h2>Maneesha Manodhara Ramanayake, BrightPath, Student 3 (Feedback &amp; Programme Directory, Team)</h2>
+    </section>
+
+    <div class="container">
+        <main>
+
+            <h1>Validation Page &mdash; Student 3</h1>
+
+            <section>
+                <h2 id="feedback">Feedback &amp; Programme Directory validation report</h2>
+                <p>Checked with the official W3C Nu Html Checker (validator.w3.org/nu/), file upload method.
+                    Result: Pass &mdash; 0 errors, 0 warnings.</p>
+                <img src="validationSnapshots/feedback_vali.png" alt="W3C Nu Html Checker screenshot for feedback.html showing 'Document checking completed. No errors or warnings to show.'">
+
+                <h3>Back to Page Editor page</h3>
+                <p><a href="pageEditor_ST3.html#feedback">Go to Feedback Page section in Page Editor</a></p>
+            </section>
+
+            <section>
+                <h2 id="team">Team Page validation report</h2>
+                <p>Checked with the official W3C Nu Html Checker, file upload method. Result: Pass &mdash; 0
+                    errors, 0 warnings. The first draft went straight from the page's &lt;h1&gt; to &lt;h3&gt;
+                    team-member names with no &lt;h2&gt; in between, which the validator flagged as a
+                    heading-level skip. Fixed by adding a "Meet the Team" &lt;h2&gt; above the team grid.</p>
+                <p><strong>[PLACEHOLDER &mdash; screenshot needs redoing]</strong> A screenshot was provided
+                    for this page, but its results banner still read "feedback.html" even though team.html was
+                    selected in the file chooser, meaning Check was never re-run on the new file, so it isn't
+                    valid evidence. Please re-check team.html and take a fresh screenshot once the results
+                    banner actually says team.html.</p>
+
+                <h3>Back to Page Editor page</h3>
+                <p><a href="pageEditor_ST3.html#team">Go to Team Page section in Page Editor</a></p>
+            </section>
+
+            <section>
+                <h2 id="content">Content Page validation report</h2>
+                <p>Checked with the official W3C Nu Html Checker, file upload method. Result: Pass &mdash; 0
+                    errors, 0 warnings.</p>
+                <p><strong>[PLACEHOLDER &mdash; screenshot needs redoing]</strong> Same issue as the Team page
+                    above: the provided screenshot's results banner still read "feedback.html" even though
+                    content_ST3.html was selected in the file chooser. Please re-check content_ST3.html and
+                    take a fresh screenshot once the results banner actually says content_ST3.html.</p>
+
+                <h3>Back to Page Editor page</h3>
+                <p><a href="pageEditor_ST3.html#content">Go to Content Page section in Page Editor</a></p>
+            </section>
+
+            <p class="top"><a href="#top">Go top</a></p>
+        </main>
+
+        <aside>
+            <h3>Core pages developed:</h3>
+
+            <ul class="top-level-ul">
+                <li>Student 1</li>
+                <ul>
+                    <li><a href="pageEditor_ST1.html#home">Home page</a></li>
+                    <li><a href="pageEditor_ST1.html#gallery">Gallery</a></li>
+                    <li><a href="pageEditor_ST1.html#content">Content</a></li>
+                </ul>
+                <li>Student 2</li>
+                <ul>
+                    <li><a href="pageEditor_ST2.html#splash">Splash Screen</a></li>
+                    <li><a href="pageEditor_ST2.html#ais">Action Impact Simulator</a></li>
+                    <li><a href="pageEditor_ST2.html#content">Content</a></li>
+                </ul>
+                <li>Student 3</li>
+                <ul>
+                    <li><a href="#feedback">Feedback</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#content">Content</a></li>
+                </ul>
+                <li>Student 4</li>
+                <ul>
+                    <li><a href="pageEditor_ST4.html#profile">User Profile</a></li>
+                    <li><a href="pageEditor_ST4.html#sitemap">Sitemap</a></li>
+                    <li><a href="pageEditor_ST4.html#content">Content</a></li>
+                </ul>
+            </ul>
+        </aside>
     </div>
 
-    <section id="feedback" class="editor-section">
-        <h2>Feedback &amp; Programme Directory &mdash; feedback.html</h2>
-        <table class="editor-table">
-            <tbody>
-                <tr><th>Page checked</th><td><a href="https://brightpath-one.vercel.app/feedback.html" target="_blank" rel="noopener">brightpath-one.vercel.app/feedback.html</a></td></tr>
-                <tr><th>Tool</th><td>W3C Nu Html Checker (validator.w3.org/nu/)</td></tr>
-                <tr><th>Result</th><td><strong style="color:#147A45;">Pass &mdash; 0 errors, 0 warnings</strong></td></tr>
-            </tbody>
-        </table>
-        <p style="margin-top:0.8rem;"><a href="pageEditor_ST3.html#feedback-page">&larr; Back to Page Editor: Feedback Page</a></p>
-    </section>
-
-    <section id="team" class="editor-section">
-        <h2>Team Page &mdash; team.html</h2>
-        <table class="editor-table">
-            <tbody>
-                <tr><th>Page checked</th><td><a href="https://brightpath-one.vercel.app/team.html" target="_blank" rel="noopener">brightpath-one.vercel.app/team.html</a></td></tr>
-                <tr><th>Tool</th><td>W3C Nu Html Checker (validator.w3.org/nu/)</td></tr>
-                <tr><th>Result</th><td><strong style="color:#147A45;">Pass &mdash; 0 errors, 0 warnings</strong></td></tr>
-            </tbody>
-        </table>
-        <p><strong>Note:</strong> The first draft went straight from the page's <code>&lt;h1&gt;</code> to
-            <code>&lt;h3&gt;</code> team-member names with no <code>&lt;h2&gt;</code> in between, which the
-            validator flagged as a heading-level skip. Fixed by adding a "Meet the Team" <code>&lt;h2&gt;</code>
-            above the team grid.</p>
-        <p style="margin-top:0.8rem;"><a href="pageEditor_ST3.html#team-page">&larr; Back to Page Editor: Team Page</a></p>
-    </section>
-
-    <section id="content" class="editor-section">
-        <h2>Content Page &mdash; content_ST3.html</h2>
-        <table class="editor-table">
-            <tbody>
-                <tr><th>Page checked</th><td><a href="https://brightpath-one.vercel.app/content_ST3.html" target="_blank" rel="noopener">brightpath-one.vercel.app/content_ST3.html</a></td></tr>
-                <tr><th>Tool</th><td>W3C Nu Html Checker (validator.w3.org/nu/)</td></tr>
-                <tr><th>Result</th><td><strong style="color:#147A45;">Pass &mdash; 0 errors, 0 warnings</strong></td></tr>
-            </tbody>
-        </table>
-        <p style="margin-top:0.8rem;"><a href="pageEditor_ST3.html#content-page">&larr; Back to Page Editor: Content Page</a></p>
-    </section>
-
-    <section id="reflection" class="editor-section">
-        <h2>Reflection on the Validation Process</h2>
-        <p>
-            The heading-order error on the Team page was the same category of mistake that showed up on
-            several other pages across the site: it's easy to reach for a smaller heading tag purely because it
-            "looks right" visually, without checking it against the actual document outline. Adding a
-            deliberate <code>&lt;h2&gt;</code> before any <code>&lt;h3&gt;</code> content fixed it every time it
-            came up.
-        </p>
-    </section>
-
-    <footer style="margin-top:2rem; padding-top:1rem; border-top:1px solid #DCE3ED; font-size:0.85rem; color:#52606D;">
-        <p><a href="pageEditor_ST3.html">&larr; Back to Page Editor</a></p>
-        <p>Maneesha Manodhara Ramanayake &middot; Student 3 &middot; ID 20241434</p>
+    <footer>
+        <div class="footer-main">
+            <div class="footer-col footer-brand">
+                <a href="home.html" class="logo">
+                    <span class="logo-mark">
+                        <img src="images/BrightPathlogo.png" alt="BrightPath Logo">
+                    </span>
+                    <span class="logo-text">
+                        <span class="logo-name">BrightPath</span>
+                        <span class="logo-tagline">Learn &middot; Grow &middot; Succeed</span>
+                    </span>
+                </a>
+                <p>A student-led website for UN SDG 4 &mdash; Quality Education.</p>
+            </div>
+            <div class="footer-col">
+                <span class="footer-heading">Pages</span>
+                <a href="home.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="ais.html">Action Simulator</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="team.html">Team</a>
+                <a href="sitemap.html">Sitemap</a>
+            </div>
+            <div class="footer-col">
+                <span class="footer-heading">Page Owner</span>
+                <a href="pageEditor_ST3.html">Page Editor</a>
+                <a href="validation_ST3.html">Validation Page</a>
+                <a href="pageEditor_ST1.html#accessibility">Accessibility / Compliance</a>
+            </div>
+            <div class="footer-col">
+                <span class="footer-heading">Student</span>
+                <p>Maneesha Manodhara Ramanayake</p>
+                <p>Student 3 &middot; ID 20241434</p>
+                <p>Feedback &middot; Team</p>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/maneesha-manodhara-56a2b0320" target="_blank" rel="noopener" aria-label="Maneesha Manodhara Ramanayake on LinkedIn">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.34V9h3.42v1.56h.05c.48-.91 1.65-1.85 3.39-1.85 3.63 0 4.3 2.39 4.3 5.49v6.25zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+                    </a>
+                    <a href="https://github.com/ManeeshaRamanayake" target="_blank" rel="noopener" aria-label="Maneesha Manodhara Ramanayake on GitHub">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.19c0 4.49 2.87 8.3 6.84 9.64.5.1.68-.22.68-.49 0-.24-.01-1.03-.01-1.87-2.78.51-3.5-.7-3.72-1.34-.13-.33-.68-1.34-1.16-1.61-.4-.22-.97-.76-.01-.78.9-.01 1.55.85 1.76 1.2 1.03 1.76 2.68 1.26 3.34.96.1-.76.4-1.26.73-1.55-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.04 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.27 2.75 1.05a9.2 9.2 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.71 1.03 1.62 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.19C22 6.58 17.52 2 12 2z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 BrightPath &middot; University of Westminster group coursework</span>
+            <span>Compliant with JANET regulations</span>
+        </div>
     </footer>
-
-    <a href="#top" class="back-to-top-editor">&uarr; Top</a>
+    <script src="js/navbar.js"></script>
 </body>
+
 </html>

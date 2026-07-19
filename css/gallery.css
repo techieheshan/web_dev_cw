@@ -48,7 +48,7 @@
     align-items: center;
     justify-content: center;
     padding: 1.5rem;
-    z-index: 50;
+    z-index: 200;
 }
 .modal.hidden {
     display: none;

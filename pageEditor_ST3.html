@@ -3,221 +3,312 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrightPath | Page Editor &mdash; Student 3</title>
+    <title>Page Editor Student 3 - Maneesha Manodhara Ramanayake</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/pageEditor_validator.css">
 </head>
 <body id="top">
-    <header class="editor-header">
-        <h1>Page Editor &mdash; Student 3</h1>
-        <p>BrightPath &middot; UN SDG 4, Quality Education &middot; University of Westminster group coursework</p>
+
+    <header>
+        <div class="utility-bar">
+            <span>UN SDG 4 &middot; Quality Education</span>
+            <a href="pageEditor_ST1.html#accessibility">Accessibility &amp; Compliance</a>
+        </div>
+        <div class="main-nav">
+            <nav class="nav-group nav-left">
+                <a href="home.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="team.html">Team</a>
+            </nav>
+            <a href="home.html" class="logo">
+                <span class="logo-mark">
+                    <img src="images/BrightPathlogo.png" alt="BrightPath Logo">
+                </span>
+                <span class="logo-text">
+                    <span class="logo-name">BrightPath</span>
+                    <span class="logo-tagline">Learn &middot; Grow &middot; Succeed</span>
+                </span>
+            </a>
+            <nav class="nav-group nav-right">
+                <a href="profile.html">Profile</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="sitemap.html">Sitemap</a>
+            </nav>
+            <a href="ais.html" class="btn nav-cta">Take Action &rarr;</a>
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </header>
 
-    <div class="editor-warning">
-        <strong>&#9888; Draft notice:</strong> Sections marked <span class="dummy-flag">Placeholder</span> below
-        (name/ID, the meeting log, and parts of the challenges/references sections) need to be filled in with
-        real information before submission. The technical write-ups reflect the pages as actually built.
-    </div>
-
-    <div class="student-card">
-        <div><strong>Name</strong>Maneesha Manodhara Ramanayake</div>
-        <div><strong>Student ID</strong>20241434</div>
-        <div><strong>Role</strong>Feedback &amp; Programme Directory, Team</div>
-        <div><strong>Group Website</strong>BrightPath &mdash; SDG 4, Quality Education</div>
-    </div>
-
-    <nav class="editor-toc" aria-label="Page Editor contents">
-        <h2>Contents</h2>
-        <ol>
-            <li><a href="#completed-tasks">Completed Pages / Tasks</a></li>
-            <li><a href="#feedback-page">Feedback &amp; Programme Directory</a></li>
-            <li><a href="#team-page">Team Page</a></li>
-            <li><a href="#content-page">Content Page</a></li>
-            <li><a href="#links-validation">Links &amp; Validation</a></li>
-            <li><a href="#challenges">Challenges &amp; Lessons Learned</a></li>
-            <li><a href="#accessibility">Accessibility Considerations</a></li>
-            <li><a href="#janet">Compliance with JANET Regulations</a></li>
-            <li><a href="#meetings">Group Meetings &amp; Contribution Log</a></li>
-            <li><a href="#references">References</a></li>
-        </ol>
-    </nav>
-
-    <section id="completed-tasks" class="editor-section">
-        <h2>Completed Pages / Tasks</h2>
-        <ul>
-            <li>Feedback &amp; Programme Directory (<code>feedback.html</code>, <code>css/feedback.css</code>, <code>js/feedback.js</code>)</li>
-            <li>Team Page (<code>team.html</code>, <code>css/team.css</code>)</li>
-            <li>Content Page &mdash; "Community Learning Programs" (<code>content_ST3.html</code>)</li>
-            <li>This Page Editor and the accompanying Validation Page</li>
-        </ul>
+    <section class="stud">
+        <h2>Maneesha Manodhara Ramanayake, BrightPath, Student 3 (Feedback &amp; Programme Directory, Team)</h2>
     </section>
 
-    <section id="feedback-page" class="editor-section">
-        <h2>Feedback &amp; Programme Directory</h2>
-        <h3>HTML Structure</h3>
-        <p>
-            A scrollable row of <code>&lt;article class="program-card"&gt;</code> elements, a ratings summary,
-            three <code>&lt;article class="review-card"&gt;</code> elements, and a <code>&lt;form&gt;</code> split
-            into two <code>&lt;fieldset&gt;</code> groups ("Personal Details" and "Feedback Details") as the
-            spec requires. The form includes text, email, tel, date, datetime-local inputs, a textarea with
-            <code>maxlength</code>, and a <code>&lt;datalist&gt;</code> for searchable programme suggestions.
-        </p>
-        <h3>CSS Techniques</h3>
-        <p>
-            The programme directory uses <code>overflow-x: auto</code> on a flex row so it scrolls horizontally
-            without taking over the page, per the spec's "scrollable, not full-page" requirement. Form fields
-            use a consistent label-above-input pattern with a visible focus outline.
-        </p>
-        <h3>JavaScript Logic</h3>
-        <p>
-            A live character counter updates on every <code>input</code> event on the comment textarea.
-            Form submission is intercepted with <code>preventDefault()</code>, each required field is checked
-            individually (name presence, an email-format regex, comment presence), and errors are written into
-            a dedicated <code>&lt;span class="field-error"&gt;</code> next to each field rather than a single
-            generic alert. A success message appears and the form resets once validation passes.
-        </p>
-        <p><a href="feedback.html" target="_blank" rel="noopener">Open the live Feedback Page &rarr;</a> &middot;
-            <a href="validation_ST3.html#feedback">See its validation evidence &rarr;</a></p>
-    </section>
+    <div class="container">
+        <main>
 
-    <section id="team-page" class="editor-section">
-        <h2>Team Page</h2>
-        <h3>HTML Structure</h3>
-        <p>
-            Four <code>&lt;div class="team-member" tabindex="0"&gt;</code> blocks, each containing an initials
-            avatar, a name, a role, and a <code>.team-details</code> block with more information.
-        </p>
-        <h3>CSS Techniques</h3>
-        <p>
-            Since real photos weren't available for every team member, each card uses a CSS-styled initials
-            avatar instead &mdash; an honest fallback the spec explicitly allows ("a thumbnail image, or icon if
-            an image is not available"). The detail panel is hidden by default via <code>max-height: 0;
-            overflow: hidden;</code> and revealed on <code>:hover</code>, <code>:focus</code>, and
-            <code>:focus-within</code> with a transition, so it works for keyboard users tabbing onto the card,
-            not just mouse users.
-        </p>
-        <h3>Design Rationale</h3>
-        <p>
-            <code>tabindex="0"</code> was added to each card specifically because the expand-on-hover
-            interaction needed a keyboard equivalent &mdash; the spec calls this out directly as an accessibility
-            requirement for this page.
-        </p>
-        <p><a href="team.html" target="_blank" rel="noopener">Open the live Team Page &rarr;</a> &middot;
-            <a href="validation_ST3.html#team">See its validation evidence &rarr;</a></p>
-    </section>
+            <h1>Page Editor &mdash; Student 3</h1>
 
-    <section id="content-page" class="editor-section">
-        <h2>Content Page &mdash; "Community Learning Programs"</h2>
-        <h3>HTML Structure</h3>
-        <p>
-            One <code>&lt;h1&gt;</code> and four <code>&lt;h2&gt;</code> sections, each with a unique
-            <code>id</code>, linked from a simple top navigation list.
-        </p>
-        <h3>CSS Techniques</h3>
-        <p>
-            Uses the shared <code>css/content.css</code> file, the same simple single-column layout as Students
-            2 and 4's content pages.
-        </p>
-        <h3>Design Rationale</h3>
-        <p>
-            Focuses on informal, neighbour-led learning rather than formal institutions, connecting to the Home
-            Page's third focus-area card.
-        </p>
-        <p><a href="content_ST3.html" target="_blank" rel="noopener">Open the live Content Page &rarr;</a> &middot;
-            <a href="validation_ST3.html#content">See its validation evidence &rarr;</a></p>
-    </section>
+            <section>
+                <h2 id="feedback">Feedback &amp; Programme Directory Page</h2>
+                <h3>Technical Description</h3>
+                <p>The page follows the shared template with a &lt;main&gt; containing three sections:
+                    Programme Directory, Reviews Summary, and Feedback Form, each wrapped in a semantic
+                    &lt;section&gt; with its own id for internal linking. The Programme Directory uses
+                    &lt;article class="program-card"&gt; per item (images credited in
+                    <a href="#ref1">reference 1</a>) inside a horizontally-scrollable Flexbox row
+                    (display: flex; overflow-x: auto;). The Reviews section uses
+                    &lt;article class="review-card"&gt; per review, laid out with CSS Grid
+                    (repeat(auto-fit, minmax(280px, 1fr))). The Feedback Form uses
+                    &lt;fieldset&gt;/&lt;legend&gt; for field grouping (<a href="#ref3">reference 3</a>), with
+                    text, email, tel, date, datetime-local inputs, a textarea, and a &lt;datalist&gt;
+                    (<a href="#ref3">reference 3</a>) for programme suggestions. js/feedback.js provides a
+                    live character counter on the message textarea, submit-time validation that checks name
+                    presence, an email-format regex, and comment presence, writing errors into each field's
+                    .field-error span, and a submission confirmation message.</p>
 
-    <section id="links-validation" class="editor-section">
-        <h2>Links &amp; Validation Summary</h2>
-        <table class="editor-table">
-            <thead>
-                <tr><th>Page</th><th>Live Page</th><th>Validation Evidence</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Feedback Page</td><td><a href="feedback.html" target="_blank" rel="noopener">feedback.html</a></td><td><a href="validation_ST3.html#feedback">Validation &rarr;</a></td></tr>
-                <tr><td>Team Page</td><td><a href="team.html" target="_blank" rel="noopener">team.html</a></td><td><a href="validation_ST3.html#team">Validation &rarr;</a></td></tr>
-                <tr><td>Content Page</td><td><a href="content_ST3.html" target="_blank" rel="noopener">content_ST3.html</a></td><td><a href="validation_ST3.html#content">Validation &rarr;</a></td></tr>
-            </tbody>
-        </table>
-    </section>
+                <h3>Accessibility</h3>
+                <p>Every form field is wrapped in its own &lt;label&gt;, and the two field groups use
+                    &lt;fieldset&gt;/&lt;legend&gt; so a screen reader announces which group a field belongs
+                    to. Validation errors appear in a .field-error span immediately next to the field that
+                    failed. The submission confirmation message uses aria-live="polite". Every programme and
+                    review image has descriptive alt text.</p>
 
-    <section id="challenges" class="editor-section">
-        <h2>Challenges &amp; Lessons Learned</h2>
-        <div class="dummy-block">
-            <span class="dummy-flag">Placeholder &mdash; rewrite in your own words</span>
-            <ul>
-                <li>Getting the horizontally-scrolling programme row to work smoothly on both desktop (mouse
-                    wheel/drag) and mobile (touch swipe) without extra JavaScript.</li>
-                <li>Deciding what counted as "enough" custom JavaScript validation on top of the HTML
-                    <code>required</code>/<code>type="email"</code> attributes, per the spec's requirement that
-                    JavaScript add genuinely extra feedback.</li>
-                <li>Making the Team page's hover-reveal panel also work for keyboard users, not just mouse
-                    hover.</li>
+                <h3>Link to the validation page</h3>
+                <p><a href="validation_ST3.html#feedback">See the validation evidence for the Feedback Page</a></p>
+
+                <h3>Link to the page</h3>
+                <p><a href="feedback.html">Open the live Feedback Page</a></p>
+            </section>
+
+            <section>
+                <h2 id="team">Team Page</h2>
+                <h3>Technical Description</h3>
+                <p>The page uses the shared template plus a team introduction paragraph and a .team-grid
+                    container built with CSS Grid (repeat(auto-fit, minmax(230px, 1fr))). Each team member is
+                    a &lt;div class="team-card"&gt; with role="group", tabindex="0", and a descriptive
+                    aria-label, containing a .team-photo-wrap image (real portraits of all four team members),
+                    a .team-basic name/role block, and a .team-details block with pages built, a summary, and
+                    LinkedIn/GitHub links for every member. All styling is embedded in a &lt;style&gt; block:
+                    each photo has a fixed aspect-ratio of 1/1 and a grayscale filter that clears to full
+                    colour on hover/focus, and the details panel is hidden via max-height: 0; opacity: 0; and
+                    revealed with a transition on :hover, :focus, and :focus-within.</p>
+
+                <h3>Accessibility</h3>
+                <p>Each card's tabindex="0" means the same expand-on-hover reveal also triggers on keyboard
+                    focus, via :focus-within, so keyboard users get the same "more details" behaviour as mouse
+                    users. role="group" plus a descriptive aria-label gives each card an accessible name
+                    beyond just the visible text. Every portrait has descriptive alt text.</p>
+
+                <h3>Link to the validation page</h3>
+                <p><a href="validation_ST3.html#team">See the validation evidence for the Team Page</a></p>
+
+                <h3>Link to the page</h3>
+                <p><a href="team.html">Open the live Team Page</a></p>
+            </section>
+
+            <section>
+                <h2 id="content">Content Page: Community Learning Programs</h2>
+                <h3>Technical Description</h3>
+                <p>The page uses the shared template plus a .content-wrapper containing a hero section, a
+                    sticky internal navigation bar (position: sticky; top: 90px;), six content sections, and a
+                    "Go to Top" button. Five images (credited in <a href="#ref1">reference 1</a>) illustrate
+                    real community-learning initiatives referenced by name, the British Council EDGE programme
+                    and UNICEF's Reading for Pleasure initiative. All styling is embedded in a &lt;style&gt;
+                    block: the hero uses a gradient background with large rounded corners, and each content
+                    section is a rounded white card with a soft shadow.</p>
+
+                <h3>Accessibility</h3>
+                <p>The page keeps a single &lt;h1&gt; (in the hero) followed by &lt;h2&gt; section headings and
+                    occasional &lt;h3&gt;s for named programmes, with no skipped levels. All five images have
+                    descriptive alt text, and the internal navigation uses ordinary anchor links, reachable
+                    without a mouse.</p>
+
+                <h3>Link to the validation page</h3>
+                <p><a href="validation_ST3.html#content">See the validation evidence for the Content Page</a></p>
+
+                <h3>Link to the page</h3>
+                <p><a href="content_ST3.html">Open the live Content Page</a></p>
+            </section>
+
+            <section>
+                <h2 id="challenge">Challenges and Lessons Learned</h2>
+                <p>Implementing the live character counter meant properly understanding DOM manipulation and
+                    event listeners rather than just updating text on submit. Getting the Team page's
+                    expand/collapse details to animate smoothly required learning proper CSS transition
+                    technique using max-height and opacity together, since max-height alone snaps rather than
+                    eases. Making the Content Page's sticky internal navigation stay visible while scrolling,
+                    without overlapping the sticky site header, took some care with the top offset and
+                    z-index. Building custom form validation with clear, field-specific error messages rather
+                    than one generic alert meaningfully improved how I think about JavaScript-driven UX.</p>
+            </section>
+
+            <section>
+                <h2 id="accessibility">Accessibility Considerations</h2>
+                <p>Across the Feedback &amp; Programme Directory, Team and Content pages, accessibility was
+                    considered at both the form and interaction level. Every field in the Feedback form is
+                    wrapped in its own &lt;label&gt;, and the two field groups use &lt;fieldset&gt;/&lt;legend&gt;
+                    so a screen reader announces which group a field belongs to before reading its individual
+                    label. Validation errors appear in a .field-error span immediately next to the field that
+                    failed, rather than in one generic alert disconnected from the problem, and the submission
+                    confirmation message uses aria-live="polite" so it's announced as soon as it appears. On
+                    the Team page, each card's tabindex="0" means the same expand-on-hover reveal also
+                    triggers on keyboard focus via :focus-within, so keyboard users get the same "more
+                    details" behaviour as mouse users, and role="group" plus a descriptive aria-label gives
+                    each card an accessible name beyond its visible text. On the Content page, heading levels
+                    never skip &mdash; a single &lt;h1&gt; followed by &lt;h2&gt;s and occasional &lt;h3&gt;s
+                    for named programmes &mdash; and the internal navigation uses ordinary anchor links,
+                    reachable without a mouse. Every image across all three pages carries descriptive alt
+                    text. The common thread is that interactive behaviour (form validation, hover reveals) is
+                    always paired with an equivalent that works on focus and is announced to assistive
+                    technology, not just visible to a sighted mouse user.</p>
+            </section>
+
+            <section>
+                <h2 id="compliance">Compliance with JANET Regulations</h2>
+                <p>All content on my pages is original or properly attributed. No offensive, defamatory, or
+                    unlawful material is present, in line with JANET's Acceptable Use Policy governing what
+                    may be published on JANET-connected networks. External resources are used under their
+                    respective free-to-use licences: photographs from Pexels are used under the Pexels Licence
+                    and attributed in References below; Google Fonts ("Poppins" and "Inter") are used under
+                    the SIL Open Font Licence &mdash; respecting the intellectual property rights JANET
+                    requires users to observe. The site does not collect or store any personal data from
+                    visitors &mdash; the Feedback form uses client-side validation only, with no server
+                    transmission, so there is no unauthorised data-collection risk to manage.</p>
+            </section>
+
+            <section>
+                <h2 id="group">Group Meetings and Individual Contribution Log</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="6">Group Meetings and Contribution Log</th>
+                        </tr>
+                        <tr>
+                            <th>Meeting</th>
+                            <th>Date &amp; Time</th>
+                            <th>Format</th>
+                            <th>Objective</th>
+                            <th>Attended</th>
+                            <th>Your Individual Contribution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>12 Jun 2026 &ndash; 3.00 PM</td><td>Face-to-face</td><td>Selected the project topic and assigned roles.</td><td>Yes</td><td>Took responsibility for the Feedback and Team pages.</td></tr>
+                        <tr><td>2</td><td>18 Jun 2026 &ndash; 7.30 PM</td><td>Online</td><td>Planned website structure.</td><td>Yes</td><td>Designed the Feedback page and Team page layout.</td></tr>
+                        <tr><td>3</td><td>26 Jun 2026 &ndash; 2.00 PM</td><td>Hybrid</td><td>Reviewed initial progress.</td><td>Yes</td><td>Completed the first version of the Feedback page.</td></tr>
+                        <tr><td>4</td><td>03 Jul 2026 &ndash; 6.30 PM</td><td>Online</td><td>Integration meeting.</td><td>Yes</td><td>Improved the Team page and form validation.</td></tr>
+                        <tr><td>5</td><td>11 Jul 2026 &ndash; 10.00 AM</td><td>Face-to-face</td><td>Testing and validation.</td><td>Yes</td><td>Tested the Feedback page and fixed validation issues.</td></tr>
+                        <tr><td>6</td><td>17 Jul 2026 &ndash; 8.00 PM</td><td>Online</td><td>Final project review.</td><td>Yes</td><td>Finalized the Team page, Content Page and Page Editor.</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2 id="ref">References</h2>
+                <p>References are listed below in a consistent, simplified format.</p>
+                <ul class="ref">
+                    <li id="ref1"><strong>[PLACEHOLDER &mdash; add the real photographer name(s)]</strong> Pexels contributors (2026) Feedback/Team/Content Page photographs. Available at: https://www.pexels.com/ (used under the Pexels licence).</li>
+                    <li id="ref2">Google Fonts (2026) "Poppins" and "Inter" typefaces. Available at: https://fonts.google.com/ (used under the SIL Open Font Licence).</li>
+                    <li id="ref3">Mozilla Developer Network (2026) MDN Web Docs, referenced for form validation patterns, fieldset/legend semantics, and the datalist element. Available at: https://developer.mozilla.org/</li>
+                </ul>
+            </section>
+
+            <p class="top"><a href="#top">Go top</a></p>
+        </main>
+
+        <aside>
+            <h3>Core pages developed:</h3>
+
+            <ul class="top-level-ul">
+                <li>Student 1</li>
+                <ul>
+                    <li><a href="pageEditor_ST1.html#home">Home page</a></li>
+                    <li><a href="pageEditor_ST1.html#gallery">Gallery</a></li>
+                    <li><a href="pageEditor_ST1.html#content">Content</a></li>
+                </ul>
+                <li>Student 2</li>
+                <ul>
+                    <li><a href="pageEditor_ST2.html#splash">Splash Screen</a></li>
+                    <li><a href="pageEditor_ST2.html#ais">Action Impact Simulator</a></li>
+                    <li><a href="pageEditor_ST2.html#content">Content</a></li>
+                </ul>
+                <li>Student 3</li>
+                <ul>
+                    <li><a href="#feedback">Feedback</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#content">Content</a></li>
+                </ul>
+                <li>Student 4</li>
+                <ul>
+                    <li><a href="pageEditor_ST4.html#profile">User Profile</a></li>
+                    <li><a href="pageEditor_ST4.html#sitemap">Sitemap</a></li>
+                    <li><a href="pageEditor_ST4.html#content">Content</a></li>
+                </ul>
+                <li><a href="#challenge">Challenges and Lessons Learned</a></li>
+                <li><a href="#accessibility">Accessibility Considerations</a></li>
+                <li><a href="#compliance">Compliance with JANET Regulations</a></li>
+                <li><a href="#group">Group Meetings and Individual Contribution Log</a></li>
+                <li><a href="#ref">References</a></li>
             </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-main">
+            <div class="footer-col footer-brand">
+                <a href="home.html" class="logo">
+                    <span class="logo-mark">
+                        <img src="images/BrightPathlogo.png" alt="BrightPath Logo">
+                    </span>
+                    <span class="logo-text">
+                        <span class="logo-name">BrightPath</span>
+                        <span class="logo-tagline">Learn &middot; Grow &middot; Succeed</span>
+                    </span>
+                </a>
+                <p>A student-led website for UN SDG 4 &mdash; Quality Education.</p>
+            </div>
+            <div class="footer-col">
+                <span class="footer-heading">Pages</span>
+                <a href="home.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="ais.html">Action Simulator</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="team.html">Team</a>
+                <a href="sitemap.html">Sitemap</a>
+            </div>
+            <div class="footer-col">
+                <span class="footer-heading">Page Owner</span>
+                <a href="pageEditor_ST3.html">Page Editor</a>
+                <a href="validation_ST3.html">Validation Page</a>
+                <a href="pageEditor_ST1.html#accessibility">Accessibility / Compliance</a>
+            </div>
+            <div class="footer-col">
+                <span class="footer-heading">Student</span>
+                <p>Maneesha Manodhara Ramanayake</p>
+                <p>Student 3 &middot; ID 20241434</p>
+                <p>Feedback &middot; Team</p>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/maneesha-manodhara-56a2b0320" target="_blank" rel="noopener" aria-label="Maneesha Manodhara Ramanayake on LinkedIn">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.34V9h3.42v1.56h.05c.48-.91 1.65-1.85 3.39-1.85 3.63 0 4.3 2.39 4.3 5.49v6.25zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+                    </a>
+                    <a href="https://github.com/ManeeshaRamanayake" target="_blank" rel="noopener" aria-label="Maneesha Manodhara Ramanayake on GitHub">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.19c0 4.49 2.87 8.3 6.84 9.64.5.1.68-.22.68-.49 0-.24-.01-1.03-.01-1.87-2.78.51-3.5-.7-3.72-1.34-.13-.33-.68-1.34-1.16-1.61-.4-.22-.97-.76-.01-.78.9-.01 1.55.85 1.76 1.2 1.03 1.76 2.68 1.26 3.34.96.1-.76.4-1.26.73-1.55-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.04 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.27 2.75 1.05a9.2 9.2 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.71 1.03 1.62 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.19C22 6.58 17.52 2 12 2z"/></svg>
+                    </a>
+                </div>
+            </div>
         </div>
-    </section>
-
-    <section id="accessibility" class="editor-section">
-        <h2>Accessibility Considerations</h2>
-        <ul>
-            <li><strong>Alt text</strong> on every programme/review image.</li>
-            <li><strong>Labelled form fields</strong> &mdash; every input is wrapped in a <code>&lt;label&gt;</code>,
-                and related fields are grouped with <code>&lt;fieldset&gt;</code>/<code>&lt;legend&gt;</code>.</li>
-            <li><strong>Error messages placed next to their field</strong>, not just at the top of the form, so
-                screen-reader users encounter them in context.</li>
-            <li><strong>Keyboard-accessible Team cards</strong> via <code>tabindex="0"</code> and
-                <code>:focus-within</code> so the detail panel opens without a mouse.</li>
-        </ul>
-    </section>
-
-    <section id="janet" class="editor-section">
-        <h2>Compliance with JANET Regulations</h2>
-        <div class="dummy-block">
-            <span class="dummy-flag">Draft &mdash; check wording against your module handbook</span>
-            <p>
-                The feedback form does not transmit data to any server &mdash; it is a front-end simulation only,
-                as permitted by the spec. Review content and reviewer names on the Feedback page are
-                illustrative examples written for this coursework, not real personal data. All images are
-                credited in the References section.
-            </p>
+        <div class="footer-bottom">
+            <span>&copy; 2026 BrightPath &middot; University of Westminster group coursework</span>
+            <span>Compliant with JANET regulations</span>
         </div>
-    </section>
-
-    <section id="meetings" class="editor-section">
-        <h2>Group Meetings &amp; Individual Contribution Log</h2>
-        <div class="dummy-block">
-            <span class="dummy-flag">Placeholder &mdash; replace every row with a real meeting</span>
-            <table class="meeting-table">
-                <thead>
-                    <tr><th>#</th><th>Date &amp; Time</th><th>Format</th><th>Objective</th><th>Attended</th><th>Your Individual Contribution</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>1</td><td>[DATE]</td><td>[FORMAT]</td><td>[OBJECTIVE]</td><td>[Yes/No]</td><td>[CONTRIBUTION]</td></tr>
-                    <tr><td>2</td><td>[DATE]</td><td>[FORMAT]</td><td>[OBJECTIVE]</td><td>[Yes/No]</td><td>[CONTRIBUTION]</td></tr>
-                    <tr><td>3</td><td>[DATE]</td><td>[FORMAT]</td><td>[OBJECTIVE]</td><td>[Yes/No]</td><td>[CONTRIBUTION]</td></tr>
-                    <tr><td>4</td><td>[DATE]</td><td>[FORMAT]</td><td>[OBJECTIVE]</td><td>[Yes/No]</td><td>[CONTRIBUTION]</td></tr>
-                    <tr><td>5</td><td>[DATE]</td><td>[FORMAT]</td><td>[OBJECTIVE]</td><td>[Yes/No]</td><td>[CONTRIBUTION]</td></tr>
-                    <tr><td>6</td><td>[DATE]</td><td>[FORMAT]</td><td>[OBJECTIVE]</td><td>[Yes/No]</td><td>[CONTRIBUTION]</td></tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <section id="references" class="editor-section">
-        <h2>References</h2>
-        <ul>
-            <li>Pexels contributors (various), Feedback/Content Page photographs, Pexels, used under the Pexels licence.</li>
-            <li>Google Fonts, "Poppins" and "Inter" typefaces, used under the SIL Open Font Licence.</li>
-            <li>Mozilla Developer Network (MDN Web Docs), referenced for form validation patterns, <code>fieldset</code>/<code>legend</code> semantics, and the <code>datalist</code> element.</li>
-        </ul>
-        <div class="dummy-block" style="margin-top:0.8rem;">
-            <span class="dummy-flag">Placeholder</span>
-            <p>[Add any lecture slides, seminar handouts, or specific tutorials you personally consulted.]</p>
-        </div>
-    </section>
-
-    <a href="#top" class="back-to-top-editor">&uarr; Top</a>
+    </footer>
+    <script src="js/navbar.js"></script>
 </body>
+
 </html>

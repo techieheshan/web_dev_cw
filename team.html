@@ -3,19 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrightPath | Team</title>
+    <title>BrightPath | Meet the Team</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/team.css">
+
+    <style>
+        .team-intro {
+            max-width: 62ch;
+            margin: 1.2rem 0 2rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1.8rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .team-card {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            background-color: var(--neutral-color);
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .team-card:hover,
+        .team-card:focus {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 28px rgba(18, 58, 122, 0.22);
+            outline: none;
+        }
+        .team-card:focus-visible {
+            outline: 3px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+
+        .team-photo-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+        }
+        .team-photo-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(35%);
+            transition: filter 0.35s ease, transform 0.35s ease;
+        }
+        .team-card:hover .team-photo-wrap img,
+        .team-card:focus .team-photo-wrap img {
+            filter: grayscale(0%);
+            transform: scale(1.06);
+        }
+
+        .team-basic {
+            padding: 0.9rem 1rem 1rem;
+            text-align: center;
+        }
+        .team-basic .t-name {
+            display: block;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.02rem;
+            color: var(--secondary-color);
+        }
+        .team-basic .t-role {
+            display: block;
+            font-size: 0.78rem;
+            color: #5B6B7D;
+            margin-top: 0.2rem;
+        }
+
+        .team-details {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            padding: 0 1.1rem;
+            background-color: var(--secondary-color);
+            color: white;
+            transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
+        }
+        .team-card:hover .team-details,
+        .team-card:focus .team-details,
+        .team-card:focus-within .team-details {
+            max-height: 360px;
+            opacity: 1;
+            padding: 1rem 1.1rem 1.3rem;
+        }
+        .team-details h2 {
+            margin: 0 0 0.3rem;
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .team-details ul {
+            margin: 0.3rem 0 0.5rem;
+            padding-left: 1.1rem;
+            font-size: 0.82rem;
+        }
+        .team-details ul a {
+            color: white;
+            text-decoration: none;
+        }
+        .team-details ul a:hover {
+            color: var(--accent-color);
+        }
+        .team-details p {
+            margin: 0 0 0.7rem;
+            font-size: 0.82rem;
+            line-height: 1.4;
+        }
+        .team-details p a {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        .team-socials {
+            display: flex;
+            gap: 0.6rem;
+            margin-top: 0.4rem;
+            padding-bottom: 0.2rem;
+        }
+        .team-socials a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.15);
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            text-decoration: none;
+        }
+        .team-socials a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+        .team-socials svg {
+            width: 16px;
+            height: 16px;
+            fill: white;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 600px) {
+            .team-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- DO NOT MODIFY: header, nav, and footer structure below -->
     <header>
         <div class="utility-bar">
             <span>UN SDG 4 &middot; Quality Education</span>
-            <a href="#">Accessibility &amp; Compliance</a>
+            <a href="pageEditor_ST1.html#accessibility">Accessibility &amp; Compliance</a>
         </div>
         <div class="main-nav">
             <nav class="nav-group nav-left">
@@ -43,58 +193,131 @@
             </button>
         </div>
     </header>
-    <main>
-        <span class="eyebrow-plain">The Team</span>
-        <h1>Four students, one site</h1>
-        <p class="hero-lede">Hover or focus on a card for what each of us actually built.</p>
 
-        <h2 class="eyebrow-plain" style="font-size:0.78rem;">Meet the Team</h2>
+    <main id="top">
+        <span class="eyebrow-plain">Team Page</span>
+        <h1>Meet the Team Behind BrightPath</h1>
+        <p class="team-intro">
+            Four students, four pages, one goal: using UN SDG 4 to show that quality education
+            is something everyone can act on, not just study.
+        </p>
+
         <div class="team-grid">
-            <div class="team-member" tabindex="0">
-                <span class="avatar" style="background:#123A7A;" aria-hidden="true">HK</span>
-                <h3>Heshan Kavinda</h3>
-                <p class="role">Student 1</p>
+            <div class="team-card" role="group" tabindex="0" aria-label="Pasindu Heshan Kavinda, Student 1">
+                <div class="team-photo-wrap">
+                    <img src="images/team-student1.jpeg" alt="Portrait of Pasindu Heshan Kavinda, Student 1">
+                </div>
+                <div class="team-basic">
+                    <span class="t-name">Pasindu Heshan Kavinda</span>
+                    <span class="t-role">Student 1 &middot; ID 20251117</span>
+                </div>
                 <div class="team-details">
-                    <p><strong>Pages built:</strong> Shared Template &amp; Nav, Home, Gallery, Content Page</p>
-                    <p>Set up the shared template, navigation, and Global CSS the rest of the team builds on,
-                        then built the Home Page and an interactive Gallery.</p>
+                    <h2>Template &middot; Home &middot; Gallery</h2>
+                    <ul>
+                        <li>Shared HTML template and global CSS</li>
+                        <li><a href="home.html">Home Page</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="content_ST1.html">Content Page: From Passing Grades to Real Skills</a></li>
+                    </ul>
+                    <p>Built the site's shared foundation so the rest of the team could build on
+                        consistent structure and styling.</p>
+                    <div class="team-socials">
+                        <a href="https://www.linkedin.com/in/pasindu-heshan-kavinda" target="_blank" rel="noopener" aria-label="Pasindu's LinkedIn">
+                            <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+                        </a>
+                        <a href="https://github.com/HDPHKavinda" target="_blank" rel="noopener" aria-label="Pasindu's GitHub">
+                            <svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.1.82-.26.82-.58v-2.02c-3.34.72-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.76-1.34-1.76-1.1-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.08 1.83 2.82 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57A12 12 0 0 0 12 .3z"/></svg>
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <div class="team-member" tabindex="0">
-                <span class="avatar" style="background:#2563EB;" aria-hidden="true">S2</span>
-                <h3>Nidarsha Liyanaarachchi</h3>
-                <p class="role">Student 2</p>
+            <div class="team-card" role="group" tabindex="0" aria-label="Nidarsha Liyanaarachchi, Student 2">
+                <div class="team-photo-wrap">
+                    <img src="images/team-student2.jpeg" alt="Portrait of Nidarsha Liyanaarachchi, Student 2">
+                </div>
+                <div class="team-basic">
+                    <span class="t-name">Nidarsha Liyanaarachchi</span>
+                    <span class="t-role">Student 2 &middot; ID 20240400</span>
+                </div>
                 <div class="team-details">
-                    <p><strong>Pages built:</strong> Splash Screen, Action Impact Simulator</p>
-                    <p>Built the site's entry point and the interactive simulator that turns SDG action into a
-                        score you can actually see.</p>
+                    <h2>Splash Screen &middot; Action Simulator</h2>
+                    <ul>
+                        <li><a href="splash.html">Splash Screen</a></li>
+                        <li><a href="ais.html">Action Impact Simulator</a></li>
+                        <li><a href="content_ST2.html">Content Page: Bridging the Digital Divide</a></li>
+                    </ul>
+                    <p>Designed the site's first impression and the interactive tool that turns
+                        student actions into a measurable impact score.</p>
+                    <div class="team-socials">
+                        <a href="https://www.linkedin.com/in/nidarsha-liyanaarachchi-b66a43309" target="_blank" rel="noopener" aria-label="Nidarsha's LinkedIn">
+                            <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+                        </a>
+                        <a href="https://github.com/Nidarsha44" target="_blank" rel="noopener" aria-label="Nidarsha's GitHub">
+                            <svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.1.82-.26.82-.58v-2.02c-3.34.72-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.76-1.34-1.76-1.1-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.08 1.83 2.82 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57A12 12 0 0 0 12 .3z"/></svg>
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <div class="team-member" tabindex="0">
-                <span class="avatar" style="background:#38BDF8;" aria-hidden="true">S3</span>
-                <h3>Maneesha Manodhara Ramanayake</h3>
-                <p class="role">Student 3</p>
+            <div class="team-card" role="group" tabindex="0" aria-label="Maneesha Manodhara Ramanayake, Student 3">
+                <div class="team-photo-wrap">
+                    <img src="images/team-student3.png" alt="Portrait of Maneesha Manodhara Ramanayake, Student 3">
+                </div>
+                <div class="team-basic">
+                    <span class="t-name">Maneesha Manodhara Ramanayake</span>
+                    <span class="t-role">Student 3 &middot; ID 20241434</span>
+                </div>
                 <div class="team-details">
-                    <p><strong>Pages built:</strong> Feedback &amp; Programme Directory, Team</p>
-                    <p>Built the programme directory, the reviews section, and this Team page you're looking at
-                        right now.</p>
+                    <h2>Content Page &middot; Team Page</h2>
+                    <ul>
+                        <li><a href="content_ST3.html">Content Page: Community Learning Programs</a></li>
+                        <li>Team page (this page)</li>
+                        <li><a href="feedback.html">Feedback Page</a></li>
+                    </ul>
+                    <p>Wrote the content page on community led education initiatives in Sri Lanka and built this Team page.</p>
+                    <div class="team-socials">
+                        <a href="https://www.linkedin.com/in/maneesha-manodhara-56a2b0320" target="_blank" rel="noopener" aria-label="Maneesha's LinkedIn">
+                            <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+                        </a>
+                        <a href="https://github.com/ManeeshaRamanayake" target="_blank" rel="noopener" aria-label="Maneesha's GitHub">
+                            <svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.1.82-.26.82-.58v-2.02c-3.34.72-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.76-1.34-1.76-1.1-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.08 1.83 2.82 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57A12 12 0 0 0 12 .3z"/></svg>
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <div class="team-member" tabindex="0">
-                <span class="avatar" style="background:#22C55E;" aria-hidden="true">S4</span>
-                <h3>J. Heshani Dinethya</h3>
-                <p class="role">Student 4</p>
+            <div class="team-card" role="group" tabindex="0" aria-label="J. Heshani Dinethya, Student 4">
+                <div class="team-photo-wrap">
+                    <img src="images/team-student4.jpeg" alt="Portrait of J. Heshani Dinethya, Student 4">
+                </div>
+                <div class="team-basic">
+                    <span class="t-name">J. Heshani Dinethya</span>
+                    <span class="t-role">Student 4 &middot; ID 20250319 (W2212756)</span>
+                </div>
                 <div class="team-details">
-                    <p><strong>Pages built:</strong> User Profile, Sitemap</p>
-                    <p>Built the progressive profile builder and the SVG sitemap that ties every page in the
-                        site together.</p>
+                    <h2>User Profile &middot; Sitemap</h2>
+                    <ul>
+                        <li><a href="profile.html">User Profile</a></li>
+                        <li><a href="sitemap.html">Sitemap</a></li>
+                        <li><a href="content_ST4.html">Content Page: Lifelong Skills for the Future</a></li>
+                    </ul>
+                    <p>Built the profile building interaction and the accessible SVG sitemap tying every page together.</p>
+                    <div class="team-socials">
+                        <a href="https://www.linkedin.com/in/heshani-dinethya-6aa2b7414" target="_blank" rel="noopener" aria-label="Heshani's LinkedIn">
+                            <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+                        </a>
+                        <a href="https://github.com/Heshani-Dinethya" target="_blank" rel="noopener" aria-label="Heshani's GitHub">
+                            <svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.1.82-.26.82-.58v-2.02c-3.34.72-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.76-1.34-1.76-1.1-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.08 1.83 2.82 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57A12 12 0 0 0 12 .3z"/></svg>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
+
+    <a href="#top" class="back-to-top">&uarr; Top</a>
+
     <footer>
         <div class="footer-main">
             <div class="footer-col footer-brand">
@@ -107,7 +330,7 @@
                         <span class="logo-tagline">Learn &middot; Grow &middot; Succeed</span>
                     </span>
                 </a>
-                <p>A student-led website for UN SDG 4 &mdash; Quality Education.</p>
+                <p>A student led website for UN SDG 4 &mdash; Quality Education.</p>
             </div>
             <div class="footer-col">
                 <span class="footer-heading">Pages</span>
@@ -122,7 +345,7 @@
                 <span class="footer-heading">Page Owner</span>
                 <a href="pageEditor_ST3.html">Page Editor</a>
                 <a href="validation_ST3.html">Validation Page</a>
-                <a href="#">Accessibility / Compliance</a>
+                <a href="pageEditor_ST1.html#accessibility">Accessibility / Compliance</a>
             </div>
             <div class="footer-col">
                 <span class="footer-heading">Student</span>

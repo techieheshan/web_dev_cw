@@ -1,10 +1,86 @@
 /* Sitemap Page (Student 4) */
 
+/* Colour key explaining what each node style means */
+.sitemap-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin: 1.4rem 0 0.4rem;
+    font-size: 0.82rem;
+    color: var(--secondary-color);
+}
+.legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+.legend-swatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 2px solid var(--link-color);
+    background: white;
+}
+.legend-home {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.legend-content {
+    background: var(--neutral-color);
+}
+.legend-current {
+    border-color: var(--teal-color);
+}
+.legend-default {
+    background: white;
+}
+
+/* White "canvas" card the diagram sits on, so it doesn't float bare on the page background */
+.sitemap-canvas {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.4rem 1.2rem 0.8rem;
+    box-shadow: 0 4px 12px rgba(18, 58, 122, 0.08);
+    margin-top: 1rem;
+}
+
 .sitemap-svg {
     width: 100%;
     height: auto;
-    margin-top: 1.5rem;
     font-family: 'Inter', Arial, sans-serif;
+}
+
+.sitemap-quicklinks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 0.8rem;
+}
+.sitemap-quicklinks a {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--secondary-color);
+    background: var(--neutral-color);
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    padding: 0.45rem 0.95rem;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.sitemap-quicklinks a:hover,
+.sitemap-quicklinks a:focus {
+    background: white;
+    border-color: var(--link-color);
+    color: var(--link-color);
+    transform: translateY(-2px);
+}
+.sitemap-quicklinks a[aria-current="page"] {
+    background: var(--teal-color);
+    border-color: var(--teal-color);
+    color: white;
 }
 
 .site-links line {

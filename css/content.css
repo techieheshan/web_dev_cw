@@ -1,35 +1,141 @@
-/* Shared content-page styling for Students 2, 3 and 4.
-   Deliberately simpler than Student 1's content page (which has its own bespoke,
-   embedded per-page styling) — this is a plain, functional layout. */
+/* Content-page styling for Student 4 (content_ST4.html). Students 2 and 3 use their
+   own embedded <style> blocks instead of this file. Card-style sections with numbered
+   badges, framed images and a callout quote — simpler than Student 1's bespoke content
+   page, but no longer a bare, unstyled layout. */
 
 .content-simple-toc {
-    background: var(--neutral-color);
-    border-radius: 10px;
-    padding: 0.9rem 1.2rem;
-    margin: 1.2rem 0 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    background: none;
+    padding: 0;
+    margin: 1.4rem 0 2.2rem;
     font-size: 0.9rem;
 }
 .content-simple-toc a {
-    color: var(--link-color);
+    color: var(--secondary-color);
     text-decoration: none;
     font-weight: 600;
-    margin-right: 1rem;
+    background: var(--neutral-color);
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    padding: 0.5rem 1.05rem;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
 }
 .content-simple-toc a:hover {
-    text-decoration: underline;
+    background: var(--link-color);
+    border-color: var(--link-color);
+    color: white;
+    transform: translateY(-2px);
 }
 
 .content-simple-section {
-    margin-bottom: 2.2rem;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 2rem 2.2rem 2.2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 16px rgba(18, 58, 122, 0.06);
     scroll-margin-top: 100px;
 }
+.content-simple-section p {
+    line-height: 1.7;
+    margin-bottom: 1.1rem;
+    color: #333;
+}
+.content-simple-section p:last-child {
+    margin-bottom: 0;
+}
+.content-simple-section ul {
+    margin: 0 0 1.1rem 1.3rem;
+    line-height: 1.7;
+}
+.content-simple-section li {
+    margin-bottom: 0.4rem;
+}
+.content-simple-section li:last-child {
+    margin-bottom: 0;
+}
 
+.st4-heading-row {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-bottom: 0.9rem;
+}
+.st4-heading-row h2 {
+    margin: 0;
+}
+.st4-num {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--link-color);
+    color: white;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.st4-figure {
+    margin: 1.2rem 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .content-simple-img {
-    width: 100%;
-    max-width: 480px;
     display: block;
-    margin: 1rem 0;
-    border-radius: 8px;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 420px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(18, 58, 122, 0.1);
+}
+@media (max-width: 640px) {
+    .content-simple-img {
+        max-height: 280px;
+    }
+}
+
+/* Hero: text column + supporting image, so the hero doesn't leave a lopsided
+   empty gap on wide screens */
+.st4-hero {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.5rem;
+    margin-bottom: 1rem;
+}
+.st4-hero-text {
+    flex: 1 1 480px;
+    min-width: 0;
+}
+.st4-hero-media {
+    flex: 1 1 320px;
+    max-width: 400px;
+}
+.st4-hero-media img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    border-radius: 18px;
+    box-shadow: 0 10px 26px rgba(18, 58, 122, 0.16);
+}
+@media (max-width: 860px) {
+    .st4-hero {
+        flex-direction: column;
+    }
+    .st4-hero-media {
+        max-width: 100%;
+        width: 100%;
+    }
 }
 
 .back-to-top {
@@ -48,4 +154,50 @@
 }
 .back-to-top:hover {
     background-color: var(--hover-color);
+}
+
+/* Student 4 content page: pull-stat callout, image captions, section intros, photo-credit line */
+.st4-lede {
+    font-size: 1.1rem;
+    line-height: 1.65;
+}
+.st4-callout {
+    position: relative;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 14px;
+    padding: 1.3rem 1.6rem 1.3rem 3.2rem;
+    margin: 1.4rem 0 2rem;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: white;
+    box-shadow: 0 8px 22px rgba(18, 58, 122, 0.2);
+}
+.st4-callout::before {
+    content: "\201C";
+    position: absolute;
+    left: 1.1rem;
+    top: 0.6rem;
+    font-family: Georgia, serif;
+    font-size: 2.6rem;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.45);
+}
+.st4-section-intro {
+    font-weight: 600;
+    color: var(--link-color);
+    margin-bottom: 0.6rem;
+}
+.st4-caption {
+    display: block;
+    font-size: 0.82rem;
+    color: #64748B;
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+.st4-credits {
+    font-size: 0.8rem;
+    color: #64748B;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.2rem;
+    margin-top: 2.2rem;
 }

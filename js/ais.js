@@ -82,7 +82,8 @@ function updateSummary() {
 resetBtn.addEventListener('click', function () {
     cards.forEach(function (card) {
         card.classList.remove('selected');
-        card.setAttribute('aria-pressed', 'false');
+        const title = card.querySelector('h3').textContent;
+        card.setAttribute('aria-label', title + ', not selected');
     });
     updateSummary();
 });

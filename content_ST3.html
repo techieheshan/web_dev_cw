@@ -8,14 +8,88 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/content.css">
+
+    <style>
+        .content-wrapper {
+            max-width: 1180px;
+            margin: 2.5rem auto;
+            padding: 0 1rem;
+        }
+
+        .hero-modern {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 5rem 2rem;
+            border-radius: 28px;
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+        .hero-modern h1 { font-size: 3.1rem; margin-bottom: 1rem; }
+
+        .internal-nav {
+            background: var(--neutral-color);
+            padding: 1.3rem;
+            border-radius: 16px;
+            margin-bottom: 3rem;
+            position: sticky;
+            top: 90px;
+            z-index: 10;
+        }
+        .internal-nav ul {
+            display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;
+            list-style: none; padding: 0; margin: 0;
+        }
+        .internal-nav a {
+            padding: 0.75rem 1.5rem; background: white; border-radius: 50px;
+            text-decoration: none; font-weight: 600; color: var(--link-color);
+            transition: all 0.3s;
+        }
+        .internal-nav a:hover {
+            background: var(--accent-color); color: white; transform: translateY(-3px);
+        }
+
+        .section-modern {
+            background: white;
+            border-radius: 20px;
+            padding: 2.8rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 12px 40px rgba(18, 58, 122, 0.09);
+        }
+        .section-modern h2 {
+            font-size: 2.3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.6rem;
+            padding-bottom: 1rem;
+            border-bottom: 4px solid var(--accent-color);
+        }
+
+        /* Smaller & Balanced Images */
+        .content-img {
+            width: 100%;
+            max-height: 360px;
+            object-fit: cover;
+            border-radius: 18px;
+            margin: 1.8rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        .go-top {
+            position: fixed; bottom: 40px; right: 40px;
+            background: var(--primary-color); color: white;
+            width: 58px; height: 58px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem; box-shadow: 0 10px 30px rgba(18, 58, 122, 0.3);
+            text-decoration: none; z-index: 99;
+        }
+        .go-top:hover { background: var(--accent-color); transform: scale(1.1); }
+    </style>
 </head>
 <body>
-    <!-- DO NOT MODIFY: header, nav, and footer structure below -->
+    <!-- SHARED HEADER -->
     <header>
         <div class="utility-bar">
             <span>UN SDG 4 &middot; Quality Education</span>
-            <a href="#">Accessibility &amp; Compliance</a>
+            <a href="pageEditor_ST1.html#accessibility">Accessibility &amp; Compliance</a>
         </div>
         <div class="main-nav">
             <nav class="nav-group nav-left">
@@ -24,9 +98,7 @@
                 <a href="team.html">Team</a>
             </nav>
             <a href="home.html" class="logo">
-                <span class="logo-mark">
-                    <img src="images/BrightPathlogo.png" alt="BrightPath Logo">
-                </span>
+                <span class="logo-mark"><img src="images/BrightPathlogo.png" alt="BrightPath Logo"></span>
                 <span class="logo-text">
                     <span class="logo-name">BrightPath</span>
                     <span class="logo-tagline">Learn &middot; Grow &middot; Succeed</span>
@@ -43,64 +115,102 @@
             </button>
         </div>
     </header>
+
     <main id="top">
         <span class="eyebrow-plain">Student 3 &middot; Content Page</span>
-        <h1>Community Learning Programs</h1>
-        <p class="hero-lede">Not all learning happens in a classroom. Some of the most useful teaching in a
-            community happens informally &mdash; a neighbour, an older student, or a local volunteer passing
-            on something they know. This page looks at why that matters.</p>
 
-        <nav class="content-simple-toc" aria-label="Page sections">
-            <a href="#what-it-looks-like">What It Looks Like</a>
-            <a href="#why-it-matters">Why It Matters</a>
-            <a href="#whats-being-done">What's Being Done</a>
-            <a href="#what-you-can-do">What You Can Do</a>
-        </nav>
+        <div class="content-wrapper">
 
-        <section id="what-it-looks-like" class="content-simple-section">
-            <h2>What It Looks Like</h2>
-            <img class="content-simple-img" src="images/content1-bookshelf-srilanka.jpg" alt="A small community bookshelf stocked with donated books">
-            <p>Community learning doesn't need a classroom or a qualified teacher. It can be as simple as an
-                older student helping a younger one with homework, or a small group meeting weekly to read and
-                discuss a book together.</p>
-        </section>
+            <div class="hero-modern">
+                <h1>Community Learning Programs</h1>
+                <p style="font-size:1.4rem; max-width:780px; margin:0 auto;">
+                    Empowering individuals and strengthening communities through accessible, inclusive, and lifelong learning opportunities across Sri Lanka.
+                </p>
+            </div>
 
-        <section id="why-it-matters" class="content-simple-section">
-            <h2>Why It Matters</h2>
-            <img class="content-simple-img" src="images/content1-group-reading.jpg" alt="A small group of students reading together">
-            <p>Not every student has support at home for schoolwork. A community programme can fill that gap
-                &mdash; it gives students somewhere to ask questions and get help outside of school hours,
-                without needing to pay for private tuition.</p>
-        </section>
+            <nav class="internal-nav" aria-label="On this page">
+                <ul>
+                    <li><a href="#why">Why It Matters</a></li>
+                    <li><a href="#examples">Success Stories</a></li>
+                    <li><a href="#how">How It Works</a></li>
+                    <li><a href="#benefits">Benefits</a></li>
+                    <li><a href="#student-role">Your Role</a></li>
+                    <li><a href="#impact">Real Impact</a></li>
+                </ul>
+            </nav>
 
-        <section id="whats-being-done" class="content-simple-section">
-            <h2>What's Being Done</h2>
-            <img class="content-simple-img" src="images/gallery1-procession-a.jpg" alt="A community gathering of school children">
-            <p>Some neighbourhoods already run informal after-school groups, often organised by parents or
-                older students rather than any official body. These groups tend to be small, low-cost, and easy
-                to start &mdash; which is exactly why they work.</p>
-        </section>
+            <div class="section-modern" id="why">
+                <h2>Why Community Learning Programs Are Essential for SDG 4</h2>
+                <img src="images/content3-community-village-learning.jpg" class="content-img" alt="Community members learning together in a village setting">
+                <p>Sri Lanka has achieved remarkable progress in primary education enrolment. However, significant challenges remain in ensuring quality, equitable, and lifelong learning for all. Many children in rural and estate areas, girls from low-income families, and working youth still face barriers such as long travel distances, lack of resources, language difficulties, and economic pressures.</p>
+                <p>Community learning programs address these gaps by delivering education at the doorstep of communities. They create safe, welcoming spaces where learning is not limited to textbooks but includes practical skills, values, and personal development. These programs are flexible, culturally sensitive, and directly respond to local needs.</p>
+            </div>
 
-        <section id="what-you-can-do" class="content-simple-section">
-            <h2>What You Can Do</h2>
-            <img class="content-simple-img" src="images/gallery2-procession-b.jpg" alt="Students gathered together in a community setting">
-            <ul>
-                <li>Offer to help a younger student in your neighbourhood with homework.</li>
-                <li>Join or start a small weekly study group near where you live.</li>
-                <li>Tell others about community groups that already exist &mdash; a lot of people don't know
-                    they're there.</li>
-            </ul>
-        </section>
+            <div class="section-modern" id="examples">
+                <h2>Successful Community Learning Initiatives in Sri Lanka</h2>
+                
+                <img src="images/content3-girls-education-club.jpg" class="content-img" alt="Girls participating in EDGE community learning club">
+                <h3>British Council EDGE Program</h3>
+                <p>The English and Digital for Girls’ Education (EDGE) initiative has established non-formal clubs that empower adolescent girls with essential English language skills, digital literacy, and leadership abilities. Through these clubs, girls gain confidence and open new opportunities for further education and employment. The program has reached thousands of girls across multiple provinces and continues to expand its impact.</p>
+                
+                <img src="images/content3-children-reading-circle.jpg" class="content-img" alt="Family reading session in community centre">
+                <h3>UNICEF Reading for Pleasure Initiative</h3>
+                <p>In partnership with local organisations, UNICEF has promoted reading habits in post-conflict areas. By involving entire families, the program has improved literacy levels and created a culture of learning that extends beyond the classroom. Children are now more engaged and confident in their studies.</p>
+            </div>
 
-        <p><a href="#top" class="back-to-top">&uarr; Top</a></p>
+            <div class="section-modern" id="how">
+                <h2>How Community Learning Programs Operate</h2>
+                <p>Most programs are designed and managed by local communities with support from NGOs and government partners. Sessions are usually held in the evenings or weekends to accommodate school-going children and working adults. Trained peer educators and volunteers use interactive methods such as group discussions, storytelling, hands-on activities, and digital tools where available.</p>
+                <p>The curriculum is often tailored to local realities — covering topics like financial literacy, health and hygiene, environmental awareness, and basic digital skills. Regular monitoring and feedback from participants ensure continuous improvement.</p>
+            </div>
+
+            <div class="section-modern" id="benefits">
+                <h2>Key Benefits of Community Learning</h2>
+                <div class="highlight-box" style="background:#f0f9ff; padding:2rem; border-radius:12px; margin:1.5rem 0;">
+                    <ul>
+                        <li><strong>Improved foundational literacy and numeracy skills</strong></li>
+                        <li><strong>Higher school attendance and better academic performance</strong></li>
+                        <li><strong>Development of life and leadership skills</strong></li>
+                        <li><strong>Greater empowerment of girls and women</strong></li>
+                        <li><strong>Stronger social cohesion within communities</strong></li>
+                        <li><strong>Reduced dropout rates and child labour</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section-modern" id="student-role">
+                <h2>Your Role as a University Student</h2>
+                <img src="images/content3-student-volunteer-teaching.jpg" class="content-img" alt="Student volunteering as a tutor">
+                <p>University students have tremendous potential to contribute. You can volunteer as a tutor, organise workshops, create learning materials, or document success stories. Your involvement not only helps the community but also builds your own skills and leadership experience.</p>
+
+                <img src="images/content3-student-mentor.jpg" class="content-img" alt="University student mentoring children">
+                <p>Sharing your knowledge with younger students can inspire them and create a positive cycle of learning in your community.</p>
+            </div>
+
+            <div class="section-modern" id="impact">
+                <h2>The Real Impact on Individuals and Communities</h2>
+                <p>Community learning programs have produced measurable positive outcomes across Sri Lanka. Many participants report improved confidence, better academic results, and clearer future aspirations. Parents become more involved in their children’s education, and entire communities develop a stronger culture of lifelong learning.</p>
+                <blockquote style="font-style:italic; background:#f8fafc; padding:2rem; border-left:6px solid var(--accent-color); margin:2.5rem 0;">
+                    “Before joining the community club, I was shy and struggled with studies. Now I not only perform better at school but also teach younger children in my village. This program changed my life.” 
+                    <br><strong>— Tharshika, 14 years old, Kilinochchi</strong>
+                </blockquote>
+                <p>These grassroots efforts are making a meaningful contribution toward achieving Sustainable Development Goal 4.</p>
+            </div>
+
+            <p style="text-align:center; color:#64748b; font-size:0.9rem; margin:4rem 0;">
+                All images are royalty-free and sourced from Pexels. Full photo credits and references are listed in the Page Editor.
+            </p>
+        </div>
     </main>
+
+    <a href="#top" class="go-top" aria-label="Go to top">↑</a>
+
+    <!-- SHARED FOOTER -->
     <footer>
         <div class="footer-main">
             <div class="footer-col footer-brand">
                 <a href="home.html" class="logo">
-                    <span class="logo-mark">
-                        <img src="images/BrightPathlogo.png" alt="BrightPath Logo">
-                    </span>
+                    <span class="logo-mark"><img src="images/BrightPathlogo.png" alt="BrightPath Logo"></span>
                     <span class="logo-text">
                         <span class="logo-name">BrightPath</span>
                         <span class="logo-tagline">Learn &middot; Grow &middot; Succeed</span>
@@ -121,7 +231,7 @@
                 <span class="footer-heading">Page Owner</span>
                 <a href="pageEditor_ST3.html">Page Editor</a>
                 <a href="validation_ST3.html">Validation Page</a>
-                <a href="#">Accessibility / Compliance</a>
+                <a href="pageEditor_ST1.html#accessibility">Accessibility / Compliance</a>
             </div>
             <div class="footer-col">
                 <span class="footer-heading">Student</span>
@@ -143,6 +253,7 @@
             <span>Compliant with JANET regulations</span>
         </div>
     </footer>
+
     <script src="js/navbar.js"></script>
 </body>
 </html>

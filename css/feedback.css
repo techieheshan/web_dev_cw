@@ -1,5 +1,17 @@
 /* Feedback & Program Directory Page (Student 3) */
 
+/* Clear visual separation between the programme directory, reviews and form */
+#programs,
+#reviews,
+#feedback-form {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.8rem 2rem 2.2rem;
+    margin-bottom: 2.2rem;
+    box-shadow: 0 4px 14px rgba(18, 58, 122, 0.06);
+}
+
 .section-heading-row {
     display: flex;
     justify-content: space-between;
@@ -23,16 +35,18 @@
     background: white;
 }
 
-/* Scrollable programme row */
+/* Scrollable programme grid: a fixed-height panel with vertical scroll, so the
+   directory can grow without pushing the rest of the page down */
 .programs-scroll {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
     gap: 1.2rem;
-    overflow-x: auto;
-    padding: 1.2rem 0.2rem 1.5rem;
+    max-height: 520px;
+    overflow-y: auto;
+    padding: 1.2rem 0.8rem 1.5rem 0.2rem;
     margin-bottom: 1rem;
 }
 .program-card {
-    flex: 0 0 260px;
     background: white;
     border-radius: 12px;
     overflow: hidden;

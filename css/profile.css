@@ -1,5 +1,51 @@
 /* User Profile Page (Student 4) */
 
+.profile-steps-overview {
+    margin: 1.6rem 0 2rem;
+    gap: 1.4rem;
+}
+.profile-step-card {
+    padding: 1.5rem 1.6rem;
+    box-shadow: 0 4px 12px rgba(18, 58, 122, 0.08);
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.profile-step-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(18, 58, 122, 0.14);
+}
+.profile-step-card h2 {
+    font-size: 1.05rem;
+    margin: 0.2rem 0 0.35rem;
+}
+.profile-step-card p {
+    font-size: 0.88rem;
+    color: #52606D;
+    margin: 0;
+}
+.step-num-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--link-color);
+    color: white;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.profile-panel {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.8rem 1.8rem 1.6rem;
+    box-shadow: 0 4px 12px rgba(18, 58, 122, 0.08);
+    margin-bottom: 2.2rem;
+}
+
 .profile-controls {
     display: flex;
     gap: 1rem;
@@ -32,6 +78,13 @@
     background: linear-gradient(90deg, var(--link-color), var(--accent-color));
     transition: width 0.4s ease;
 }
+.progress-bar-scale {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.72rem;
+    color: #94A3B8;
+    margin: -0.2rem 0 0.6rem;
+}
 #progressText {
     font-size: 0.85rem;
     font-weight: 600;
@@ -45,22 +98,44 @@
     margin-bottom: 2rem;
 }
 .step-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     font-family: 'Poppins', Arial, sans-serif;
     font-size: 0.82rem;
     font-weight: 600;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.1rem 0.5rem 0.6rem;
     border-radius: 999px;
     border: 1px solid var(--border-color);
     background: white;
     color: var(--secondary-color);
     cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.step-btn::before {
+    content: attr(data-step);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--neutral-color);
+    color: var(--secondary-color);
+    font-size: 0.72rem;
+    flex-shrink: 0;
 }
 .step-btn:hover {
     background: var(--neutral-color);
+    transform: translateY(-1px);
 }
 .step-btn.step-complete {
     border-color: var(--teal-color);
     color: var(--teal-color);
+}
+.step-btn.step-complete::before {
+    background: var(--teal-color);
+    color: white;
 }
 
 .profile-output {
@@ -71,13 +146,40 @@
     min-height: 100px;
 }
 .profile-placeholder {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
     color: #64748B;
     font-size: 0.9rem;
+}
+.placeholder-icon {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--neutral-color);
+    color: var(--link-color);
+    font-size: 1rem;
+}
+.placeholder-copy strong {
+    color: var(--secondary-color);
+    display: block;
+    margin-bottom: 0.2rem;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+@keyframes profileBlockIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 .profile-step-block {
     margin-bottom: 1.2rem;
     padding-bottom: 1.2rem;
     border-bottom: 1px solid var(--neutral-color);
+    animation: profileBlockIn 0.35s ease;
 }
 .profile-step-block:last-child {
     border-bottom: none;

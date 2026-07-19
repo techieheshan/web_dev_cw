@@ -3,229 +3,314 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrightPath | Page Editor &mdash; Student 2</title>
+    <title>Page Editor Student 2 - Nidarsha Liyanaarachchi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/pageEditor_validator.css">
 </head>
 <body id="top">
-    <header class="editor-header">
-        <h1>Page Editor &mdash; Student 2</h1>
-        <p>BrightPath &middot; UN SDG 4, Quality Education &middot; University of Westminster group coursework</p>
+
+    <header>
+        <div class="utility-bar">
+            <span>UN SDG 4 &middot; Quality Education</span>
+            <a href="pageEditor_ST1.html#accessibility">Accessibility &amp; Compliance</a>
+        </div>
+        <div class="main-nav">
+            <nav class="nav-group nav-left">
+                <a href="home.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="team.html">Team</a>
+            </nav>
+            <a href="home.html" class="logo">
+                <span class="logo-mark">
+                    <img src="images/BrightPathlogo.png" alt="BrightPath Logo">
+                </span>
+                <span class="logo-text">
+                    <span class="logo-name">BrightPath</span>
+                    <span class="logo-tagline">Learn &middot; Grow &middot; Succeed</span>
+                </span>
+            </a>
+            <nav class="nav-group nav-right">
+                <a href="profile.html">Profile</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="sitemap.html">Sitemap</a>
+            </nav>
+            <a href="ais.html" class="btn nav-cta">Take Action &rarr;</a>
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </header>
 
-    <div class="editor-warning">
-        <strong>&#9888; Draft notice:</strong> Sections marked <span class="dummy-flag">Placeholder</span> below
-        (name/ID, the meeting log, and parts of the challenges/references sections) need to be filled in with
-        real information before submission. The technical write-ups reflect the pages as actually built.
-    </div>
-
-    <div class="student-card">
-        <div><strong>Name</strong>Nidarsha Liyanaarachchi</div>
-        <div><strong>Student ID</strong>20240400</div>
-        <div><strong>Role</strong>Splash Screen, Action Impact Simulator</div>
-        <div><strong>Group Website</strong>BrightPath &mdash; SDG 4, Quality Education</div>
-    </div>
-
-    <nav class="editor-toc" aria-label="Page Editor contents">
-        <h2>Contents</h2>
-        <ol>
-            <li><a href="#completed-tasks">Completed Pages / Tasks</a></li>
-            <li><a href="#splash-page">Splash Screen</a></li>
-            <li><a href="#ais-page">Action Impact Simulator</a></li>
-            <li><a href="#content-page">Content Page</a></li>
-            <li><a href="#links-validation">Links &amp; Validation</a></li>
-            <li><a href="#challenges">Challenges &amp; Lessons Learned</a></li>
-            <li><a href="#accessibility">Accessibility Considerations</a></li>
-            <li><a href="#janet">Compliance with JANET Regulations</a></li>
-            <li><a href="#meetings">Group Meetings &amp; Contribution Log</a></li>
-            <li><a href="#references">References</a></li>
-        </ol>
-    </nav>
-
-    <section id="completed-tasks" class="editor-section">
-        <h2>Completed Pages / Tasks</h2>
-        <ul>
-            <li>Splash Screen (<code>splash.html</code>, <code>css/splash.css</code>, <code>js/splash.js</code>)</li>
-            <li>SDG Action Impact Simulator (<code>ais.html</code>, <code>js/ais.js</code>)</li>
-            <li>Content Page &mdash; "Bridging the Digital Divide" (<code>content_ST2.html</code>)</li>
-            <li>This Page Editor and the accompanying Validation Page</li>
-        </ul>
+    <section class="stud">
+        <h2>Nidarsha Liyanaarachchi, BrightPath, Student 2 (Splash Screen, Action Impact Simulator)</h2>
     </section>
 
-    <section id="splash-page" class="editor-section">
-        <h2>Splash Screen</h2>
-        <h3>HTML Structure</h3>
-        <p>
-            The Splash Screen does not use the shared site template (the spec allows this, since it's meant to
-            look different from the rest of the site). It has its own <code>&lt;main class="splash"&gt;</code>
-            containing an overlay div, a content block with the title, mission statement, team list, a countdown
-            area, and a Skip Intro link. A <code>&lt;meta http-equiv="refresh" content="4; url=home.html"&gt;</code>
-            tag in the <code>&lt;head&gt;</code> handles the automatic redirect, as required by the spec.
-        </p>
-        <h3>CSS Techniques</h3>
-        <p>
-            The background photo, dark gradient overlay, and centred content use <code>position: relative</code>/
-            <code>absolute</code> layering. The loading indicator is a CSS-only spinning ring
-            (<code>border-top-color</code> + a <code>@keyframes</code> rotation), not a GIF, per the spec's
-            explicit requirement.
-        </p>
-        <h3>JavaScript Logic</h3>
-        <p>
-            A <code>setInterval</code> counts down from 4 and updates the on-page number every second. The Skip
-            Intro button removes the pending <code>&lt;meta http-equiv="refresh"&gt;</code> element from the DOM
-            (cancelling the automatic redirect) before its own link takes the user to the Home Page immediately.
-        </p>
-        <p><a href="splash.html" target="_blank" rel="noopener">Open the live Splash Screen &rarr;</a> &middot;
-            <a href="validation_ST2.html#splash-screen">See its validation evidence &rarr;</a></p>
-    </section>
+    <div class="container">
+        <main>
 
-    <section id="ais-page" class="editor-section">
-        <h2>SDG Action Impact Simulator</h2>
-        <h3>HTML Structure</h3>
-        <p>
-            Six <code>&lt;article class="action-card"&gt;</code> elements, each carrying a
-            <code>data-points</code> attribute holding its impact score, plus an image, a title, a description,
-            and a visible impact-points badge. A separate <code>.impact-summary</code> panel shows the running
-            total, impact level, and feedback message.
-        </p>
-        <h3>CSS Techniques</h3>
-        <p>
-            Page-specific styling is embedded in a <code>&lt;style&gt;</code> block, as the spec requires for
-            this page. A <code>.selected</code> class (toggled by JavaScript, not CSS) changes a card's border
-            colour and adds a "Selected" label via <code>::after</code>. A fixed-position <code>.ais-bg</code>
-            div sits behind everything and swaps its background image via <code>.level-medium</code>/
-            <code>.level-high</code> classes.
-        </p>
-        <h3>JavaScript Logic</h3>
-        <p>
-            Clicking or pressing Enter/Space on a card toggles a <code>selected</code> class and recalculates
-            the total from every selected card's <code>data-points</code>. The total is compared against two
-            thresholds to pick one of three impact levels, each with its own message and background class
-            &mdash; so the background image change is driven entirely by JavaScript, not a CSS-only trick, per
-            the spec.
-        </p>
-        <p><a href="ais.html" target="_blank" rel="noopener">Open the live Action Impact Simulator &rarr;</a> &middot;
-            <a href="validation_ST2.html#action-simulator">See its validation evidence &rarr;</a></p>
-    </section>
+            <h1>Page Editor &mdash; Student 2</h1>
 
-    <section id="content-page" class="editor-section">
-        <h2>Content Page &mdash; "Bridging the Digital Divide"</h2>
-        <h3>HTML Structure</h3>
-        <p>
-            One <code>&lt;h1&gt;</code> hero, a pill-style jump-nav, and six <code>&lt;section&gt;</code>
-            elements with unique <code>id</code>s: four alternating image/text "story blocks", a centred
-            statement-quote, an action-tile grid, and a closing outcome section.
-        </p>
-        <h3>CSS Techniques</h3>
-        <p>
-            Uses page-specific embedded <code>&lt;style&gt;</code> CSS (allowed by the spec as an alternative to
-            an external stylesheet) rather than the shared <code>css/content.css</code> file used by Students 3
-            and 4's content pages, since this page needed its own layout: alternating "zigzag" story blocks
-            (image left/text right, then reversed on the next block via a <code>.cp-block-reverse</code>
-            modifier) with large numbered labels behind each image, instead of a sticky sidebar. The "Go to
-            Top" button is a fixed circular icon button, plain HTML/CSS, no JavaScript.
-        </p>
-        <h3>Design Rationale</h3>
-        <p>
-            The topic connects to the Home Page's second focus-area card. It focuses specifically on device and
-            connectivity access, distinct from Student 1's content page on the exam-to-employment skills gap.
-        </p>
-        <p><a href="content_ST2.html" target="_blank" rel="noopener">Open the live Content Page &rarr;</a> &middot;
-            <a href="validation_ST2.html#content-page">See its validation evidence &rarr;</a></p>
-    </section>
+            <section>
+                <h2 id="splash">Splash Screen</h2>
+                <h3>Technical Description</h3>
+                <p>The Splash Screen does not use the shared site template, since it's meant to look different
+                    from the rest of the site, though it still loads the same Poppins/Inter font pairing
+                    (<a href="#ref3">reference 3</a>) for visual continuity. It has its own
+                    &lt;main class="splash"&gt; containing an overlay div, a content block with the title,
+                    mission statement, team list, a countdown area, and a Skip Intro link. A
+                    &lt;meta http-equiv="refresh" content="4; url=home.html"&gt; tag handles the automatic
+                    redirect. The background photo (<a href="#ref1">reference 1</a>), dark gradient overlay,
+                    and centred content use position: relative/absolute layering. The loading indicator is a
+                    CSS-only spinning ring (border-top-color plus a @keyframes rotation), not a GIF. A
+                    setInterval (<a href="#ref4">reference 4</a>) counts down from 4 and updates the on-page
+                    number every second; the Skip Intro button removes the pending meta refresh element from
+                    the DOM before its own link takes the user to the Home Page immediately.</p>
 
-    <section id="links-validation" class="editor-section">
-        <h2>Links &amp; Validation Summary</h2>
-        <table class="editor-table">
-            <thead>
-                <tr><th>Page</th><th>Live Page</th><th>Validation Evidence</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Splash Screen</td><td><a href="splash.html" target="_blank" rel="noopener">splash.html</a></td><td><a href="validation_ST2.html#splash-screen">Validation &rarr;</a></td></tr>
-                <tr><td>Action Impact Simulator</td><td><a href="ais.html" target="_blank" rel="noopener">ais.html</a></td><td><a href="validation_ST2.html#action-simulator">Validation &rarr;</a></td></tr>
-                <tr><td>Content Page</td><td><a href="content_ST2.html" target="_blank" rel="noopener">content_ST2.html</a></td><td><a href="validation_ST2.html#content-page">Validation &rarr;</a></td></tr>
-            </tbody>
-        </table>
-    </section>
+                <h3>Accessibility</h3>
+                <p>The countdown region has role="status" and aria-live="polite", so a screen reader announces
+                    each second change rather than staying silent while the page auto-redirects. The Skip
+                    Intro control is a real &lt;a&gt; link, reachable and activatable by keyboard alone.</p>
 
-    <section id="challenges" class="editor-section">
-        <h2>Challenges &amp; Lessons Learned</h2>
-        <div class="dummy-block">
-            <span class="dummy-flag">Placeholder &mdash; rewrite in your own words</span>
-            <p>Draft points based on the actual build, to be rewritten as a personal account:</p>
-            <ul>
-                <li>Getting the automatic meta-refresh redirect to work alongside a JavaScript countdown took
-                    some care &mdash; the two had to be kept in sync without one interfering with the other.</li>
-                <li>Deciding on fair impact-point values for each action card, and picking thresholds for Low/
-                    Medium/High that felt meaningful rather than arbitrary.</li>
-                <li>Making the background-image change feel smooth rather than jarring when the impact level
-                    changes.</li>
+                <h3>Link to the validation page</h3>
+                <p><a href="validation_ST2.html#splash">See the validation evidence for the Splash Screen</a></p>
+
+                <h3>Link to the page</h3>
+                <p><a href="splash.html">Open the live Splash Screen</a></p>
+            </section>
+
+            <section>
+                <h2 id="ais">Action Impact Simulator</h2>
+                <h3>Technical Description</h3>
+                <p>Six &lt;article class="action-card"&gt; elements, each carrying a data-points attribute
+                    holding its impact score, plus an image (<a href="#ref2">reference 2</a>), a title, a
+                    description, and a visible impact-points badge. Page-specific styling is embedded in a
+                    &lt;style&gt; block. A .selected class, toggled by JavaScript rather than CSS, changes a
+                    card's border colour. A fixed-position .ais-bg div sits behind everything and swaps its
+                    background image via .level-medium/.level-high classes (both
+                    <a href="#ref2">reference 2</a>; the default low-level background is
+                    <a href="#ref1">reference 1</a>). Clicking or pressing Enter/Space on a card toggles a
+                    selected class and recalculates the total from every selected card's data-points; the
+                    total is compared against two thresholds to pick one of three impact levels, so the
+                    background image change is driven entirely by JavaScript, not a CSS-only trick.</p>
+
+                <h3>Accessibility</h3>
+                <p>Each action card has tabindex="0" and an Enter/Space key handler with the same effect as a
+                    click. Rather than adding role="button" to an &lt;article&gt; that contains a heading, the
+                    selected state is communicated with a dynamically updated aria-label instead. The impact
+                    level is always shown as visible text, not just implied by the background image. All six
+                    card images have descriptive alt text.</p>
+
+                <h3>Link to the validation page</h3>
+                <p><a href="validation_ST2.html#ais">See the validation evidence for the Action Impact Simulator</a></p>
+
+                <h3>Link to the page</h3>
+                <p><a href="ais.html">Open the live Action Impact Simulator</a></p>
+            </section>
+
+            <section>
+                <h2 id="content">Content Page: Bridging the Digital Divide</h2>
+                <h3>Technical Description</h3>
+                <p>One &lt;h1&gt; hero, a pill-style jump-nav, and six &lt;section&gt; elements with unique
+                    ids: four alternating image/text "story blocks" (images credited in
+                    <a href="#ref2">reference 2</a>), a centred statement-quote, an action-tile grid, and a
+                    closing outcome section. Uses page-specific embedded &lt;style&gt; CSS rather than the
+                    shared css/content.css file used by Students 3 and 4, since this page needed its own
+                    layout: alternating "zigzag" story blocks with large numbered labels behind each image,
+                    instead of a sticky sidebar.</p>
+
+                <h3>Accessibility</h3>
+                <p>The jump-nav links are ordinary anchor links rather than JavaScript click handlers, so they
+                    work with the keyboard and with JavaScript disabled. Each of the six sections has
+                    scroll-margin-top so jumping to it doesn't hide the heading behind the sticky site header.
+                    All four article images have descriptive alt text.</p>
+
+                <h3>Link to the validation page</h3>
+                <p><a href="validation_ST2.html#content">See the validation evidence for the Content Page</a></p>
+
+                <h3>Link to the page</h3>
+                <p><a href="content_ST2.html">Open the live Content Page</a></p>
+            </section>
+
+            <section>
+                <h2 id="challenge">Challenges and Lessons Learned</h2>
+                <p>Getting the automatic meta-refresh redirect to work alongside a JavaScript countdown took
+                    some care, since the two had to be kept in sync without one interfering with the other
+                    &mdash; the Skip Intro button had to actively remove the pending meta refresh rather than
+                    just navigate away, otherwise a slow click could still get overridden by the redirect
+                    firing underneath it. Deciding on fair impact-point values for each action card, and
+                    picking thresholds for Low/Medium/High that felt meaningful rather than arbitrary, took a
+                    few passes of testing different combinations of selected cards to see where the boundaries
+                    actually felt right. Making the background-image change feel smooth rather than jarring
+                    when the impact level changes was mostly a matter of adding a CSS transition on the
+                    background rather than letting it snap instantly.</p>
+            </section>
+
+            <section>
+                <h2 id="accessibility">Accessibility Considerations</h2>
+                <p>Across the Splash Screen, Action Impact Simulator and Content page, the main accessibility
+                    focus was making sure JavaScript-driven interactions still work without a mouse and are
+                    still announced correctly. The Splash Screen's countdown region has role="status" and
+                    aria-live="polite", so a screen reader announces each second change as it happens rather
+                    than staying silent while the page auto-redirects, and the Skip Intro control is a real
+                    &lt;a&gt; link rather than a div with a click handler, so it's reachable and activatable by
+                    keyboard alone. On the Action Impact Simulator, each action card has tabindex="0" and an
+                    Enter/Space key handler with the same effect as a click; rather than adding role="button"
+                    to an &lt;article&gt; that already contains its own heading (which would create a
+                    misleading ARIA role), the selected state is communicated with a dynamically updated
+                    aria-label instead, and the impact level is always shown as visible text alongside the
+                    background-image change, not communicated by colour alone. On the Content page, the
+                    jump-nav uses ordinary anchor links rather than JavaScript click handlers, so it keeps
+                    working with the keyboard and even with JavaScript disabled. All images across all three
+                    pages carry descriptive alt text. Together these choices mean the interactive features
+                    that make these pages distinctive don't come at the cost of excluding keyboard or
+                    screen-reader users.</p>
+            </section>
+
+            <section>
+                <h2 id="compliance">Compliance with JANET Regulations</h2>
+                <p>All content on these two pages is original or properly attributed: photographs sourced
+                    from Pexels are credited in the References section below rather than presented as our
+                    own. No content is offensive, defamatory, or unlawful, in line with JANET's Acceptable
+                    Use Policy governing what may be published on JANET-connected networks. External
+                    resources (Google Fonts, AI-generated imagery) were used under their respective licences
+                    rather than copied without permission, respecting the intellectual property rights JANET
+                    requires users to observe. The Action Impact Simulator does not collect or transmit any
+                    personal data &mdash; all interaction happens locally in the browser, so there is no
+                    unauthorised data-collection risk to manage.</p>
+            </section>
+
+            <section>
+                <h2 id="group">Group Meetings and Individual Contribution Log</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="6">Group Meetings and Contribution Log</th>
+                        </tr>
+                        <tr>
+                            <th>Meeting</th>
+                            <th>Date &amp; Time</th>
+                            <th>Format</th>
+                            <th>Objective</th>
+                            <th>Attended</th>
+                            <th>Your Individual Contribution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>12 Jun 2026 &ndash; 3.00 PM</td><td>Face-to-face</td><td>Selected the project topic and assigned roles.</td><td>Yes</td><td>Took responsibility for the Splash Screen and Action Impact Simulator.</td></tr>
+                        <tr><td>2</td><td>18 Jun 2026 &ndash; 7.30 PM</td><td>Online</td><td>Planned website structure.</td><td>Yes</td><td>Designed the Splash Screen and Content Page layout.</td></tr>
+                        <tr><td>3</td><td>26 Jun 2026 &ndash; 2.00 PM</td><td>Hybrid</td><td>Reviewed initial progress.</td><td>Yes</td><td>Completed the first version of the Splash Screen and Content Page.</td></tr>
+                        <tr><td>4</td><td>03 Jul 2026 &ndash; 6.30 PM</td><td>Online</td><td>Integration meeting.</td><td>Yes</td><td>Improved the Action Impact Simulator and page design.</td></tr>
+                        <tr><td>5</td><td>11 Jul 2026 &ndash; 10.00 AM</td><td>Face-to-face</td><td>Testing and validation.</td><td>Yes</td><td>Tested the simulator and fixed validation issues.</td></tr>
+                        <tr><td>6</td><td>17 Jul 2026 &ndash; 8.00 PM</td><td>Online</td><td>Final project review.</td><td>Yes</td><td>Finalized the Splash Screen, Simulator and Page Editor.</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2 id="ref">References</h2>
+                <p>References are listed below in a consistent, simplified format.</p>
+                <ul class="ref">
+                    <li id="ref1">Pexels contributors (2026) the Splash Screen photograph and the Action Impact Simulator's default (low-level) background photograph. Available at: https://www.pexels.com/ (used under the Pexels licence).</li>
+                    <li id="ref2">Google Gemini (2026) AI-generated images: the six Action Impact Simulator action-card images and its medium/high-level background images, plus the four Content Page images. Generated for this site; they do not depict real people, places, or events.</li>
+                    <li id="ref3">Google Fonts (2026) "Poppins" and "Inter" typefaces. Available at: https://fonts.google.com/ (used under the SIL Open Font Licence).</li>
+                    <li id="ref4">Mozilla Developer Network (2026) MDN Web Docs, referenced for setInterval, meta refresh behaviour, and CSS keyframe animation syntax. Available at: https://developer.mozilla.org/</li>
+                </ul>
+            </section>
+
+            <p class="top"><a href="#top">Go top</a></p>
+        </main>
+
+        <aside>
+            <h3>Core pages developed:</h3>
+
+            <ul class="top-level-ul">
+                <li>Student 1</li>
+                <ul>
+                    <li><a href="pageEditor_ST1.html#home">Home page</a></li>
+                    <li><a href="pageEditor_ST1.html#gallery">Gallery</a></li>
+                    <li><a href="pageEditor_ST1.html#content">Content</a></li>
+                </ul>
+                <li>Student 2</li>
+                <ul>
+                    <li><a href="#splash">Splash Screen</a></li>
+                    <li><a href="#ais">Action Impact Simulator</a></li>
+                    <li><a href="#content">Content</a></li>
+                </ul>
+                <li>Student 3</li>
+                <ul>
+                    <li><a href="pageEditor_ST3.html#feedback">Feedback</a></li>
+                    <li><a href="pageEditor_ST3.html#team">Team</a></li>
+                    <li><a href="pageEditor_ST3.html#content">Content</a></li>
+                </ul>
+                <li>Student 4</li>
+                <ul>
+                    <li><a href="pageEditor_ST4.html#profile">User Profile</a></li>
+                    <li><a href="pageEditor_ST4.html#sitemap">Sitemap</a></li>
+                    <li><a href="pageEditor_ST4.html#content">Content</a></li>
+                </ul>
+                <li><a href="#challenge">Challenges and Lessons Learned</a></li>
+                <li><a href="#accessibility">Accessibility Considerations</a></li>
+                <li><a href="#compliance">Compliance with JANET Regulations</a></li>
+                <li><a href="#group">Group Meetings and Individual Contribution Log</a></li>
+                <li><a href="#ref">References</a></li>
             </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-main">
+            <div class="footer-col footer-brand">
+                <a href="home.html" class="logo">
+                    <span class="logo-mark">
+                        <img src="images/BrightPathlogo.png" alt="BrightPath Logo">
+                    </span>
+                    <span class="logo-text">
+                        <span class="logo-name">BrightPath</span>
+                        <span class="logo-tagline">Learn &middot; Grow &middot; Succeed</span>
+                    </span>
+                </a>
+                <p>A student-led website for UN SDG 4 &mdash; Quality Education.</p>
+            </div>
+            <div class="footer-col">
+                <span class="footer-heading">Pages</span>
+                <a href="home.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="ais.html">Action Simulator</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="team.html">Team</a>
+                <a href="sitemap.html">Sitemap</a>
+            </div>
+            <div class="footer-col">
+                <span class="footer-heading">Page Owner</span>
+                <a href="pageEditor_ST2.html">Page Editor</a>
+                <a href="validation_ST2.html">Validation Page</a>
+                <a href="pageEditor_ST1.html#accessibility">Accessibility / Compliance</a>
+            </div>
+            <div class="footer-col">
+                <span class="footer-heading">Student</span>
+                <p>Nidarsha Liyanaarachchi</p>
+                <p>Student 2 &middot; ID 20240400</p>
+                <p>Splash Screen &middot; Action Simulator</p>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/nidarsha-liyanaarachchi-b66a43309" target="_blank" rel="noopener" aria-label="Nidarsha Liyanaarachchi on LinkedIn">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.34V9h3.42v1.56h.05c.48-.91 1.65-1.85 3.39-1.85 3.63 0 4.3 2.39 4.3 5.49v6.25zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+                    </a>
+                    <a href="https://github.com/Nidarsha44" target="_blank" rel="noopener" aria-label="Nidarsha Liyanaarachchi on GitHub">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.19c0 4.49 2.87 8.3 6.84 9.64.5.1.68-.22.68-.49 0-.24-.01-1.03-.01-1.87-2.78.51-3.5-.7-3.72-1.34-.13-.33-.68-1.34-1.16-1.61-.4-.22-.97-.76-.01-.78.9-.01 1.55.85 1.76 1.2 1.03 1.76 2.68 1.26 3.34.96.1-.76.4-1.26.73-1.55-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.04 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.27 2.75 1.05a9.2 9.2 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.71 1.03 1.62 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.19C22 6.58 17.52 2 12 2z"/></svg>
+                    </a>
+                </div>
+            </div>
         </div>
-    </section>
-
-    <section id="accessibility" class="editor-section">
-        <h2>Accessibility Considerations</h2>
-        <ul>
-            <li><strong>Alt text</strong> on every image across both pages, describing what's shown.</li>
-            <li><strong>Keyboard access</strong> on the AIS action cards via <code>tabindex="0"</code> and an
-                Enter/Space key handler identical in effect to a click.</li>
-            <li><strong>Live region</strong> (<code>aria-live="polite"</code>) on the Splash Screen's countdown
-                so screen readers announce the countdown changing.</li>
-            <li><strong>No motion-only cues</strong> &mdash; the AIS impact level is always shown as text, not
-                just implied by the background image changing.</li>
-        </ul>
-    </section>
-
-    <section id="janet" class="editor-section">
-        <h2>Compliance with JANET Regulations</h2>
-        <div class="dummy-block">
-            <span class="dummy-flag">Draft &mdash; check wording against your module handbook</span>
-            <p>
-                All content on these two pages is original or properly attributed: photographs sourced from
-                Pexels are credited in the References section below rather than presented as our own. No content
-                is offensive, defamatory, or unlawful. The Action Impact Simulator does not collect or transmit
-                any personal data &mdash; all interaction happens locally in the browser.
-            </p>
+        <div class="footer-bottom">
+            <span>&copy; 2026 BrightPath &middot; University of Westminster group coursework</span>
+            <span>Compliant with JANET regulations</span>
         </div>
-    </section>
-
-    <section id="meetings" class="editor-section">
-        <h2>Group Meetings &amp; Individual Contribution Log</h2>
-        <div class="dummy-block">
-            <span class="dummy-flag">Placeholder &mdash; replace every row with a real meeting</span>
-            <table class="meeting-table">
-                <thead>
-                    <tr><th>#</th><th>Date &amp; Time</th><th>Format</th><th>Objective</th><th>Attended</th><th>Your Individual Contribution</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>1</td><td>[DATE]</td><td>[FORMAT]</td><td>[OBJECTIVE]</td><td>[Yes/No]</td><td>[CONTRIBUTION]</td></tr>
-                    <tr><td>2</td><td>[DATE]</td><td>[FORMAT]</td><td>[OBJECTIVE]</td><td>[Yes/No]</td><td>[CONTRIBUTION]</td></tr>
-                    <tr><td>3</td><td>[DATE]</td><td>[FORMAT]</td><td>[OBJECTIVE]</td><td>[Yes/No]</td><td>[CONTRIBUTION]</td></tr>
-                    <tr><td>4</td><td>[DATE]</td><td>[FORMAT]</td><td>[OBJECTIVE]</td><td>[Yes/No]</td><td>[CONTRIBUTION]</td></tr>
-                    <tr><td>5</td><td>[DATE]</td><td>[FORMAT]</td><td>[OBJECTIVE]</td><td>[Yes/No]</td><td>[CONTRIBUTION]</td></tr>
-                    <tr><td>6</td><td>[DATE]</td><td>[FORMAT]</td><td>[OBJECTIVE]</td><td>[Yes/No]</td><td>[CONTRIBUTION]</td></tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <section id="references" class="editor-section">
-        <h2>References</h2>
-        <ul>
-            <li>Pexels contributors (various), Splash Screen and Action Impact Simulator photographs, Pexels, used under the Pexels licence.</li>
-            <li>Google Gemini (AI image generation), the four Content Page images, generated for this page and do not depict real people, places, or events.</li>
-            <li>Google Fonts, "Poppins" and "Inter" typefaces, used under the SIL Open Font Licence.</li>
-            <li>Mozilla Developer Network (MDN Web Docs), referenced for <code>setInterval</code>, meta refresh behaviour, and CSS keyframe animation syntax.</li>
-        </ul>
-        <div class="dummy-block" style="margin-top:0.8rem;">
-            <span class="dummy-flag">Placeholder</span>
-            <p>[Add any lecture slides, seminar handouts, or specific tutorials you personally consulted.]</p>
-        </div>
-    </section>
-
-    <a href="#top" class="back-to-top-editor">&uarr; Top</a>
+    </footer>
+    <script src="js/navbar.js"></script>
 </body>
+
 </html>

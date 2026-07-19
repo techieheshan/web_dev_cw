@@ -23,10 +23,10 @@
             transition: background-image 0.6s ease;
         }
         .ais-bg.level-medium {
-            background: linear-gradient(rgba(18, 58, 122, 0.82), rgba(18, 58, 122, 0.7)), url('images/gallery1-procession-a.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(18, 58, 122, 0.82), rgba(18, 58, 122, 0.7)), url('images/ais-medium-campus-ai.jpg') center/cover no-repeat;
         }
         .ais-bg.level-high {
-            background: linear-gradient(rgba(18, 58, 122, 0.72), rgba(18, 58, 122, 0.55)), url('images/home-card3-graduation.jpg') center top/cover no-repeat;
+            background: linear-gradient(rgba(18, 58, 122, 0.72), rgba(18, 58, 122, 0.55)), url('images/action-workshop.jpg') center top/cover no-repeat;
         }
 
         .ais-intro {
@@ -55,6 +55,10 @@
         .action-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 10px 22px rgba(18, 58, 122, 0.2);
+        }
+        .action-card:focus-visible {
+            outline: 3px solid var(--link-color);
+            outline-offset: 2px;
         }
         .action-card img {
             width: 100%;
@@ -150,7 +154,7 @@
     <header>
         <div class="utility-bar">
             <span>UN SDG 4 &middot; Quality Education</span>
-            <a href="#">Accessibility &amp; Compliance</a>
+            <a href="pageEditor_ST1.html#accessibility">Accessibility &amp; Compliance</a>
         </div>
         <div class="main-nav">
             <nav class="nav-group nav-left">
@@ -189,7 +193,7 @@
         <h2 style="color:white;">Choose your actions</h2>
         <div class="action-grid" id="actionGrid">
             <article class="action-card" tabindex="0" data-points="4">
-                <img src="images/content1-apprentice-workshop.jpg" alt="An experienced mentor teaching a younger apprentice a hands-on skill">
+                <img src="images/action-tutor.jpg" alt="Two students sitting together at a library table, one pointing to a passage in an open book to help the other">
                 <div class="action-card-body">
                     <h3>Tutor a Peer Weekly</h3>
                     <p>Commit one hour a week to helping someone with a subject you're confident in.</p>
@@ -198,7 +202,7 @@
             </article>
 
             <article class="action-card" tabindex="0" data-points="2">
-                <img src="images/content1-bookshelf-srilanka.jpg" alt="A small community bookshelf stocked with books">
+                <img src="images/action-donate-books.jpg" alt="Two students exchanging a stack of textbooks">
                 <div class="action-card-body">
                     <h3>Donate Old Textbooks</h3>
                     <p>Pass on notes and books you no longer need to a student who does.</p>
@@ -207,7 +211,7 @@
             </article>
 
             <article class="action-card" tabindex="0" data-points="4">
-                <img src="images/gallery4-reading-outdoors.jpg" alt="A student reading outdoors">
+                <img src="images/action-volunteer-library.jpg" alt="A student placing a book back onto a shelf in a community library">
                 <div class="action-card-body">
                     <h3>Volunteer at a Community Library</h3>
                     <p>Give a few hours a month keeping a local reading space open and stocked.</p>
@@ -216,7 +220,7 @@
             </article>
 
             <article class="action-card" tabindex="0" data-points="2">
-                <img src="images/content1-group-reading.jpg" alt="Students sharing study material together">
+                <img src="images/action-share-study-resources.jpg" alt="A student at a desk photographing handwritten notes with a phone to share online, laptop open beside them">
                 <div class="action-card-body">
                     <h3>Share Study Resources Online</h3>
                     <p>Post your notes or past papers somewhere the next cohort can find them.</p>
@@ -225,7 +229,7 @@
             </article>
 
             <article class="action-card" tabindex="0" data-points="3">
-                <img src="images/gallery3-computer-lab.jpg" alt="Students learning together in a computer lab">
+                <img src="images/action-firstyear-student.jpg" alt="An older student pointing something out in a notebook to a younger student sitting beside him outdoors on campus">
                 <div class="action-card-body">
                     <h3>Mentor a First-Year Student</h3>
                     <p>Answer the questions nobody officially answers &mdash; how things actually work.</p>
@@ -234,7 +238,7 @@
             </article>
 
             <article class="action-card" tabindex="0" data-points="5">
-                <img src="images/content1-exam-study.jpg" alt="A student studying with an open book">
+                <img src="images/action-workshop.jpg" alt="A group of six students gathered around a laptop during a workshop session with a whiteboard behind them">
                 <div class="action-card-body">
                     <h3>Organise a Skills Workshop</h3>
                     <p>Get a few students together to teach each other something the syllabus skips.</p>
@@ -279,7 +283,7 @@
                 <span class="footer-heading">Page Owner</span>
                 <a href="pageEditor_ST2.html">Page Editor</a>
                 <a href="validation_ST2.html">Validation Page</a>
-                <a href="#">Accessibility / Compliance</a>
+                <a href="pageEditor_ST1.html#accessibility">Accessibility / Compliance</a>
             </div>
             <div class="footer-col">
                 <span class="footer-heading">Student</span>

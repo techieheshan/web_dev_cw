@@ -84,29 +84,46 @@
         }
         .mag-content .content-img {
             width: 100%;
+            max-width: 600px;
+            display: block;
             border-radius: 10px;
             border: 1px solid var(--border-color);
             box-shadow: 0 6px 16px rgba(18, 58, 122, 0.15);
-            margin: 1rem 0 0.4rem;
+            margin: 1.2rem auto 0.4rem;
         }
         .mag-content .img-caption {
             display: block;
+            max-width: 600px;
+            margin: 0 auto 1.2rem;
             font-size: 0.78rem;
             color: #5B6B7D;
-            margin-bottom: 1rem;
+            text-align: center;
         }
 
-        /* Pull-quotes float beside the text on wide screens */
+        /* Pull-quote: a full-width gradient callout in the flow, not a float —
+           floats need body text to wrap around them, and this quote otherwise
+           sits right after a heading with nothing beside it to wrap. */
         .pull-quote-float {
-            float: right;
-            width: 40%;
-            margin: 0 0 1rem 1.6rem;
-            padding-left: 1rem;
-            border-left: 4px solid var(--accent-color);
+            position: relative;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
             font-weight: 600;
             font-style: italic;
             font-size: 1.1rem;
-            color: var(--secondary-color);
+            border-radius: 14px;
+            padding: 1.3rem 1.7rem 1.3rem 3.2rem;
+            margin: 1.2rem 0 1.6rem;
+            box-shadow: 0 8px 22px rgba(18, 58, 122, 0.2);
+        }
+        .pull-quote-float::before {
+            content: "\201C";
+            position: absolute;
+            left: 1.05rem;
+            top: 0.45rem;
+            font-family: Georgia, serif;
+            font-size: 2.4rem;
+            line-height: 1;
+            color: rgba(255, 255, 255, 0.45);
         }
 
         /* Action checklist styled like a to-do list rather than plain bullets */
@@ -177,11 +194,6 @@
             .mag-sidebar {
                 position: static;
             }
-            .pull-quote-float {
-                float: none;
-                width: 100%;
-                margin: 1.2rem 0;
-            }
         }
     </style>
 </head>
@@ -190,7 +202,7 @@
     <header>
         <div class="utility-bar">
             <span>UN SDG 4 &middot; Quality Education</span>
-            <a href="#">Accessibility &amp; Compliance</a>
+            <a href="pageEditor_ST1.html#accessibility">Accessibility &amp; Compliance</a>
         </div>
         <div class="main-nav">
             <nav class="nav-group nav-left">
@@ -386,7 +398,7 @@
                 <span class="footer-heading">Page Owner</span>
                 <a href="pageEditor_ST1.html">Page Editor</a>
                 <a href="validation_ST1.html">Validation Page</a>
-                <a href="#">Accessibility / Compliance</a>
+                <a href="pageEditor_ST1.html#accessibility">Accessibility / Compliance</a>
             </div>
             <div class="footer-col">
                 <span class="footer-heading">Student</span>

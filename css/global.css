@@ -64,10 +64,6 @@ h2 { font-size: 1.5rem; }
     font-size: 1.05rem;
     margin-bottom: 1.5rem;
 }
-.hero-banner .hero-lede {
-    color: var(--border-color);
-    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
-}
 
 /* Buttons */
 .btn {

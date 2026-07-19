@@ -15,7 +15,7 @@
     <header>
         <div class="utility-bar">
             <span>UN SDG 4 &middot; Quality Education</span>
-            <a href="#">Accessibility &amp; Compliance</a>
+            <a href="pageEditor_ST1.html#accessibility">Accessibility &amp; Compliance</a>
         </div>
         <div class="main-nav">
             <nav class="nav-group nav-left">
@@ -49,28 +49,52 @@
         <p class="hero-lede">No form to fill in &mdash; just answer a few short prompts as they pop up. Skip
             anything you're not ready to answer, and come back to it later.</p>
 
-        <div class="profile-controls">
-            <button type="button" class="btn btn-solid" id="startBtn">Start / Continue Profile</button>
-            <button type="button" class="btn btn-outline-dark" id="resetBtn">Reset Profile</button>
-        </div>
-
-        <div class="profile-progress">
-            <div class="progress-bar-track">
-                <div class="progress-bar-fill" id="progressFill" style="width:0%;"></div>
+        <div class="cards-grid profile-steps-overview">
+            <div class="card profile-step-card">
+                <span class="step-num-badge">1</span>
+                <h2>Basics</h2>
+                <p>Your name, a username, and where you're based.</p>
             </div>
-            <span id="progressText">Completion: 0% (0/9 prompts completed)</span>
+            <div class="card profile-step-card">
+                <span class="step-num-badge">2</span>
+                <h2>Interests</h2>
+                <p>Which part of SDG 4 you care about most, and how you like to learn.</p>
+            </div>
+            <div class="card profile-step-card">
+                <span class="step-num-badge">3</span>
+                <h2>Actions</h2>
+                <p>One thing you'd actually do, and one goal for this term.</p>
+            </div>
         </div>
 
-        <div class="step-buttons" id="stepButtons">
-            <button type="button" class="step-btn" data-step="1">Step 1: Basics</button>
-            <button type="button" class="step-btn" data-step="2">Step 2: Interests</button>
-            <button type="button" class="step-btn" data-step="3">Step 3: Actions</button>
+        <div class="profile-panel">
+            <div class="profile-controls">
+                <button type="button" class="btn btn-solid" id="startBtn">Start / Continue Profile</button>
+                <button type="button" class="btn btn-outline-dark" id="resetBtn">Reset Profile</button>
+            </div>
+
+            <div class="profile-progress">
+                <div class="progress-bar-track">
+                    <div class="progress-bar-fill" id="progressFill" style="width:0%;"></div>
+                </div>
+                <div class="progress-bar-scale" aria-hidden="true"><span>0%</span><span>50%</span><span>100%</span></div>
+                <span id="progressText">Completion: 0% (0/9 prompts completed)</span>
+            </div>
+
+            <div class="step-buttons" id="stepButtons">
+                <button type="button" class="step-btn" data-step="1">Step 1: Basics</button>
+                <button type="button" class="step-btn" data-step="2">Step 2: Interests</button>
+                <button type="button" class="step-btn" data-step="3">Step 3: Actions</button>
+            </div>
         </div>
 
         <h2 class="eyebrow-plain" style="font-size:0.78rem;">Your Profile (Updates Progressively)</h2>
         <div class="profile-output" id="profileOutput">
-            <p class="profile-placeholder" id="profilePlaceholder">Nothing here yet &mdash; click "Start /
-                Continue Profile" above to begin.</p>
+            <p class="profile-placeholder" id="profilePlaceholder">
+                <span class="placeholder-icon" aria-hidden="true">&#10022;</span>
+                <span class="placeholder-copy"><strong>Nothing here yet.</strong> Click &ldquo;Start / Continue
+                    Profile&rdquo; above to begin.</span>
+            </p>
         </div>
     </main>
     <footer>
@@ -100,12 +124,12 @@
                 <span class="footer-heading">Page Owner</span>
                 <a href="pageEditor_ST4.html">Page Editor</a>
                 <a href="validation_ST4.html">Validation Page</a>
-                <a href="#">Accessibility / Compliance</a>
+                <a href="pageEditor_ST1.html#accessibility">Accessibility / Compliance</a>
             </div>
             <div class="footer-col">
                 <span class="footer-heading">Student</span>
                 <p>J. Heshani Dinethya</p>
-                <p>Student 4 &middot; ID 20250319</p>
+                <p>Student 4 &middot; ID 20250319 (W2212756)</p>
                 <p>Profile &middot; Sitemap</p>
                 <div class="footer-social">
                     <a href="https://www.linkedin.com/in/heshani-dinethya-6aa2b7414" target="_blank" rel="noopener" aria-label="J. Heshani Dinethya on LinkedIn">

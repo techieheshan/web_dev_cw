@@ -3,105 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrightPath | Validation &mdash; Student 2</title>
+    <title>Validator Page Student - Nidarsha Liyanaarachchi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/pageEditor_validator.css">
 </head>
 <body id="top">
-    <header class="editor-header">
-        <h1>Validation Page &mdash; Student 2</h1>
-        <p>HTML validation evidence for the Splash Screen, Content Page (content_ST2.html), and Action Impact Simulator</p>
+
+    <header>
+        <div class="utility-bar">
+            <span>UN SDG 4 &middot; Quality Education</span>
+            <a href="pageEditor_ST1.html#accessibility">Accessibility &amp; Compliance</a>
+        </div>
+        <div class="main-nav">
+            <nav class="nav-group nav-left">
+                <a href="home.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="team.html">Team</a>
+            </nav>
+            <a href="home.html" class="logo">
+                <span class="logo-mark">
+                    <img src="images/BrightPathlogo.png" alt="BrightPath Logo">
+                </span>
+                <span class="logo-text">
+                    <span class="logo-name">BrightPath</span>
+                    <span class="logo-tagline">Learn &middot; Grow &middot; Succeed</span>
+                </span>
+            </a>
+            <nav class="nav-group nav-right">
+                <a href="profile.html">Profile</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="sitemap.html">Sitemap</a>
+            </nav>
+            <a href="ais.html" class="btn nav-cta">Take Action &rarr;</a>
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </header>
 
-    <div class="editor-warning">
-        <strong>How this evidence was produced:</strong> Each page below was checked using the official
-        <a href="https://validator.w3.org/nu/" target="_blank" rel="noopener">W3C Nu Html Checker</a> &mdash;
-        the same validation engine used at validator.w3.org &mdash; by uploading the page's HTML file directly
-        (file upload method, checked with vnu 26.7.16). Checked on 19 July 2026. The raw pass/fail result and
-        any messages returned by the validator are reproduced below exactly as returned, with no edits. Before
-        submission, it's still worth also running each page against its live, publicly deployed URL on
-        <a href="https://validator.w3.org/#validate_by_uri" target="_blank" rel="noopener">validator.w3.org</a>
-        and keeping that as a second piece of evidence, since some markers check the deployed version
-        specifically.
+    <section class="stud">
+        <h2>Nidarsha Liyanaarachchi, BrightPath, Student 2 (Splash Screen, Action Impact Simulator)</h2>
+    </section>
+
+    <div class="container">
+        <main>
+
+            <h1>Validation Page &mdash; Student 2</h1>
+
+            <section>
+                <h2 id="splash">Splash Screen validation report</h2>
+                <p>Checked with the official W3C Nu Html Checker (validator.w3.org/nu/), file upload method,
+                    checked with vnu 26.7.16. Result: Pass &mdash; 0 errors, 0 warnings. Since the Splash
+                    Screen doesn't use the shared header/nav/footer template, its heading outline had to be
+                    built from scratch rather than inheriting one already validated elsewhere; keeping it to a
+                    single &lt;h1&gt; with no skipped levels avoided the heading-order errors that showed up on
+                    other pages across the site.</p>
+                <img src="validationSnapshots/splash_vali.jpg" alt="W3C Nu Html Checker screenshot for splash.html showing 'Document checking completed. No errors or warnings to show.'">
+
+                <h3>Back to Page Editor page</h3>
+                <p><a href="pageEditor_ST2.html#splash">Go to Splash Screen section in Page Editor</a></p>
+            </section>
+
+            <section>
+                <h2 id="ais">Action Impact Simulator validation report</h2>
+                <p>Checked with the official W3C Nu Html Checker, file upload method. Result: Pass &mdash; 0
+                    errors, 0 warnings. Each action card needed a value the JavaScript could read to
+                    calculate impact score; rather than inventing an ad-hoc attribute, the standard HTML5
+                    data-* pattern (data-points="&hellip;") was used, which the validator explicitly allows
+                    for author-defined data. The page also needed interactive cards without native
+                    &lt;button&gt; elements; since aria-pressed is only valid on elements with (or implying)
+                    role="button", forcing that role onto an &lt;article&gt; containing a heading would likely
+                    have produced an ARIA-usage warning, so a dynamic aria-label update was used instead.</p>
+                <img src="validationSnapshots/ais_vali.jpg" alt="W3C Nu Html Checker screenshot for ais.html showing 'Document checking completed. No errors or warnings to show.'">
+
+                <h3>Back to Page Editor page</h3>
+                <p><a href="pageEditor_ST2.html#ais">Go to Action Impact Simulator section in Page Editor</a></p>
+            </section>
+
+            <section>
+                <h2 id="content">Content Page validation report</h2>
+                <p>Checked with the official W3C Nu Html Checker, file upload method. Result: Pass &mdash; 0
+                    errors, 0 warnings. All three of my pages passed with zero errors and zero warnings on the
+                    first submitted check &mdash; not luck so much as writing markup with the validator's
+                    rules in mind from the start, particularly around custom data attributes and ARIA roles,
+                    which are easy to get subtly wrong even when a page looks and behaves correctly in the
+                    browser.</p>
+                <img src="validationSnapshots/content2_vali.jpg" alt="W3C Nu Html Checker screenshot for content_ST2.html showing 'Document checking completed. No errors or warnings to show.'">
+
+                <h3>Back to Page Editor page</h3>
+                <p><a href="pageEditor_ST2.html#content">Go to Content Page section in Page Editor</a></p>
+            </section>
+
+            <p class="top"><a href="#top">Go top</a></p>
+        </main>
+
+        <aside>
+            <h3>Core pages developed:</h3>
+
+            <ul class="top-level-ul">
+                <li>Student 1</li>
+                <ul>
+                    <li><a href="pageEditor_ST1.html#home">Home page</a></li>
+                    <li><a href="pageEditor_ST1.html#gallery">Gallery</a></li>
+                    <li><a href="pageEditor_ST1.html#content">Content</a></li>
+                </ul>
+                <li>Student 2</li>
+                <ul>
+                    <li><a href="#splash">Splash Screen</a></li>
+                    <li><a href="#ais">Action Impact Simulator</a></li>
+                    <li><a href="#content">Content</a></li>
+                </ul>
+                <li>Student 3</li>
+                <ul>
+                    <li><a href="pageEditor_ST3.html#feedback">Feedback</a></li>
+                    <li><a href="pageEditor_ST3.html#team">Team</a></li>
+                    <li><a href="pageEditor_ST3.html#content">Content</a></li>
+                </ul>
+                <li>Student 4</li>
+                <ul>
+                    <li><a href="pageEditor_ST4.html#profile">User Profile</a></li>
+                    <li><a href="pageEditor_ST4.html#sitemap">Sitemap</a></li>
+                    <li><a href="pageEditor_ST4.html#content">Content</a></li>
+                </ul>
+            </ul>
+        </aside>
     </div>
 
-    <section id="splash-screen" class="editor-section">
-        <h2>Splash Screen &mdash; splash.html</h2>
-        <table class="editor-table">
-            <tbody>
-                <tr><th>Page checked</th><td>splash.html</td></tr>
-                <tr><th>Tool</th><td>W3C Nu Html Checker (validator.w3.org/nu/), file upload method</td></tr>
-                <tr><th>Result</th><td><strong style="color:#147A45;">Pass &mdash; 0 errors, 0 warnings</strong></td></tr>
-            </tbody>
-        </table>
-        <img class="validation-screenshot" src="validationSnapshots/splash_vali.jpg" alt="W3C Nu Html Checker screenshot for splash.html showing 'Document checking completed. No errors or warnings to show.'">
-        <p style="margin-top:0.8rem;"><a href="pageEditor_ST2.html#splash-page">&larr; Back to Page Editor: Splash Screen</a></p>
-    </section>
-
-    <section id="content-page" class="editor-section">
-        <h2>Content Page &mdash; content_ST2.html</h2>
-        <table class="editor-table">
-            <tbody>
-                <tr><th>Page checked</th><td>content_ST2.html</td></tr>
-                <tr><th>Tool</th><td>W3C Nu Html Checker (validator.w3.org/nu/), file upload method</td></tr>
-                <tr><th>Result</th><td><strong style="color:#147A45;">Pass &mdash; 0 errors, 0 warnings</strong></td></tr>
-            </tbody>
-        </table>
-        <img class="validation-screenshot" src="validationSnapshots/content2_vali.jpg" alt="W3C Nu Html Checker screenshot for content_ST2.html showing 'Document checking completed. No errors or warnings to show.'">
-        <p style="margin-top:0.8rem;"><a href="pageEditor_ST2.html#content-page">&larr; Back to Page Editor: Content Page</a></p>
-    </section>
-
-    <section id="action-simulator" class="editor-section">
-        <h2>Action Impact Simulator &mdash; ais.html</h2>
-        <table class="editor-table">
-            <tbody>
-                <tr><th>Page checked</th><td>ais.html</td></tr>
-                <tr><th>Tool</th><td>W3C Nu Html Checker (validator.w3.org/nu/), file upload method</td></tr>
-                <tr><th>Result</th><td><strong style="color:#147A45;">Pass &mdash; 0 errors, 0 warnings</strong></td></tr>
-            </tbody>
-        </table>
-        <img class="validation-screenshot" src="validationSnapshots/ais_vali.jpg" alt="W3C Nu Html Checker screenshot for ais.html showing 'Document checking completed. No errors or warnings to show.'">
-        <p style="margin-top:0.8rem;"><a href="pageEditor_ST2.html#ais-page">&larr; Back to Page Editor: Action Impact Simulator</a></p>
-    </section>
-
-    <section id="reflection" class="editor-section">
-        <h2>Reflection on the Validation Process</h2>
-        <p>
-            Unlike some of the other pages on the site, all three of my pages passed with zero errors and zero
-            warnings on the first submitted check. That wasn't luck so much as a few deliberate precautions
-            taken while writing the markup, rather than something fixed afterwards:
-        </p>
-        <p>
-            On <code>ais.html</code>, each action card needed a value the JavaScript could read to calculate
-            impact score. Rather than inventing an ad-hoc attribute, I used <code>data-points="&hellip;"</code>
-            &mdash; the standard HTML5 <code>data-*</code> pattern the validator explicitly allows for
-            author-defined data, so it never flagged the attribute as unrecognised. The same page also needed
-            interactive cards without native <code>&lt;button&gt;</code> elements; <code>aria-pressed</code>
-            is only valid on elements with (or implying) <code>role="button"</code>, so instead of forcing that
-            role onto an <code>&lt;article&gt;</code> containing a heading &mdash; which would likely have
-            produced an ARIA-usage warning &mdash; I used a dynamic <code>aria-label</code> update instead, as
-            explained on the Page Editor page.
-        </p>
-        <p>
-            On <code>splash.html</code>, since it doesn't use the shared header/nav/footer template, I had to
-            build its heading outline from scratch rather than inheriting one that Student 1 had already
-            validated. Keeping it to a single <code>&lt;h1&gt;</code> with no skipped levels avoided the
-            heading-order errors that showed up elsewhere on the site.
-        </p>
-        <p>
-            The main lesson was less about fixing mistakes and more about writing markup with the validator's
-            rules in mind from the start &mdash; particularly around custom data attributes and ARIA roles,
-            which are easy to get subtly wrong even when the page looks and behaves correctly in the browser.
-        </p>
-    </section>
-
-    <footer style="margin-top:2rem; padding-top:1rem; border-top:1px solid #E0DACE; font-size:0.85rem; color:#52606D;">
-        <p><a href="pageEditor_ST2.html">&larr; Back to Page Editor</a></p>
-        <p>Nidarsha Liyanaarachchi &middot; Student 2 &middot; ID 20240400</p>
+    <footer>
+        <div class="footer-main">
+            <div class="footer-col footer-brand">
+                <a href="home.html" class="logo">
+                    <span class="logo-mark">
+                        <img src="images/BrightPathlogo.png" alt="BrightPath Logo">
+                    </span>
+                    <span class="logo-text">
+                        <span class="logo-name">BrightPath</span>
+                        <span class="logo-tagline">Learn &middot; Grow &middot; Succeed</span>
+                    </span>
+                </a>
+                <p>A student-led website for UN SDG 4 &mdash; Quality Education.</p>
+            </div>
+            <div class="footer-col">
+                <span class="footer-heading">Pages</span>
+                <a href="home.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="ais.html">Action Simulator</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="team.html">Team</a>
+                <a href="sitemap.html">Sitemap</a>
+            </div>
+            <div class="footer-col">
+                <span class="footer-heading">Page Owner</span>
+                <a href="pageEditor_ST2.html">Page Editor</a>
+                <a href="validation_ST2.html">Validation Page</a>
+                <a href="pageEditor_ST1.html#accessibility">Accessibility / Compliance</a>
+            </div>
+            <div class="footer-col">
+                <span class="footer-heading">Student</span>
+                <p>Nidarsha Liyanaarachchi</p>
+                <p>Student 2 &middot; ID 20240400</p>
+                <p>Splash Screen &middot; Action Simulator</p>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/nidarsha-liyanaarachchi-b66a43309" target="_blank" rel="noopener" aria-label="Nidarsha Liyanaarachchi on LinkedIn">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.34V9h3.42v1.56h.05c.48-.91 1.65-1.85 3.39-1.85 3.63 0 4.3 2.39 4.3 5.49v6.25zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+                    </a>
+                    <a href="https://github.com/Nidarsha44" target="_blank" rel="noopener" aria-label="Nidarsha Liyanaarachchi on GitHub">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.19c0 4.49 2.87 8.3 6.84 9.64.5.1.68-.22.68-.49 0-.24-.01-1.03-.01-1.87-2.78.51-3.5-.7-3.72-1.34-.13-.33-.68-1.34-1.16-1.61-.4-.22-.97-.76-.01-.78.9-.01 1.55.85 1.76 1.2 1.03 1.76 2.68 1.26 3.34.96.1-.76.4-1.26.73-1.55-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.04 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.27 2.75 1.05a9.2 9.2 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.71 1.03 1.62 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.19C22 6.58 17.52 2 12 2z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 BrightPath &middot; University of Westminster group coursework</span>
+            <span>Compliant with JANET regulations</span>
+        </div>
     </footer>
-
-    <a href="#top" class="back-to-top-editor">&uarr; Top</a>
+    <script src="js/navbar.js"></script>
 </body>
+
 </html>
